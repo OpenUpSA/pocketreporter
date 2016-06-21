@@ -67,21 +67,21 @@
 
       <section class="question-list">
       {{#each topic.questions}}
-        <div class="question">
-          <h3>{{ this }}</h3>
+        <div class="question" data-key="{{ key }}">
+          <h3>#{{ num }}/{{ ../topic.length }} - {{ q }}</h3>
           <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-default active">
-              <input type="radio" name="options" id="option1" autocomplete="off"> Yes
+              <input type="radio" value="yes" name="q-{{ key }}-a" autocomplete="off"> Yes
             </label>
             <label class="btn btn-default">
-              <input type="radio" name="options" id="option2" autocomplete="off" checked> No
+              <input type="radio" value="no" name="q-{{ key }}-a" autocomplete="off" checked> No
             </label>
             <label class="btn btn-default">
-              <input type="radio" name="options" id="option3" autocomplete="off"> Not applicable
+              <input type="radio" value="n/a" name="q-{{ key }}-a" autocomplete="off"> Not applicable
             </label>
           </div>
 
-          <textarea class="form-control" placeholder="Notes..."></textarea>
+          <textarea class="form-control" name="q-{{ key }}-notes" placeholder="Notes..."></textarea>
         </div>
       {{/each}}
       </section>

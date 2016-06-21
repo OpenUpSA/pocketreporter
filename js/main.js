@@ -57,7 +57,7 @@ var Persistence = Backbone.Model.extend({
 
 /*** Globals ***/
 var StoryCheck = {
-  topics: new Backbone.Collection([{
+  topics: new Topics([{
     id: 'accidents',
     name: 'Accidents',
     questions: [
