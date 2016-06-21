@@ -24,3 +24,5 @@ var Story = Backbone.Model.extend({});
 var Stories = Backbone.Collection.extend({
   model: Story,
 });
+
+var Answers = Backbone.Model.extend({});
