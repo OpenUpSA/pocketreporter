@@ -7,14 +7,15 @@
 }
 
 #main-view header.top {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 999;
+
   border-bottom: 1px solid #ccc;
   background-color: #efefef;
   padding: 5px 15px;
-  margin: 0px -15px;
-  position: fixed;
-  top: 0px;
-  width: 100%;
-  z-index: 999;
 }
 
 #main-view article {
@@ -22,7 +23,6 @@
 }
 
 #main-view header.top h1 {
-  font-size: 14px;
   margin: 0px;
   text-align: center;
 }
