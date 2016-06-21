@@ -49,6 +49,16 @@
       <button type="button" class="btn btn-default btn-block" data-topic="{{ id }}">{{ name }}</button>
       {{/each}}
     </div>
+
+    {{#if stories}}
+    <h4>Continue a story</h4>
+
+    <div class="list-group story-list">
+    {{#each stories}}
+      <a href="#" class="list-group-item" data-id="{{ id }}">{{ id }} {{ topic }}</a>
+    {{/each}}
+    </div>
+    {{/if}}
   </script>
 
   <script id="story-view-template" type="text/x-handlebars-template">

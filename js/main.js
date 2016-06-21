@@ -40,6 +40,8 @@ var HomeView = Backbone.View.extend({
   initialize: function() {
     this.render();
     $("#main-view").html(this.el);
+
+    StoryCheck.stories.on('add remove', _.bind(this.render, this));
   },
 
   newStory: function(e) {
@@ -54,6 +56,7 @@ var HomeView = Backbone.View.extend({
   render: function() {
     this.$el.html(this.template({
       topics: StoryCheck.topics.toJSON(),
+      stories: StoryCheck.stories.toJSON(),
     }));
   },
 });
@@ -76,6 +79,28 @@ var StoryView = Backbone.View.extend({
     this.$el.html(this.template({
       story: this.model.toJSON(),
     }));
+  },
+});
+
+
+/*** Persistence ***/
+var Persistence = Backbone.Model.extend({
+  initialize: function() {
+    this.storage = localStorage;
+
+    this.load();
+
+    StoryCheck.stories.on('change add remove', _.bind(this.save, this));
+  },
+
+  load: function() {
+    var val = this.storage.getItem('stories');
+    if (val) val = JSON.parse(val);
+    StoryCheck.stories = new Stories(val || []);
+  },
+
+  save: function() {
+    this.storage.setItem('stories', JSON.stringify(StoryCheck.stories.toJSON()));
   },
 });
 
@@ -112,10 +137,10 @@ var StoryCheck = {
     ],
   }]),
 
-  stories: new Stories(),
 };
 
 
 // do it
+new Persistence();
 var router = new Router();
 Backbone.history.start();
