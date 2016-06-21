@@ -68,7 +68,7 @@
       <section class="question-list">
       {{#each topic.questions}}
         <div class="question" data-key="{{ key }}">
-          <h3>#{{ num }}/{{ ../topic.length }} - {{ q }}</h3>
+          <h3>{{ q }} <span class="num">{{ num }} / {{ ../topic.length }}</span></h3>
 
           <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-default">
