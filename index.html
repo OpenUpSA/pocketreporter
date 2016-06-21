@@ -30,23 +30,29 @@
       <h1>StoryCheck</h1>
     </header>
 
-    <h4>Start a new story</h4>
+    <article>
+      <section>
+        <h2>Start a new story</h2>
 
-    <div class="btn-group-vertical topic-list">
-      {{#each topics}}
-      <button type="button" class="btn btn-default btn-block" data-topic="{{ id }}">{{ name }}</button>
-      {{/each}}
-    </div>
+        <div class="btn-group-vertical topic-list">
+          {{#each topics}}
+          <button type="button" class="btn btn-default btn-block" data-topic="{{ id }}">{{ name }}</button>
+          {{/each}}
+        </div>
+      </section>
 
-    {{#if stories}}
-    <h4>Continue a story</h4>
+      {{#if stories}}
+        <section>
+          <h2>Continue a story</h2>
 
-    <div class="list-group story-list">
-    {{#each stories}}
-      <a href="#stories/{{ id }}" class="list-group-item">{{ id }} {{ topic }}</a>
-    {{/each}}
-    </div>
-    {{/if}}
+          <div class="list-group story-list">
+          {{#each stories}}
+            <a href="#stories/{{ id }}" class="list-group-item">{{ id }} {{ topic }}</a>
+          {{/each}}
+          </div>
+        </section>
+      {{/if}}
+    </article>
   </script>
 
   <script id="story-view-template" type="text/x-handlebars-template">
@@ -55,7 +61,35 @@
         <a href="#">&lt; Stories</a>
       </nav>
     </header>
-    <h4>Your {{ story.topic }} story! {{ story.id }}</h4>
+    
+    <article>
+      <h2>Your {{ story.topic }} story! {{ story.id }}</h2>
+
+      <section class="question-list">
+      {{#each topic.questions}}
+        <div class="question">
+          <h3>{{ this }}</h3>
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default active">
+              <input type="radio" name="options" id="option1" autocomplete="off"> Yes
+            </label>
+            <label class="btn btn-default">
+              <input type="radio" name="options" id="option2" autocomplete="off" checked> No
+            </label>
+            <label class="btn btn-default">
+              <input type="radio" name="options" id="option3" autocomplete="off"> Not applicable
+            </label>
+          </div>
+
+          <textarea class="form-control" placeholder="Notes..."></textarea>
+        </div>
+      {{/each}}
+      </section>
+
+      <footer class="bottom">
+        <a href="#" class="btn btn-block btn-success">I'm done</a>
+      </footer>
+    </article>
   </script>
 
   <script src="js/vendor/jquery-1.11.2.min.js"></script>

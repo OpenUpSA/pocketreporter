@@ -7,6 +7,8 @@ var StoryView = Backbone.View.extend({
   },
 
   initialize: function() {
+    this.topic = StoryCheck.topics.get(this.model.get('topic'));
+
     this.render();
     $("#main-view").html(this.el);
   },
@@ -14,6 +16,7 @@ var StoryView = Backbone.View.extend({
   render: function() {
     this.$el.html(this.template({
       story: this.model.toJSON(),
+      topic: this.topic.toJSON(),
     }));
   },
 });
