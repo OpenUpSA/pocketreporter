@@ -11,7 +11,12 @@ var Router = Backbone.Router.extend({
 
   story: function(id) {
     var story = StoryCheck.stories.get(id);
-    this.loadView(new StoryView({model: story}));
+
+    if (story) {
+      this.loadView(new StoryView({model: story}));
+    } else {
+      this.navigate('', {trigger: true});
+    }
   },
 
   loadView: function(view) {
