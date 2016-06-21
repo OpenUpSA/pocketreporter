@@ -1,1 +1,121 @@
+/*** Router ***/
+var Router = Backbone.Router.extend({
+  routes : {
+    "" : "home",
+    "stories/:id" : "story"
+  },
 
+  home: function() {
+    this.loadView(new HomeView());
+  },
+
+  story: function(id) {
+    var story = StoryCheck.stories.get(id);
+    this.loadView(new StoryView({model: story}));
+  },
+
+  loadView: function(view) {
+    if (this.view) {
+      if (this.view.close) {
+        this.view.close();
+      } else {
+        this.view.remove();
+      }
+    }
+
+    this.view = view;
+  }
+});
+
+
+/*** HomeView ***/
+var HomeView = Backbone.View.extend({
+  className: "home-view",
+  template: Handlebars.compile($("#home-view-template").html()),
+
+  events: {
+    'click .topic-list button': 'newStory',
+  },
+
+  initialize: function() {
+    this.render();
+    $("#main-view").html(this.el);
+  },
+
+  newStory: function(e) {
+    var topic = $(e.target).data('topic'),
+        story = new Story({topic: topic});
+    story.set('id', story.cid);
+
+    StoryCheck.stories.add(story);
+    router.navigate('stories/' + story.id, {trigger: true});
+  },
+
+  render: function() {
+    this.$el.html(this.template({
+      topics: StoryCheck.topics.toJSON(),
+    }));
+  },
+});
+
+
+/*** StoryView ***/
+var StoryView = Backbone.View.extend({
+  className: "story-view",
+  template: Handlebars.compile($("#story-view-template").html()),
+
+  events: {
+  },
+
+  initialize: function() {
+    this.render();
+    $("#main-view").html(this.el);
+  },
+
+  render: function() {
+    this.$el.html(this.template({
+      story: this.model.toJSON(),
+    }));
+  },
+});
+
+
+/*** Models ***/
+var Topic = Backbone.Model.extend({});
+var Topics = Backbone.Collection.extend({
+  model: Topic,
+});
+
+var Story = Backbone.Model.extend({});
+var Stories = Backbone.Collection.extend({
+  model: Story,
+});
+
+
+/*** Globals ***/
+var StoryCheck = {
+  topics: new Topics([{
+    id: 'accidents',
+    name: 'Accidents',
+    questions: [
+      "Identification of dead, injured",
+      "Time and location",
+      "Type(s) of vehicle(s) involved",
+    ],
+  }, {
+    id: 'biography',
+    name: 'Biography',
+    questions: [
+      "Name",
+      "Date of birth",
+      "Place of birth",
+    ],
+  }]),
+
+  stories: new Stories(),
+};
+
+
+// do it
+var router = new Router();
+Backbone.history.start();
