@@ -33,61 +33,6 @@ var Router = Backbone.Router.extend({
 });
 
 
-/*** HomeView ***/
-var HomeView = Backbone.View.extend({
-  className: "home-view",
-  template: Handlebars.compile($("#home-view-template").html()),
-
-  events: {
-    'click .topic-list button': 'newStory',
-  },
-
-  initialize: function() {
-    this.render();
-    $("#main-view").html(this.el);
-
-    StoryCheck.stories.on('add remove', _.bind(this.render, this));
-  },
-
-  newStory: function(e) {
-    var topic = $(e.target).data('topic'),
-        story = new Story({topic: topic});
-    story.set('id', story.cid);
-
-    StoryCheck.stories.add(story);
-    router.navigate('stories/' + story.id, {trigger: true});
-  },
-
-  render: function() {
-    this.$el.html(this.template({
-      topics: StoryCheck.topics.toJSON(),
-      stories: StoryCheck.stories.toJSON(),
-    }));
-  },
-});
-
-
-/*** StoryView ***/
-var StoryView = Backbone.View.extend({
-  className: "story-view",
-  template: Handlebars.compile($("#story-view-template").html()),
-
-  events: {
-  },
-
-  initialize: function() {
-    this.render();
-    $("#main-view").html(this.el);
-  },
-
-  render: function() {
-    this.$el.html(this.template({
-      story: this.model.toJSON(),
-    }));
-  },
-});
-
-
 /*** Persistence ***/
 var Persistence = Backbone.Model.extend({
   initialize: function() {
@@ -107,18 +52,6 @@ var Persistence = Backbone.Model.extend({
   save: function() {
     this.storage.setItem('stories', JSON.stringify(StoryCheck.stories.toJSON()));
   },
-});
-
-
-/*** Models ***/
-var Topic = Backbone.Model.extend({});
-var Topics = Backbone.Collection.extend({
-  model: Topic,
-});
-
-var Story = Backbone.Model.extend({});
-var Stories = Backbone.Collection.extend({
-  model: Story,
 });
 
 
