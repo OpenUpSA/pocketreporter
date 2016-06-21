@@ -39,8 +39,10 @@ var StoryView = Backbone.View.extend({
   },
 
   deleteStory: function() {
-    StoryCheck.stories.remove(this.model);
-    router.navigate('', {trigger: true});
+    if (confirm("Delete this story?")) {
+      StoryCheck.stories.remove(this.model);
+      router.navigate('', {trigger: true});
+    }
   },
 
   render: function() {
