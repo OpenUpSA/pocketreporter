@@ -4,6 +4,7 @@ var StoryView = Backbone.View.extend({
   template: Handlebars.compile($("#story-view-template").html()),
 
   events: {
+    'click button.delete': 'deleteStory',
   },
 
   initialize: function() {
@@ -11,6 +12,11 @@ var StoryView = Backbone.View.extend({
 
     this.render();
     $("#main-view").html(this.el);
+  },
+
+  deleteStory: function() {
+    StoryCheck.stories.remove(this.model);
+    router.navigate('', {trigger: true});
   },
 
   render: function() {
