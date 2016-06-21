@@ -20,28 +20,16 @@
   <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-  <nav class="navbar navbar-inverse" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">StoryCheck</a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-      </div><!--/.navbar-collapse -->
-    </div>
-  </nav>
-
   <div class="container">
     <div id="main-view">
     </div>
   </div>
 
   <script id="home-view-template" type="text/x-handlebars-template">
+    <header class="top">
+      <h1>StoryCheck</h1>
+    </header>
+
     <h4>Start a new story</h4>
 
     <div class="btn-group-vertical topic-list">
@@ -55,13 +43,18 @@
 
     <div class="list-group story-list">
     {{#each stories}}
-      <a href="#" class="list-group-item" data-id="{{ id }}">{{ id }} {{ topic }}</a>
+      <a href="#stories/{{ id }}" class="list-group-item">{{ id }} {{ topic }}</a>
     {{/each}}
     </div>
     {{/if}}
   </script>
 
   <script id="story-view-template" type="text/x-handlebars-template">
+    <header class="top">
+      <nav>
+        <a href="#">&lt; Stories</a>
+      </nav>
+    </header>
     <h4>Your {{ story.topic }} story! {{ story.id }}</h4>
   </script>
 
