@@ -82,7 +82,7 @@
       <section class="question-list">
       {{#each topic.questions}}
         <div class="question" data-key="{{ key }}">
-          <h3>{{ q }} <span class="num">{{ num }} / {{ ../topic.length }}</span></h3>
+          <h3>{{ question }} <span class="num">{{ num }} / {{ ../topic.length }}</span></h3>
 
           <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-default">
@@ -102,7 +102,9 @@
       </section>
 
       <footer class="bottom">
-        <a href="#" class="btn btn-block btn-success">I'm done</a>
+        <a href="#" class="btn btn-block btn-success save">Save for later</a>
+        <br>
+        <button type="button" class="btn btn-block btn-default share">Share by email</button>
         <br>
         <button type="button" class="btn btn-danger btn-block delete">Delete this story</button>
       </footer>

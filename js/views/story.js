@@ -5,6 +5,7 @@ var StoryView = Backbone.View.extend({
 
   events: {
     'click button.delete': 'deleteStory',
+    'click .share': 'share',
   },
 
   bindings: {
@@ -43,6 +44,16 @@ var StoryView = Backbone.View.extend({
       StoryCheck.stories.remove(this.model);
       router.navigate('', {trigger: true});
     }
+  },
+
+  share: function(e) {
+    // construct a completed mailto: url
+    var mailto = 'mailto:you@example.com';
+
+    mailto += '?subject=' + encodeURIComponent(this.model.title());
+    mailto += '&body=' + encodeURIComponent(this.model.shareableBody());
+
+    window.location = mailto;
   },
 
   render: function() {
