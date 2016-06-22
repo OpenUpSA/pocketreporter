@@ -57,6 +57,7 @@
 
       {{/if}}
 
+
       <section>
         <h2>Start a new story</h2>
 
@@ -66,6 +67,22 @@
           {{/each}}
         </div>
       </section>
+
+
+      {{#if archived}}
+        <section>
+          <button class="btn btn-default btn-block" data-toggle="collapse" data-target="#archived-stories">{{ archived.length }} Finished Stories</button>
+        </section>
+
+        <section id="archived-stories" class="collapse">
+          <div class="list-group story-list">
+          {{#each archived}}
+            <a href="#stories/{{ id }}" class="list-group-item">{{ id }} {{ topic }}</a>
+          {{/each}}
+          </div>
+        </section>
+      {{/if}}
+
     </article>
   </script>
 
@@ -99,6 +116,14 @@
           <textarea class="form-control" name="q-{{ key }}-notes" placeholder="Notes..."></textarea>
         </div>
       {{/each}}
+      </section>
+
+      <section>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="archived"> Story is finished
+          </label>
+        </div>
       </section>
 
       <footer class="bottom">

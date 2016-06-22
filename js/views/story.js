@@ -9,10 +9,13 @@ var StoryView = Backbone.View.extend({
   },
 
   bindings: {
+    '[name=archived]': 'archived',
   },
 
   initialize: function() {
     this.topic = StoryCheck.topics.get(this.model.get('topic'));
+    this.model.on('change:archived', _.bind(this.archivedChanged, this));
+
     this.answers = new Answers(this.model.get('answers'));
     this.answers.on('change', _.debounce(_.bind(this.saveAnswers, this), 300, true));
 
@@ -23,6 +26,10 @@ var StoryView = Backbone.View.extend({
   },
 
   setupBindings: function() {
+    // bindings for the story model
+    this.stickit();
+
+    // bindings for the answers
     var bindings = {};
 
     // link form elements to answer attributes
@@ -56,10 +63,16 @@ var StoryView = Backbone.View.extend({
     window.location = mailto;
   },
 
+  archivedChanged: function() {
+    this.$el.find('.save').text(this.model.get('archived') ? 'Archive' : 'Save for later');
+  },
+
   render: function() {
     this.$el.html(this.template({
       story: this.model.toJSON(),
       topic: this.topic.toJSON(),
     }));
+
+    this.archivedChanged();
   },
 });

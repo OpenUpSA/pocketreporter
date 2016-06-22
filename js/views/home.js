@@ -24,9 +24,13 @@ var HomeView = Backbone.View.extend({
   },
 
   render: function() {
+    var archived = StoryCheck.stories.where({archived: true}),
+        current = StoryCheck.stories.where({archived: false});
+
     this.$el.html(this.template({
       topics: StoryCheck.topics.toJSON(),
-      stories: StoryCheck.stories.toJSON(),
+      stories: _.map(current, function(s) { return s.toJSON(); }),
+      archived: _.map(archived, function(s) { return s.toJSON(); }),
     }));
   },
 });
