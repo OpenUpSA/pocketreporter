@@ -11,7 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/bootstrap-material-design.min.css">
+  <link rel="stylesheet" href="css/ripples.min.css">
   <link rel="stylesheet" href="css/main.css">
 
   <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
@@ -38,12 +39,25 @@
       {{#if stories}}
 
         <section>
-          <h2>Continue a story</h2>
+          <div class="panel panel-primary">
+            <div class="panel-heading">Continue a story</div>
+            <div class="panel-body">
 
-          <div class="list-group story-list">
-          {{#each stories}}
-            <a href="#stories/{{ id }}" class="list-group-item">{{ id }} {{ topic }}</a>
-          {{/each}}
+              <div class="list-group story-list">
+                {{#each stories}}
+                <a href="#stories/{{ id }}" class="list-group-item">
+                  <div class="row-action-primary">
+                  aoeu
+                  </div>
+                  <div class="row-content">
+                    <h4 class="list-group-item-heading">{{ id }}</h4>
+                  </div>
+                </a>
+                <div class="list-group-separator"></div>
+                {{/each}}
+              </div>
+
+            </div>
           </div>
         </section>
 
@@ -59,28 +73,43 @@
 
 
       <section>
-        <h2>Start a new story</h2>
+        <div class="panel panel-info">
+          <div class="panel-heading">Start a new story</div>
+          <div class="panel-body">
 
-        <div class="btn-group-vertical topic-list">
-          {{#each topics}}
-          <button type="button" class="btn btn-default btn-block" data-topic="{{ id }}">{{ name }}</button>
-          {{/each}}
+            <div class="btn-group-vertical topic-list">
+              {{#each topics}}
+              <button type="button" class="btn btn-default btn-block" data-topic="{{ id }}">{{ name }}</button>
+              {{/each}}
+            </div>
+
+          </div>
         </div>
       </section>
 
 
       {{#if archived}}
-        <section>
-          <button class="btn btn-default btn-block" data-toggle="collapse" data-target="#archived-stories">{{ archived.length }} Finished Stories</button>
-        </section>
+      <section>
+        <div class="panel panel-success">
+          <div class="panel-heading">Finished stories</div>
+          <div class="panel-body">
 
-        <section id="archived-stories" class="collapse">
-          <div class="list-group story-list">
-          {{#each archived}}
-            <a href="#stories/{{ id }}" class="list-group-item">{{ id }} {{ topic }}</a>
-          {{/each}}
+            <div class="list-group story-list">
+            {{#each archived}}
+              <a href="#stories/{{ id }}" class="list-group-item">
+                <div class="row-action-primary">
+                aoeu
+                </div>
+                <div class="row-content">
+                  <h4 class="list-group-item-heading">{{ id }}</h4>
+                </div>
+              </a>
+              <div class="list-group-separator"></div>
+            {{/each}}
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
       {{/if}}
 
     </article>
@@ -138,6 +167,8 @@
 
   <script src="js/vendor/jquery-1.11.2.min.js"></script>
   <script src="js/vendor/bootstrap-3.3.1.min.js"></script>
+  <script src="js/vendor/material.min.js"></script>
+  <script src="js/vendor/ripples.min.js"></script>
   <script src="js/vendor/handlebars-v4.0.5.js"></script>
   <script src="js/vendor/underscore-1.8.3-min.js"></script>
   <script src="js/vendor/backbone-1.3.3-min.js"></script>

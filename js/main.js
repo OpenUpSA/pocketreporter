@@ -81,3 +81,5 @@ var StoryCheck = {
 new Persistence();
 var router = new Router();
 Backbone.history.start();
+
+$.material.init();
