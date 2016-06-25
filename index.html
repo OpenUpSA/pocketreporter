@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/bootstrap-material-design.min.css">
   <link rel="stylesheet" href="css/ripples.min.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
 
   <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
@@ -46,12 +47,7 @@
               <div class="list-group story-list">
                 {{#each stories}}
                 <a href="#stories/{{ id }}" class="list-group-item">
-                  <div class="row-action-primary">
-                  aoeu
-                  </div>
-                  <div class="row-content">
-                    <h4 class="list-group-item-heading">{{ id }}</h4>
-                  </div>
+                  <h4 class="list-group-item-heading">{{ id }}</h4>
                 </a>
                 <div class="list-group-separator"></div>
                 {{/each}}
@@ -118,7 +114,7 @@
   <script id="story-view-template" type="text/x-handlebars-template">
     <header class="top">
       <nav>
-        <a href="#"><i class="glyphicon glyphicon-chevron-left" aria-hidden="true"></i> Stories</a>
+        <a href="#"><i class="material-icons">arrow back</i> Stories</a>
       </nav>
 
       <h2>Your {{ story.topic }} story! {{ story.id }}</h2>
