@@ -2,11 +2,11 @@
   width: 100%;
 }
 
-#main-view {
+#viewport {
   margin-bottom: 20px;
 }
 
-#main-view header.top {
+#viewport header.top {
   position: fixed;
   top: 0px;
   left: 0px;
@@ -18,43 +18,43 @@
   padding: 5px 15px;
 }
 
-#main-view article {
+#viewport article {
   padding-top: 40px;
 }
 
-#main-view header.top h1 {
+#viewport header.top h1 {
   margin: 0px;
   text-align: center;
 }
 
-#main-view h1,
-#main-view h2,
-#main-view h3 {
+#viewport h1,
+#viewport h2,
+#viewport h3 {
   font-size: 16px;
   margin-top: 0px;
 }
 
-#main-view h4,
-#main-view h5 {
+#viewport h4,
+#viewport h5 {
   font-size: 14px;
   margin-top: 0px;
 }
 
-#main-view section {
+#viewport section {
   margin-bottom: 20px;
 }
 
-#main-view .story-view .question {
+#viewport .story-view .question {
   margin-bottom: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid #efefef;
 }
 
-#main-view .story-view .question .btn-group {
+#viewport .story-view .question .btn-group {
   margin-bottom: 10px;
 }
 
-#main-view .story-view .question .num {
+#viewport .story-view .question .num {
   float: right;
   color: #ccc;
   font-size: 13px;
