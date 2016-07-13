@@ -51,6 +51,17 @@ var Story = Backbone.Model.extend({
     return 'Your ' + this.get('topic') + ' story ' + this.id;
   },
 
+  percentComplete: function() {
+    var topic = StoryCheck.topics.get(this.get('topic')),
+        total = topic.get('questions').length,
+        answers = this.get('answers'),
+        completed = _.filter(topic.get('questions'), function (q) { 
+          return !!answers[q.key + '-done'];
+        }).length;
+
+    return (total === 0 ? 0 : completed / total);
+  },
+
   shareableBody: function() {
     var topic = StoryCheck.topics.get(this.get('topic')),
         answers = this.get('answers'),

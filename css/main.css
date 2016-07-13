@@ -124,4 +124,8 @@ ul.question-list {
 .topic-list {
   width: 100%; }
 
+#story-progress {
+  margin: -10px -5px 10px;
+  border-radius: 0px; }
+
 /*# sourceMappingURL=main.css.map */

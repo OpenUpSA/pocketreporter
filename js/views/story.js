@@ -19,6 +19,7 @@ var StoryView = Backbone.View.extend({
 
     this.answers = new Answers(this.model.get('answers'));
     this.answers.on('change', _.debounce(_.bind(this.saveAnswers, this), 300, true));
+    this.answers.on('change', this.updateProgress, this);
 
     this.render();
     $("#viewport").html(this.el);
@@ -41,6 +42,13 @@ var StoryView = Backbone.View.extend({
 
     this.stickit(this.answers, bindings);
     this.$el.find('.btn-group input[type=radio]:checked').closest('label').addClass('active');
+  },
+
+  updateProgress: function() {
+    var p = this.model.percentComplete();
+    this.$('#story-progress .progress-bar')
+      .css({width: p * 100 + "%"})
+      .text(Math.round(p * 100) + "% complete");
   },
 
   saveAnswers: function() {
@@ -93,5 +101,6 @@ var StoryView = Backbone.View.extend({
     }));
 
     this.archivedChanged();
+    this.updateProgress();
   },
 });
