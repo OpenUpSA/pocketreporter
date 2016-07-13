@@ -54,7 +54,9 @@ body {
     text-overflow: ellipsis; }
   #app-header .back {
     position: absolute;
-    left: 15px; }
+    left: 15px;
+    padding: 10px;
+    margin: -10px; }
 
 #viewport article.with-header {
   padding-top: 60px; }

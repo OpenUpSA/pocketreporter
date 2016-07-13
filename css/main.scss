@@ -80,6 +80,9 @@ body {
   .back {
     position: absolute;
     left: 15px;
+    // nice big tap target
+    padding: 10px;
+    margin: -10px;
   }
 }
 
