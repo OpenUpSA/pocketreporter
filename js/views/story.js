@@ -46,7 +46,7 @@ var StoryView = Backbone.View.extend({
     this.topic = StoryCheck.topics.get(this.model.get('topic'));
 
     this.answers = new AnswerList(this.model.get('answers'));
-    this.answers.on('change', _.debounce(_.bind(this.saveAnswers, this), 300, true));
+    this.answers.on('change', _.debounce(_.bind(this.saveAnswers, this), 300));
     this.answers.on('change', this.updateProgress, this);
 
     this.render();
