@@ -37,6 +37,7 @@ var Router = Backbone.Router.extend({
 var Persistence = Backbone.Model.extend({
   initialize: function() {
     this.storage = localStorage;
+    this.version = 1;
 
     this.load();
 
@@ -44,13 +45,22 @@ var Persistence = Backbone.Model.extend({
   },
 
   load: function() {
-    var val = this.storage.getItem('stories');
-    if (val) val = JSON.parse(val);
-    StoryCheck.stories = new Stories(val || [], {parse: true});
+    var val = this.storage.getItem('StoryCheck');
+    if (val) {
+      val = JSON.parse(val);
+    } else {
+      val = {};
+    }
+
+    StoryCheck.stories = new Stories(val.stories || [], {parse: true});
   },
 
   save: function() {
-    this.storage.setItem('stories', JSON.stringify(StoryCheck.stories.toJSON()));
+    var val = {
+      version: this.version,
+      stories: StoryCheck.stories.toJSON(),
+    };
+    this.storage.setItem('StoryCheck', JSON.stringify(val));
   },
 });
 
