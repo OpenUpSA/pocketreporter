@@ -41,13 +41,13 @@
       </div>
     </div>
 
-    <article class="with-header box-sections">
+    <article class="with-header box-sections collapsible-sections">
       {{#if stories}}
 
         <section>
-          <h2>{{ pluralCount stories.length 'Current story' 'Current stories' }}</h2>
+          <h2 data-toggle="collapse" data-target="#current-story-list">{{ pluralCount stories.length 'Current story' 'Current stories' }}</h2>
 
-          <ul class="story-list">
+          <ul class="story-list collapse in" id="current-story-list">
             {{#each stories}}
               <li>
                 <a href="#stories/{{ id }}">
@@ -72,9 +72,9 @@
 
       {{#if archived}}
         <section>
-          <h2>{{ pluralCount archived.length 'Archived story' 'Archived stories' }}</h2>
+          <h2 data-toggle="collapse" data-target="#archive-story-list">{{ pluralCount archived.length 'Archived story' 'Archived stories' }}</h2>
 
-          <ul class="story-list">
+          <ul class="story-list collapse in" id="archive-story-list">
             {{#each archived}}
               <li>
                 <a href="#stories/{{ id }}">

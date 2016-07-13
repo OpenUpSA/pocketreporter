@@ -78,7 +78,7 @@ h5 {
   }
 }
 
-article.box-sections {
+.box-sections {
   & > section {
     padding: 5px;
     background-color: $grey-light;
@@ -88,6 +88,30 @@ article.box-sections {
   h2 {
     margin: 5px 0px 10px 5px;
     font-size: 18px;
+  }
+}
+
+.collapsible-sections {
+  > section {
+    > h2 {
+      &::before {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        margin-righT: 5px;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      &::before {
+        content: "\f077";
+      }
+
+      &.collapsed::before {
+        content: "\f078";
+      }
+    }
   }
 }
 

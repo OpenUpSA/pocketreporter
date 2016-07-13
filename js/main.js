@@ -77,6 +77,15 @@ var StoryCheck = {
 };
 
 
+// collapsibles
+$('body').on('show.bs.collapse', '.collapsible-sections .collapse', function() {
+  $(this).prev().removeClass('collapsed');
+});
+$('body').on('hide.bs.collapse', '.collapsible-sections .collapse', function() {
+  $(this).prev().addClass('collapsed');
+});
+
+
 // do it
 new Persistence();
 var router = new Router();
