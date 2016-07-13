@@ -4,6 +4,8 @@ $header-height: 50px;
 
 $black: #4a4a4a;
 $white: white;
+$grey-light: #f5f6f6;
+$grey-border: #d7d7d7;
 
 $header-bg: $black;
 $header-fg: $white;
@@ -38,7 +40,7 @@ h5 {
 
 /* app layout */
 #viewport {
-  margin-bottom: 20px;
+  margin: 0px -10px 20px;
 }
 
 #header-wrapper {
@@ -76,6 +78,31 @@ h5 {
   }
 }
 
+article.box-sections {
+  & > section {
+    padding: 5px;
+    background-color: $grey-light;
+    border: 1px solid $grey-border;
+  }
+}
+
+ul.story-list {
+  padding: 0px;
+  margin: 0px;
+
+  > li {
+    display: block;
+    padding: 5px;
+    margin-bottom: 10px;
+
+    background-color: white;
+    border: 1px solid $grey-border;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
 
 /* specific views */
 .story-view {
@@ -99,4 +126,3 @@ h5 {
 .topic-list {
   width: 100%;
 }
-
