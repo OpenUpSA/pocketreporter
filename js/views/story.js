@@ -6,6 +6,10 @@ var QuestionView = Backbone.View.extend({
   template: Handlebars.compile($("#story-question-template").html()),
   tagName: 'li',
   className: 'question clearfix',
+  bindings: {
+    '[name=answer]': 'answer',
+    '[name=notes]': 'notes',
+  },
 
   initialize: function(options) {
     this.question = options.question;
@@ -17,11 +21,7 @@ var QuestionView = Backbone.View.extend({
       .html(this.template(this.question))
       .data('key', this.key);
 
-    var bindings = {};
-    bindings['[name="q-' + this.key + '-a"]'] = 'answer';
-    bindings['[name="q-' + this.key + '-notes"]'] = 'notes';
-
-    this.stickit(this.model, bindings);
+    this.stickit();
     this.$el.find('.btn-group input[type=radio]:checked').closest('label').addClass('active');
 
     return this;
