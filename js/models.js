@@ -16,16 +16,35 @@ var Topic = Backbone.Model.extend({
   },
 });
 
+
 var Topics = Backbone.Collection.extend({
   model: Topic,
 });
+
 
 var Story = Backbone.Model.extend({
   defaults: function() {
     return {
       answers: {},
       archived: false,
+      created_at: moment(),
+      updated_at: moment(),
     };
+  },
+
+  initialize: function() {
+    this.on('change', this.updated, this);
+  },
+
+  parse: function(json, options) {
+    // reify moments from iso8601 string
+    json.created_at = moment(json.created_at);
+    json.updated_at = moment(json.updated_at);
+    return json;
+  },
+
+  updated: function() {
+    this.set('updated_at', moment(), {silent: true});
   },
 
   title: function() {

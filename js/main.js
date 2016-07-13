@@ -46,7 +46,7 @@ var Persistence = Backbone.Model.extend({
   load: function() {
     var val = this.storage.getItem('stories');
     if (val) val = JSON.parse(val);
-    StoryCheck.stories = new Stories(val || []);
+    StoryCheck.stories = new Stories(val || [], {parse: true});
   },
 
   save: function() {
@@ -75,6 +75,15 @@ var StoryCheck = {
     ],
   }]),
 };
+
+
+// collapsibles
+$('body').on('show.bs.collapse', '.collapsible-sections .collapse', function() {
+  $(this).prev().removeClass('collapsed');
+});
+$('body').on('hide.bs.collapse', '.collapsible-sections .collapse', function() {
+  $(this).prev().addClass('collapsed');
+});
 
 
 // do it

@@ -1,0 +1,157 @@
+/* variables */
+
+$header-height: 50px;
+
+$black: #4a4a4a;
+$white: white;
+$grey-light: #f5f6f6;
+$grey-border: #d7d7d7;
+
+$header-bg: $black;
+$header-fg: $white;
+
+
+/* forms */
+input[type=text],
+input[type=phone],
+input[type=email],
+input[type=password],
+textarea {
+  font-size: 16px !important;
+}
+
+/* typography */
+h1,
+h2,
+h3 {
+  font-size: 16px;
+  margin-top: 0px;
+}
+
+h4,
+h5 {
+  font-size: 14px;
+  margin-top: 0px;
+}
+
+* {
+  color: $black;
+}
+
+/* app layout */
+#viewport {
+  margin: 0px -10px 20px;
+}
+
+#header-wrapper {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 999;
+}
+
+#app-header {
+  height: $header-height;
+
+  padding: 15px 15px 0px;
+  margin-left: -15px;
+  margin-right: -15px;
+
+  color: $header-fg;
+  background-color: $header-bg;
+
+  h1 {
+    margin: 0px;
+    text-align: center;
+    font-weight: normal;
+  }
+}
+
+#viewport {
+  article.with-header {
+    padding-top: ($header-height + 10px);
+  }
+
+  article section {
+    margin-bottom: 20px;
+  }
+}
+
+.box-sections {
+  & > section {
+    padding: 5px;
+    background-color: $grey-light;
+    border: 1px solid $grey-border;
+  }
+
+  h2 {
+    margin: 5px 0px 10px 5px;
+    font-size: 18px;
+  }
+}
+
+.collapsible-sections {
+  > section {
+    > h2 {
+      &::before {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        margin-righT: 5px;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      &::before {
+        content: "\f077";
+      }
+
+      &.collapsed::before {
+        content: "\f078";
+      }
+    }
+  }
+}
+
+ul.story-list {
+  padding: 0px;
+  margin: 0px;
+
+  > li {
+    display: block;
+    padding: 5px;
+    margin-bottom: 10px;
+
+    background-color: white;
+    border: 1px solid $grey-border;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+/* specific views */
+.story-view {
+  .question {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #efefef;
+
+    .btn-group {
+      margin-bottom: 10px;
+    }
+
+    .num {
+      float: right;
+      color: #ccc;
+      font-size: 13px;
+    }
+  }
+}
+
+.topic-list {
+  width: 100%;
+}

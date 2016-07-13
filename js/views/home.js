@@ -9,7 +9,7 @@ var HomeView = Backbone.View.extend({
 
   initialize: function() {
     this.render();
-    $("#main-view").html(this.el);
+    $("#viewport").html(this.el);
 
     StoryCheck.stories.on('add remove', _.bind(this.render, this));
   },

@@ -20,7 +20,7 @@ var StoryView = Backbone.View.extend({
     this.answers.on('change', _.debounce(_.bind(this.saveAnswers, this), 300, true));
 
     this.render();
-    $("#main-view").html(this.el);
+    $("#viewport").html(this.el);
 
     this.setupBindings();
   },
