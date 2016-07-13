@@ -6,6 +6,8 @@ $black: #4a4a4a;
 $white: white;
 $grey-light: #f5f6f6;
 $grey-border: #d7d7d7;
+$red: #d0021b;
+$green: #03ac20;
 
 $header-bg: $black;
 $header-fg: $white;
@@ -179,6 +181,27 @@ ul.question-list {
 
     .btn-group {
       margin-bottom: 10px;
+      width: 100%;
+
+      label {
+        width: 33%;
+        box-shadow: none;
+      }
+
+      label.yes.active {
+        background-color: $green;
+        color: $white;
+      }
+
+      label.no.active {
+        background-color: $red;
+        color: $white;
+      }
+
+      label.na.active {
+        background-color: $black;
+        color: $white;
+      }
     }
 
     .num {
