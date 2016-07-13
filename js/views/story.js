@@ -74,9 +74,22 @@ var StoryView = Backbone.View.extend({
   },
 
   render: function() {
+    var answers = this.model.get('answers');
+
+    // unanswered questions
+    var pending = _.filter(this.topic.get('questions'), function (q) { 
+      return !answers[q.key + '-done'];
+    });
+    // answered questions
+    var completed = _.filter(this.topic.get('questions'), function (q) { 
+      return !!answers[q.key + '-done'];
+    });
+
     this.$el.html(this.template({
       story: this.model.toJSON(),
       topic: this.topic.toJSON(),
+      pending: pending,
+      completed: completed,
     }));
 
     this.archivedChanged();

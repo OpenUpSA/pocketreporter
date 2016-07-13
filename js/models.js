@@ -75,4 +75,8 @@ var Stories = Backbone.Collection.extend({
   comparator: 'updated_at',
 });
 
+/* answers are a simple model, with attributes for each question key, such as
+ * q-name: answer for the name question
+ * q-name-notes: notes for the "name" question
+ */
 var Answers = Backbone.Model.extend({});

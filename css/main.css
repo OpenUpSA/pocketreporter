@@ -82,6 +82,7 @@ body {
 .collapsible-sections > section > h2.collapsed::before {
   content: "\f078"; }
 
+/* specific views */
 ul.story-list {
   padding: 0px;
   margin: 0px; }
@@ -103,17 +104,22 @@ ul.story-list {
       font-weight: bold;
       margin-bottom: 2px; }
 
-/* specific views */
-.story-view .question {
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #efefef; }
-  .story-view .question .btn-group {
-    margin-bottom: 10px; }
-  .story-view .question .num {
-    float: right;
-    color: #ccc;
-    font-size: 13px; }
+ul.question-list {
+  padding: 0px;
+  margin: 0px; }
+  ul.question-list > li {
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #efefef;
+    border: 1px solid #d7d7d7;
+    background-color: white; }
+    ul.question-list > li .btn-group {
+      margin-bottom: 10px; }
+    ul.question-list > li .num {
+      float: right;
+      color: #ccc;
+      font-size: 13px; }
 
 .topic-list {
   width: 100%; }

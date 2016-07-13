@@ -116,28 +116,62 @@
       </div>
     </div>
     
-    <article class="with-header">
-      <section class="question-list">
-      {{#each topic.questions}}
-        <div class="question" data-key="{{ key }}">
-          <h3>{{ question }} <span class="num">{{ num }} / {{ ../topic.length }}</span></h3>
+    <article class="with-header box-sections collapsible-sections">
+      <section>
+        <h2 data-toggle="collapse" data-target="#pending-question-list">You still need to complete {{ pluralCount pending.length 'item' }}</h2>
 
-          <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-default">
-              <input type="radio" value="yes" name="q-{{ key }}-a" autocomplete="off"> Yes
-            </label>
-            <label class="btn btn-default">
-              <input type="radio" value="no" name="q-{{ key }}-a" autocomplete="off"> No
-            </label>
-            <label class="btn btn-default">
-              <input type="radio" value="n/a" name="q-{{ key }}-a" autocomplete="off"> Not applicable
-            </label>
-          </div>
+        <ul class="question-list collapse in" id="pending-question-list">
+          {{#each pending}}
+            <li class="question" data-key="{{ key }}">
+              <h3>{{ question }} <span class="num">{{ num }} / {{ ../topic.length }}</span></h3>
 
-          <textarea class="form-control" name="q-{{ key }}-notes" placeholder="Notes..."></textarea>
-        </div>
-      {{/each}}
+              <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-default">
+                  <input type="radio" value="yes" name="q-{{ key }}-a" autocomplete="off"> Yes
+                </label>
+                <label class="btn btn-default">
+                  <input type="radio" value="no" name="q-{{ key }}-a" autocomplete="off"> No
+                </label>
+                <label class="btn btn-default">
+                  <input type="radio" value="n/a" name="q-{{ key }}-a" autocomplete="off"> Not applicable
+                </label>
+              </div>
+
+              <textarea class="form-control" name="q-{{ key }}-notes" placeholder="Notes..."></textarea>
+            </li>
+          {{/each}}
+        </ul>
+
       </section>
+
+      {{#if completed.length }}
+        <section>
+          <h2 data-toggle="collapse" data-target="#completed-question-list">You have completed {{ pluralCount completed.length 'item' }}</h2>
+
+          <ul class="question-list collapse in" id="completed-question-list">
+            {{#each completed}}
+              <li class="question" data-key="{{ key }}">
+                <h3>{{ question }} <span class="num">{{ num }} / {{ ../topic.length }}</span></h3>
+
+                <div class="btn-group" data-toggle="buttons">
+                  <label class="btn btn-default">
+                    <input type="radio" value="yes" name="q-{{ key }}-a" autocomplete="off"> Yes
+                  </label>
+                  <label class="btn btn-default">
+                    <input type="radio" value="no" name="q-{{ key }}-a" autocomplete="off"> No
+                  </label>
+                  <label class="btn btn-default">
+                    <input type="radio" value="n/a" name="q-{{ key }}-a" autocomplete="off"> Not applicable
+                  </label>
+                </div>
+
+                <textarea class="form-control" name="q-{{ key }}-notes" placeholder="Notes..."></textarea>
+              </li>
+            {{/each}}
+          </ul>
+
+        </section>
+      {{/if}}
 
       <section>
         <div class="checkbox">

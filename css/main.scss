@@ -130,6 +130,7 @@ body {
   }
 }
 
+/* specific views */
 ul.story-list {
   padding: 0px;
   margin: 0px;
@@ -161,12 +162,17 @@ ul.story-list {
   }
 }
 
-/* specific views */
-.story-view {
-  .question {
+ul.question-list {
+  padding: 0px;
+  margin: 0px;
+
+  > li {
+    display: block;
+    padding: 10px;
     margin-bottom: 10px;
-    padding-bottom: 10px;
     border-bottom: 1px solid #efefef;
+    border: 1px solid $grey-border;
+    background-color: $white;
 
     .btn-group {
       margin-bottom: 10px;
