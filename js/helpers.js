@@ -8,3 +8,11 @@ Handlebars.registerHelper('plural', function(number, singular, plural) {
 Handlebars.registerHelper('pluralCount', function(number, singular, plural) {
   return number + ' ' + Handlebars.helpers.plural.apply(this, arguments);
 });
+
+Handlebars.registerHelper('date', function(date) {
+  var then = moment().subtract(2, 'days');
+
+  if (date.isBefore(then))
+    return date.format('D MM YYYY');
+  return date.fromNow();
+});
