@@ -4,6 +4,7 @@ var StoryView = Backbone.View.extend({
   template: Handlebars.compile($("#story-view-template").html()),
 
   events: {
+    'click #app-header h1': 'changeTitle',
     'click button.delete': 'deleteStory',
     'click .share': 'share',
   },
@@ -14,7 +15,7 @@ var StoryView = Backbone.View.extend({
 
   initialize: function() {
     this.topic = StoryCheck.topics.get(this.model.get('topic'));
-    this.model.on('change:archived', _.bind(this.archivedChanged, this));
+    this.model.on('change:archived', this.archivedChanged, this);
 
     this.answers = new Answers(this.model.get('answers'));
     this.answers.on('change', _.debounce(_.bind(this.saveAnswers, this), 300, true));
@@ -51,6 +52,11 @@ var StoryView = Backbone.View.extend({
       StoryCheck.stories.remove(this.model);
       router.navigate('', {trigger: true});
     }
+  },
+
+  changeTitle: function(e) {
+    this.model.set('title', prompt('Rename this story', this.model.get('title')));
+    this.$('#app-header h1').text(this.model.get('title'));
   },
 
   share: function(e) {
