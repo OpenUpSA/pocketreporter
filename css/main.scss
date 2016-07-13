@@ -34,7 +34,7 @@ h5 {
   margin-top: 0px;
 }
 
-* {
+body {
   color: $black;
 }
 
@@ -61,10 +61,25 @@ h5 {
   color: $header-fg;
   background-color: $header-bg;
 
+  a,
+  a:visited,
+  a:active,
+  a:link {
+    color: $header-fg;
+  }
+
   h1 {
     margin: 0px;
     text-align: center;
     font-weight: normal;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .back {
+    position: absolute;
+    left: 15px;
   }
 }
 
@@ -115,13 +130,14 @@ h5 {
   }
 }
 
+/* specific views */
 ul.story-list {
   padding: 0px;
   margin: 0px;
 
   > li {
     display: block;
-    padding: 5px;
+    padding: 10px;
     margin-bottom: 10px;
 
     background-color: white;
@@ -130,15 +146,33 @@ ul.story-list {
     &:last-child {
       margin-bottom: 0px;
     }
+
+    a,
+    a:visited,
+    a:active,
+    a:hover {
+      color: $black;
+      text-decoration: none;
+    }
+
+    h3 {
+      font-weight: bold;
+      margin-bottom: 2px;
+    }
   }
 }
 
-/* specific views */
-.story-view {
-  .question {
+ul.question-list {
+  padding: 0px;
+  margin: 0px;
+
+  > li {
+    display: block;
+    padding: 10px;
     margin-bottom: 10px;
-    padding-bottom: 10px;
     border-bottom: 1px solid #efefef;
+    border: 1px solid $grey-border;
+    background-color: $white;
 
     .btn-group {
       margin-bottom: 10px;
@@ -154,4 +188,9 @@ ul.story-list {
 
 .topic-list {
   width: 100%;
+}
+
+#story-progress {
+  margin: -10px -5px 10px;
+  border-radius: 0px;
 }

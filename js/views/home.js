@@ -29,8 +29,8 @@ var HomeView = Backbone.View.extend({
 
     this.$el.html(this.template({
       topics: StoryCheck.topics.toJSON(),
-      stories: _.map(current, function(s) { return s.toJSON(); }),
-      archived: _.map(archived, function(s) { return s.toJSON(); }),
+      stories: _.map(current, function(s) { return s.toJSON(); }).reverse(),
+      archived: _.map(archived, function(s) { return s.toJSON(); }).reverse(),
     }));
   },
 });

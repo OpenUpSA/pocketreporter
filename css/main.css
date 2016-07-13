@@ -19,7 +19,7 @@ h5 {
   font-size: 14px;
   margin-top: 0px; }
 
-* {
+body {
   color: #4a4a4a; }
 
 /* app layout */
@@ -40,10 +40,21 @@ h5 {
   margin-right: -15px;
   color: white;
   background-color: #4a4a4a; }
+  #app-header a,
+  #app-header a:visited,
+  #app-header a:active,
+  #app-header a:link {
+    color: white; }
   #app-header h1 {
     margin: 0px;
     text-align: center;
-    font-weight: normal; }
+    font-weight: normal;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  #app-header .back {
+    position: absolute;
+    left: 15px; }
 
 #viewport article.with-header {
   padding-top: 60px; }
@@ -71,31 +82,50 @@ h5 {
 .collapsible-sections > section > h2.collapsed::before {
   content: "\f078"; }
 
+/* specific views */
 ul.story-list {
   padding: 0px;
   margin: 0px; }
   ul.story-list > li {
     display: block;
-    padding: 5px;
+    padding: 10px;
     margin-bottom: 10px;
     background-color: white;
     border: 1px solid #d7d7d7; }
     ul.story-list > li:last-child {
       margin-bottom: 0px; }
+    ul.story-list > li a,
+    ul.story-list > li a:visited,
+    ul.story-list > li a:active,
+    ul.story-list > li a:hover {
+      color: #4a4a4a;
+      text-decoration: none; }
+    ul.story-list > li h3 {
+      font-weight: bold;
+      margin-bottom: 2px; }
 
-/* specific views */
-.story-view .question {
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #efefef; }
-  .story-view .question .btn-group {
-    margin-bottom: 10px; }
-  .story-view .question .num {
-    float: right;
-    color: #ccc;
-    font-size: 13px; }
+ul.question-list {
+  padding: 0px;
+  margin: 0px; }
+  ul.question-list > li {
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #efefef;
+    border: 1px solid #d7d7d7;
+    background-color: white; }
+    ul.question-list > li .btn-group {
+      margin-bottom: 10px; }
+    ul.question-list > li .num {
+      float: right;
+      color: #ccc;
+      font-size: 13px; }
 
 .topic-list {
   width: 100%; }
+
+#story-progress {
+  margin: -10px -5px 10px;
+  border-radius: 0px; }
 
 /*# sourceMappingURL=main.css.map */

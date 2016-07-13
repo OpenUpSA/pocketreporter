@@ -4,6 +4,7 @@ var StoryView = Backbone.View.extend({
   template: Handlebars.compile($("#story-view-template").html()),
 
   events: {
+    'click #app-header h1': 'changeTitle',
     'click button.delete': 'deleteStory',
     'click .share': 'share',
   },
@@ -14,10 +15,11 @@ var StoryView = Backbone.View.extend({
 
   initialize: function() {
     this.topic = StoryCheck.topics.get(this.model.get('topic'));
-    this.model.on('change:archived', _.bind(this.archivedChanged, this));
+    this.model.on('change:archived', this.archivedChanged, this);
 
     this.answers = new Answers(this.model.get('answers'));
     this.answers.on('change', _.debounce(_.bind(this.saveAnswers, this), 300, true));
+    this.answers.on('change', this.updateProgress, this);
 
     this.render();
     $("#viewport").html(this.el);
@@ -42,6 +44,13 @@ var StoryView = Backbone.View.extend({
     this.$el.find('.btn-group input[type=radio]:checked').closest('label').addClass('active');
   },
 
+  updateProgress: function() {
+    var p = this.model.percentComplete();
+    this.$('#story-progress .progress-bar')
+      .css({width: p * 100 + "%"})
+      .text(Math.round(p * 100) + "% complete");
+  },
+
   saveAnswers: function() {
     this.model.set('answers', this.answers.toJSON());
   },
@@ -51,6 +60,11 @@ var StoryView = Backbone.View.extend({
       StoryCheck.stories.remove(this.model);
       router.navigate('', {trigger: true});
     }
+  },
+
+  changeTitle: function(e) {
+    this.model.set('title', prompt('Rename this story', this.model.get('title')));
+    this.$('#app-header h1').text(this.model.get('title'));
   },
 
   share: function(e) {
@@ -68,11 +82,25 @@ var StoryView = Backbone.View.extend({
   },
 
   render: function() {
+    var answers = this.model.get('answers');
+
+    // unanswered questions
+    var pending = _.filter(this.topic.get('questions'), function (q) { 
+      return !answers[q.key + '-done'];
+    });
+    // answered questions
+    var completed = _.filter(this.topic.get('questions'), function (q) { 
+      return !!answers[q.key + '-done'];
+    });
+
     this.$el.html(this.template({
       story: this.model.toJSON(),
       topic: this.topic.toJSON(),
+      pending: pending,
+      completed: completed,
     }));
 
     this.archivedChanged();
+    this.updateProgress();
   },
 });
