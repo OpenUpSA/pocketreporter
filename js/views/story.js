@@ -88,7 +88,7 @@ var StoryView = Backbone.View.extend({
 
   markDone: function(e) {
     var key = $(e.target).closest('li').data('key');
-    this.answers.set(key + "-done", true);
+    this.answers.get(key).set('done', true);
   },
 
   render: function() {
