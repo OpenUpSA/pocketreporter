@@ -135,6 +135,10 @@ ul.question-list {
       float: right;
       color: #ccc;
       font-size: 13px; }
+    ul.question-list > li .btn.done {
+      float: right;
+      text-transform: uppercase;
+      color: #03ac20; }
 
 .topic-list {
   width: 100%; }

@@ -7,6 +7,7 @@ var StoryView = Backbone.View.extend({
     'click #app-header h1': 'changeTitle',
     'click button.delete': 'deleteStory',
     'click .share': 'share',
+    'click .done': 'markDone',
   },
 
   bindings: {
@@ -79,6 +80,11 @@ var StoryView = Backbone.View.extend({
 
   archivedChanged: function() {
     this.$el.find('.save').text(this.model.get('archived') ? 'Archive' : 'Save for later');
+  },
+
+  markDone: function(e) {
+    var key = $(e.target).closest('li').data('key');
+    this.answers.set(key + "-done", true);
   },
 
   render: function() {

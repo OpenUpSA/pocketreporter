@@ -209,6 +209,12 @@ ul.question-list {
       color: #ccc;
       font-size: 13px;
     }
+
+    .btn.done {
+      float: right;
+      text-transform: uppercase;
+      color: $green;
+    }
   }
 }
 

@@ -126,7 +126,7 @@
 
         <ul class="question-list collapse in" id="pending-question-list">
           {{#each pending}}
-            <li class="question" data-key="{{ key }}">
+            <li class="question clearfix" data-key="{{ key }}">
               <h3>{{ question }} <span class="num">{{ num }} / {{ ../topic.length }}</span></h3>
 
               <div class="btn-group" data-toggle="buttons">
@@ -142,6 +142,8 @@
               </div>
 
               <textarea class="form-control" name="q-{{ key }}-notes" placeholder="Notes..."></textarea>
+
+              <button class="btn btn-link done">Mark as done</button>
             </li>
           {{/each}}
         </ul>
