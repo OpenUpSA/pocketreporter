@@ -72,6 +72,7 @@ var Story = Backbone.Model.extend({
 
 var Stories = Backbone.Collection.extend({
   model: Story,
+  comparator: 'updated_at',
 });
 
 var Answers = Backbone.Model.extend({});
