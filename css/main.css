@@ -1,69 +1,64 @@
-.topic-list {
-  width: 100%;
-}
-
-#viewport {
-  margin-bottom: 20px;
-}
-
-#viewport header.top {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  z-index: 999;
-
-  border-bottom: 1px solid #ccc;
-  background-color: #efefef;
-  padding: 5px 15px;
-}
-
-#viewport article {
-  padding-top: 40px;
-}
-
-#viewport header.top h1 {
-  margin: 0px;
-  text-align: center;
-}
-
-#viewport h1,
-#viewport h2,
-#viewport h3 {
-  font-size: 16px;
-  margin-top: 0px;
-}
-
-#viewport h4,
-#viewport h5 {
-  font-size: 14px;
-  margin-top: 0px;
-}
-
-#viewport section {
-  margin-bottom: 20px;
-}
-
-#viewport .story-view .question {
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #efefef;
-}
-
-#viewport .story-view .question .btn-group {
-  margin-bottom: 10px;
-}
-
-#viewport .story-view .question .num {
-  float: right;
-  color: #ccc;
-  font-size: 13px;
-}
-
+/* variables */
+/* forms */
 input[type=text],
 input[type=phone],
 input[type=email],
 input[type=password],
 textarea {
-  font-size: 16px !important;
-}
+  font-size: 16px !important; }
+
+/* typography */
+h1,
+h2,
+h3 {
+  font-size: 16px;
+  margin-top: 0px; }
+
+h4,
+h5 {
+  font-size: 14px;
+  margin-top: 0px; }
+
+/* app layout */
+#viewport {
+  margin-bottom: 20px; }
+
+#header-wrapper {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 40px;
+  z-index: 999; }
+
+#app-header {
+  padding: 5px 15px;
+  margin-left: -15px;
+  margin-right: -15px;
+  background-color: #efefef;
+  border-bottom: 1px solid #ccc; }
+  #app-header h1 {
+    margin: 0px;
+    text-align: center; }
+
+#viewport article.with-header {
+  padding-top: 50px; }
+#viewport article section {
+  margin-bottom: 20px; }
+
+/* specific views */
+.story-view .question {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #efefef; }
+  .story-view .question .btn-group {
+    margin-bottom: 10px; }
+  .story-view .question .num {
+    float: right;
+    color: #ccc;
+    font-size: 13px; }
+
+.topic-list {
+  width: 100%; }
+
+/*# sourceMappingURL=main.css.map */

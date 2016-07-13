@@ -28,11 +28,19 @@
   </div>
 
   <script id="home-view-template" type="text/x-handlebars-template">
-    <header class="top">
-      <h1>StoryCheck</h1>
-    </header>
+    <div id="header-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <header id="app-header">
+              <h1>StoryCheck</h1>
+            </header>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <article>
+    <article class="with-header">
       {{#if stories}}
 
         <section>
@@ -85,13 +93,19 @@
   </script>
 
   <script id="story-view-template" type="text/x-handlebars-template">
-    <header class="top">
-      <nav>
-        <a href="#"><i class="glyphicon glyphicon-chevron-left" aria-hidden="true"></i> Stories</a>
-      </nav>
-    </header>
+    <div id="header-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <header id="app-header">
+              <a href="#"><i class="glyphicon glyphicon-chevron-left" aria-hidden="true"></i> Stories</a>
+            </header>
+          </div>
+        </div>
+      </div>
+    </div>
     
-    <article>
+    <article class="with-header">
       <h2>Your {{ story.topic }} story! {{ story.id }}</h2>
 
       <section class="question-list">
