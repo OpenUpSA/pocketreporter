@@ -1,7 +1,39 @@
+/*** QuestionView
+ *
+ * Single question/answer in a story
+ */
+var QuestionView = Backbone.View.extend({
+  template: Handlebars.compile($("#story-question-template").html()),
+  tagName: 'li',
+  className: 'question clearfix',
+
+  initialize: function(options) {
+    this.question = options.question;
+    this.key = this.question.key;
+  },
+
+  render: function() {
+    this.$el
+      .html(this.template(this.question))
+      .data('key', this.key);
+
+    var bindings = {};
+    bindings['[name="q-' + this.key + '-a"]'] = 'answer';
+    bindings['[name="q-' + this.key + '-notes"]'] = 'notes';
+
+    this.stickit(this.model, bindings);
+    this.$el.find('.btn-group input[type=radio]:checked').closest('label').addClass('active');
+
+    return this;
+  },
+});
+
+
 /*** StoryView ***/
 var StoryView = Backbone.View.extend({
   className: "story-view",
   template: Handlebars.compile($("#story-view-template").html()),
+  children: [],
 
   events: {
     'click #app-header h1': 'changeTitle',
@@ -10,39 +42,15 @@ var StoryView = Backbone.View.extend({
     'click .done': 'markDone',
   },
 
-  bindings: {
-    '[name=archived]': 'archived',
-  },
-
   initialize: function() {
     this.topic = StoryCheck.topics.get(this.model.get('topic'));
-    this.model.on('change:archived', this.archivedChanged, this);
 
-    this.answers = new Answers(this.model.get('answers'));
+    this.answers = new AnswerList(this.model.get('answers'));
     this.answers.on('change', _.debounce(_.bind(this.saveAnswers, this), 300, true));
     this.answers.on('change', this.updateProgress, this);
 
     this.render();
     $("#viewport").html(this.el);
-
-    this.setupBindings();
-  },
-
-  setupBindings: function() {
-    // bindings for the story model
-    this.stickit();
-
-    // bindings for the answers
-    var bindings = {};
-
-    // link form elements to answer attributes
-    _.each(this.topic.get('questions'), function(q) {
-      bindings['[name="q-' + q.key + '-a"]'] = q.key;
-      bindings['[name="q-' + q.key + '-notes"]'] = q.key + "-notes";
-    });
-
-    this.stickit(this.answers, bindings);
-    this.$el.find('.btn-group input[type=radio]:checked').closest('label').addClass('active');
   },
 
   updateProgress: function() {
@@ -78,16 +86,13 @@ var StoryView = Backbone.View.extend({
     window.location = mailto;
   },
 
-  archivedChanged: function() {
-    this.$el.find('.save').text(this.model.get('archived') ? 'Archive' : 'Save for later');
-  },
-
   markDone: function(e) {
     var key = $(e.target).closest('li').data('key');
     this.answers.set(key + "-done", true);
   },
 
   render: function() {
+    var self = this;
     var answers = this.model.get('answers');
 
     // unanswered questions
@@ -106,7 +111,32 @@ var StoryView = Backbone.View.extend({
       completed: completed,
     }));
 
-    this.archivedChanged();
+    function renderQuestions(items, ul) {
+      _.each(items, function(q) {
+        var model = self.answers.get(q.key);
+        if (!model) {
+          model = new Answer({key: q.key});
+          self.answers.add(model);
+        }
+
+        var view = new QuestionView({
+          model: model,
+          question: q,
+        });
+
+        self.children.unshift(view);
+        ul.append(view.render().el);
+      });
+    }
+
+    renderQuestions(pending, this.$('#pending-question-list'));
+    renderQuestions(completed, this.$('#completed-question-list'));
+
     this.updateProgress();
+  },
+
+  close: function() {
+    this.remove();
+    _.each(this.children, function(c) { c.remove(); });
   },
 });
