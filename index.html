@@ -108,7 +108,8 @@
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
             <header id="app-header">
-              <a href="#"><i class="glyphicon glyphicon-chevron-left" aria-hidden="true"></i> Stories</a>
+              <a href="#" class="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+              <h1>{{ story.title }}</h1>
             </header>
           </div>
         </div>
@@ -116,8 +117,6 @@
     </div>
     
     <article class="with-header">
-      <h2>Your {{ story.topic }} story! {{ story.id }}</h2>
-
       <section class="question-list">
       {{#each topic.questions}}
         <div class="question" data-key="{{ key }}">

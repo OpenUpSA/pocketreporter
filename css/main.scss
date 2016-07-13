@@ -34,7 +34,7 @@ h5 {
   margin-top: 0px;
 }
 
-* {
+body {
   color: $black;
 }
 
@@ -61,10 +61,25 @@ h5 {
   color: $header-fg;
   background-color: $header-bg;
 
+  a,
+  a:visited,
+  a:active,
+  a:link {
+    color: $header-fg;
+  }
+
   h1 {
     margin: 0px;
     text-align: center;
     font-weight: normal;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .back {
+    position: absolute;
+    left: 15px;
   }
 }
 

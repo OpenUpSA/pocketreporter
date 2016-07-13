@@ -19,7 +19,7 @@ h5 {
   font-size: 14px;
   margin-top: 0px; }
 
-* {
+body {
   color: #4a4a4a; }
 
 /* app layout */
@@ -40,10 +40,21 @@ h5 {
   margin-right: -15px;
   color: white;
   background-color: #4a4a4a; }
+  #app-header a,
+  #app-header a:visited,
+  #app-header a:active,
+  #app-header a:link {
+    color: white; }
   #app-header h1 {
     margin: 0px;
     text-align: center;
-    font-weight: normal; }
+    font-weight: normal;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  #app-header .back {
+    position: absolute;
+    left: 15px; }
 
 #viewport article.with-header {
   padding-top: 60px; }
