@@ -8,6 +8,7 @@ var HomeView = Backbone.View.extend({
   },
 
   initialize: function() {
+    this.footer = new FooterView();
     this.render();
     $("#viewport").html(this.el);
 
@@ -53,5 +54,13 @@ var HomeView = Backbone.View.extend({
         },
       }).set(p);
     });
+
+    // footer
+    this.$('#app-footer').html(this.footer.el);
+  },
+
+  close: function() {
+    footer.remove();
+    this.remove();
   },
 });

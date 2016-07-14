@@ -80,6 +80,7 @@ var StoryView = Backbone.View.extend({
       });
     });
 
+    this.footer = new FooterView();
     this.render();
     $("#viewport").html(this.el);
   },
@@ -143,6 +144,9 @@ var StoryView = Backbone.View.extend({
       }
     });
 
+    // footer
+    this.$('#app-footer').html(this.footer.el);
+
     this.updateLists();
     this.updateProgress();
   },
@@ -167,6 +171,7 @@ var StoryView = Backbone.View.extend({
   },
 
   close: function() {
+    footer.remove();
     this.remove();
     _.each(this.children, function(c) { c.remove(); });
   },

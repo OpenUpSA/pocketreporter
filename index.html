@@ -41,7 +41,7 @@
       </div>
     </div>
 
-    <article class="with-header box-sections collapsible-sections">
+    <article class="with-header with-footer box-sections collapsible-sections">
       {{#if stories}}
 
         <section>
@@ -88,19 +88,17 @@
           </ul>
         </section>
       {{/if}}
-
-      <section>
-        <h2>Start a new story</h2>
-
-        <div class="btn-group-vertical topic-list">
-          {{#each topics}}
-          <button type="button" class="btn btn-default btn-block" data-topic="{{ id }}">{{ name }}</button>
-          {{/each}}
-        </div>
-      </section>
-
-
     </article>
+
+    <div id="footer-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <footer id="app-footer"></footer>
+          </div>
+        </div>
+      </div>
+    </div>
   </script>
 
   <script id="story-question-template" type="text/x-handlebars-template">
@@ -139,7 +137,7 @@
       </div>
     </div>
     
-    <article class="with-header box-sections collapsible-sections">
+    <article class="with-header with-footer box-sections collapsible-sections">
       <div class="progress" id="story-progress">
         <div class="progress-bar" style="width: 0%; min-width: 8%"></div>
       </div>
@@ -172,6 +170,32 @@
         <button type="button" class="btn btn-danger btn-block delete">Delete this story</button>
       </footer>
     </article>
+
+    <div id="footer-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <footer id="app-footer"></footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <script id="footer-view-template" type="text/x-handlebars-template">
+    <ul class="nav-items">
+      <li>
+        <a href="/#"><i class="fa fa-list fa-2x"></i><br>My Stories</a>
+      </li>
+
+      <li>
+        <a href="" class="add-story"><i class="fa fa-plus-circle fa-2x"></i><br>Add Story</a>
+      </li>
+
+      <li>
+        <a href="" class="about"><i class="fa fa-question-circle fa-2x"></i><br>About</a>
+      </li>
+    </ul>
   </script>
 
   <script src="js/vendor/jquery-1.11.2.min.js"></script>
@@ -185,6 +209,7 @@
 
   <script src="js/helpers.js"></script>
   <script src="js/models.js"></script>
+  <script src="js/views/footer.js"></script>
   <script src="js/views/home.js"></script>
   <script src="js/views/story.js"></script>
   <script src="js/main.js"></script>

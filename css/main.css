@@ -44,7 +44,8 @@ body {
   #app-header a:visited,
   #app-header a:active,
   #app-header a:link {
-    color: white; }
+    color: white;
+    text-decoration: none; }
   #app-header h1 {
     margin: 0px;
     text-align: center;
@@ -60,8 +61,31 @@ body {
 
 #viewport article.with-header {
   padding-top: 60px; }
+#viewport article.with-footer {
+  padding-bottom: 75px; }
 #viewport article section {
   margin-bottom: 20px; }
+
+#footer-wrapper {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 999; }
+
+#app-footer {
+  height: 65px;
+  margin-left: -15px;
+  margin-right: -15px;
+  color: white;
+  background-color: #73c619;
+  background-image: linear-gradient(to bottom, #b4ec51, #429321); }
+  #app-footer a,
+  #app-footer a:visited,
+  #app-footer a:active,
+  #app-footer a:link {
+    color: white;
+    text-decoration: none; }
 
 .box-sections > section {
   padding: 5px;
@@ -167,6 +191,18 @@ ul.question-list {
     text-transform: uppercase;
     color: #03ac20; }
 
+.footer-view .nav-items {
+  list-style: none; }
+  .footer-view .nav-items li {
+    display: block;
+    float: left;
+    width: 33%;
+    text-align: center; }
+    .footer-view .nav-items li a {
+      display: block;
+      height: 65px;
+      padding: 10px; }
+
 .topic-list {
   width: 100%; }
 
@@ -174,6 +210,7 @@ section.empty {
   display: none; }
 
 .progress-bar {
-  background-color: #03ac20; }
+  background-color: #73c619;
+  background-image: linear-gradient(to right, #b4ec51, #429321); }
 
 /*# sourceMappingURL=main.css.map */

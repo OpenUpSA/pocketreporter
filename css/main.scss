@@ -1,6 +1,7 @@
 /* variables */
 
 $header-height: 50px;
+$footer-height: 65px;
 
 $black: #4a4a4a;
 $white: white;
@@ -8,12 +9,19 @@ $grey-light: #f5f6f6;
 $grey-dark: #e6e6e6;
 $grey-border: #d7d7d7;
 $red: #d0021b;
-$green: #03ac20;
-$light-green: #73c619;
 $gold: #ffca03;
+
+$success: #03ac20;
+
+$green-start: #b4ec51;
+$green-middle: #73c619;
+$green-end: #429321;
 
 $header-bg: $black;
 $header-fg: $white;
+
+$footer-fg: $white;
+$footer-bg: $green-middle;
 
 
 /* forms */
@@ -71,6 +79,7 @@ body {
   a:active,
   a:link {
     color: $header-fg;
+    text-decoration: none;
   }
 
   h1 {
@@ -96,8 +105,39 @@ body {
     padding-top: ($header-height + 10px);
   }
 
+  article.with-footer {
+    padding-bottom: ($footer-height + 10px);
+  }
+
   article section {
     margin-bottom: 20px;
+  }
+}
+
+#footer-wrapper {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 999;
+}
+
+#app-footer {
+  height: $footer-height;
+
+  margin-left: -15px;
+  margin-right: -15px;
+
+  color: $footer-fg;
+  background-color: $footer-bg;
+  background-image: linear-gradient(to bottom, $green-start, $green-end);
+
+  a,
+  a:visited,
+  a:active,
+  a:link {
+    color: $footer-fg;
+    text-decoration: none;
   }
 }
 
@@ -212,7 +252,7 @@ ul.question-list {
       }
 
       label.yes.active {
-        background-color: $green;
+        background-color: $success;
         color: $white;
       }
 
@@ -230,7 +270,7 @@ ul.question-list {
     .btn.done {
       float: right;
       text-transform: uppercase;
-      color: $green;
+      color: $success;
 
       &.disabled {
         color: $grey-border;
@@ -262,7 +302,26 @@ ul.question-list {
 
     .btn {
       text-transform: uppercase;
-      color: $green;
+      color: $success;
+    }
+  }
+}
+
+.footer-view {
+  .nav-items {
+    list-style: none;
+
+    li {
+      display: block;
+      float: left;
+      width: 33%;
+      text-align: center;
+
+      a {
+        display: block;
+        height: $footer-height;
+        padding: 10px;
+      }
     }
   }
 }
@@ -276,5 +335,6 @@ section.empty {
 }
 
 .progress-bar {
-  background-color: $green;
+  background-color: $green-middle;
+  background-image: linear-gradient(to right, $green-start, $green-end);
 }
