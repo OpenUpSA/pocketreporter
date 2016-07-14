@@ -138,12 +138,21 @@ ul.question-list {
   ul.question-list#completed-question-list .btn.done {
     display: none; }
 
-.topic-list {
-  width: 100%; }
-
-#story-progress {
+.story-view #story-progress {
   margin: -10px -5px 10px;
   border-radius: 0px; }
+.story-view .story-done {
+  display: none;
+  padding: 20px 0px;
+  text-align: center; }
+  .story-view .story-done i, .story-view .story-done h2 {
+    color: #ffca03; }
+  .story-view .story-done .btn {
+    text-transform: uppercase;
+    color: #03ac20; }
+
+.topic-list {
+  width: 100%; }
 
 section.empty {
   display: none; }

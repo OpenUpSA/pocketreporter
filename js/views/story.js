@@ -154,7 +154,7 @@ var StoryView = Backbone.View.extend({
 
     // complete?
     if (this.$pending.is(":empty")) {
-      this.$('.story-done').removeClass('hidden');
+      this.$('.story-done').show();
     }
   },
 

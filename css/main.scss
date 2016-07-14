@@ -8,6 +8,7 @@ $grey-light: #f5f6f6;
 $grey-border: #d7d7d7;
 $red: #d0021b;
 $green: #03ac20;
+$gold: #ffca03;
 
 $header-bg: $black;
 $header-fg: $white;
@@ -218,13 +219,30 @@ ul.question-list {
   }
 }
 
-.topic-list {
-  width: 100%;
+.story-view {
+  #story-progress {
+    margin: -10px -5px 10px;
+    border-radius: 0px;
+  }
+
+  .story-done {
+    display: none;
+    padding: 20px 0px;
+
+    text-align: center;
+    i, h2 {
+      color: $gold;
+    }
+
+    .btn {
+      text-transform: uppercase;
+      color: $green;
+    }
+  }
 }
 
-#story-progress {
-  margin: -10px -5px 10px;
-  border-radius: 0px;
+.topic-list {
+  width: 100%;
 }
 
 section.empty {
