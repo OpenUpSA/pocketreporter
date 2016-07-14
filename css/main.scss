@@ -132,6 +132,10 @@ body {
       &.collapsed::before {
         content: "\f078";
       }
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }

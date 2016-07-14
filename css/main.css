@@ -83,6 +83,8 @@ body {
   content: "\f077"; }
 .collapsible-sections > section > h2.collapsed::before {
   content: "\f078"; }
+.collapsible-sections > section > h2:hover {
+  cursor: pointer; }
 
 /* specific views */
 ul.story-list {
