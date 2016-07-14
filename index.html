@@ -102,6 +102,28 @@
     </article>
   </script>
 
+  <script id="story-question-template" type="text/x-handlebars-template">
+    <h3>{{ question }}</h3>
+
+    <form>
+      <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-default yes">
+          <input type="radio" value="yes" name="answer" autocomplete="off"> Yes
+        </label>
+        <label class="btn btn-default no">
+          <input type="radio" value="no" name="answer" autocomplete="off"> No
+        </label>
+        <label class="btn btn-default na">
+          <input type="radio" value="n/a" name="answer" autocomplete="off"> Not applicable
+        </label>
+      </div>
+    </form>
+
+    <textarea class="form-control" name="notes" placeholder="Notes..."></textarea>
+
+    <button class="btn btn-link done">Mark as done</button>
+  </script>
+
   <script id="story-view-template" type="text/x-handlebars-template">
     <div id="header-wrapper">
       <div class="container">
@@ -121,68 +143,24 @@
         <div class="progress-bar" style="width: 0%; min-width: 8%"></div>
       </div>
 
+      <div class="story-done">
+        <i class="fa fa-star fa-4x"></i>
+
+        <h2>You have completed this story!</h2>
+
+        <button class="btn btn-link share">Share this story now</button>
+      </div>
+
       <section>
-        <h2 data-toggle="collapse" data-target="#pending-question-list">You still need to complete {{ pluralCount pending.length 'item' }}</h2>
+        <h2 data-toggle="collapse" data-target="#pending-question-list">You still need to complete <span class="count"></span></h2>
 
-        <ul class="question-list collapse in" id="pending-question-list">
-          {{#each pending}}
-            <li class="question" data-key="{{ key }}">
-              <h3>{{ question }} <span class="num">{{ num }} / {{ ../topic.length }}</span></h3>
-
-              <div class="btn-group" data-toggle="buttons">
-                <label class="btn btn-default">
-                  <input type="radio" value="yes" name="q-{{ key }}-a" autocomplete="off"> Yes
-                </label>
-                <label class="btn btn-default">
-                  <input type="radio" value="no" name="q-{{ key }}-a" autocomplete="off"> No
-                </label>
-                <label class="btn btn-default">
-                  <input type="radio" value="n/a" name="q-{{ key }}-a" autocomplete="off"> Not applicable
-                </label>
-              </div>
-
-              <textarea class="form-control" name="q-{{ key }}-notes" placeholder="Notes..."></textarea>
-            </li>
-          {{/each}}
-        </ul>
-
+        <ul class="question-list collapse in" id="pending-question-list"></ul>
       </section>
 
-      {{#if completed.length }}
-        <section>
-          <h2 data-toggle="collapse" data-target="#completed-question-list">You have completed {{ pluralCount completed.length 'item' }}</h2>
-
-          <ul class="question-list collapse in" id="completed-question-list">
-            {{#each completed}}
-              <li class="question" data-key="{{ key }}">
-                <h3>{{ question }} <span class="num">{{ num }} / {{ ../topic.length }}</span></h3>
-
-                <div class="btn-group" data-toggle="buttons">
-                  <label class="btn btn-default">
-                    <input type="radio" value="yes" name="q-{{ key }}-a" autocomplete="off"> Yes
-                  </label>
-                  <label class="btn btn-default">
-                    <input type="radio" value="no" name="q-{{ key }}-a" autocomplete="off"> No
-                  </label>
-                  <label class="btn btn-default">
-                    <input type="radio" value="n/a" name="q-{{ key }}-a" autocomplete="off"> Not applicable
-                  </label>
-                </div>
-
-                <textarea class="form-control" name="q-{{ key }}-notes" placeholder="Notes..."></textarea>
-              </li>
-            {{/each}}
-          </ul>
-
-        </section>
-      {{/if}}
-
       <section>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="archived"> Story is finished
-          </label>
-        </div>
+        <h2 data-toggle="collapse" data-target="#completed-question-list">You have completed <span class="count"></span></h2>
+
+        <ul class="question-list collapse in" id="completed-question-list"></ul>
       </section>
 
       <footer class="bottom">

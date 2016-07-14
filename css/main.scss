@@ -6,6 +6,9 @@ $black: #4a4a4a;
 $white: white;
 $grey-light: #f5f6f6;
 $grey-border: #d7d7d7;
+$red: #d0021b;
+$green: #03ac20;
+$gold: #ffca03;
 
 $header-bg: $black;
 $header-fg: $white;
@@ -80,6 +83,9 @@ body {
   .back {
     position: absolute;
     left: 15px;
+    // nice big tap target
+    padding: 10px;
+    margin: -10px;
   }
 }
 
@@ -125,6 +131,10 @@ body {
 
       &.collapsed::before {
         content: "\f078";
+      }
+
+      &:hover {
+        cursor: pointer;
       }
     }
   }
@@ -176,12 +186,61 @@ ul.question-list {
 
     .btn-group {
       margin-bottom: 10px;
+      width: 100%;
+
+      label {
+        width: 33%;
+        box-shadow: none;
+      }
+
+      label.yes.active {
+        background-color: $green;
+        color: $white;
+      }
+
+      label.no.active {
+        background-color: $red;
+        color: $white;
+      }
+
+      label.na.active {
+        background-color: $black;
+        color: $white;
+      }
     }
 
-    .num {
+    .btn.done {
       float: right;
-      color: #ccc;
-      font-size: 13px;
+      text-transform: uppercase;
+      color: $green;
+    }
+  }
+
+  &#completed-question-list {
+    .btn.done {
+      display: none;
+    }
+  }
+}
+
+.story-view {
+  #story-progress {
+    margin: -10px -5px 10px;
+    border-radius: 0px;
+  }
+
+  .story-done {
+    display: none;
+    padding: 20px 0px;
+
+    text-align: center;
+    i, h2 {
+      color: $gold;
+    }
+
+    .btn {
+      text-transform: uppercase;
+      color: $green;
     }
   }
 }
@@ -190,7 +249,6 @@ ul.question-list {
   width: 100%;
 }
 
-#story-progress {
-  margin: -10px -5px 10px;
-  border-radius: 0px;
+section.empty {
+  display: none;
 }

@@ -16,8 +16,7 @@ var HomeView = Backbone.View.extend({
 
   newStory: function(e) {
     var topic = $(e.target).data('topic'),
-        story = new Story({topic: topic});
-    story.set('id', story.cid);
+        story = new Story({topic: topic, id: new Date().valueOf()});
 
     StoryCheck.stories.add(story);
     router.navigate('stories/' + story.id, {trigger: true});

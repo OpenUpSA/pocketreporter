@@ -54,7 +54,9 @@ body {
     text-overflow: ellipsis; }
   #app-header .back {
     position: absolute;
-    left: 15px; }
+    left: 15px;
+    padding: 10px;
+    margin: -10px; }
 
 #viewport article.with-header {
   padding-top: 60px; }
@@ -81,6 +83,8 @@ body {
   content: "\f077"; }
 .collapsible-sections > section > h2.collapsed::before {
   content: "\f078"; }
+.collapsible-sections > section > h2:hover {
+  cursor: pointer; }
 
 /* specific views */
 ul.story-list {
@@ -115,17 +119,44 @@ ul.question-list {
     border: 1px solid #d7d7d7;
     background-color: white; }
     ul.question-list > li .btn-group {
-      margin-bottom: 10px; }
-    ul.question-list > li .num {
+      margin-bottom: 10px;
+      width: 100%; }
+      ul.question-list > li .btn-group label {
+        width: 33%;
+        box-shadow: none; }
+      ul.question-list > li .btn-group label.yes.active {
+        background-color: #03ac20;
+        color: white; }
+      ul.question-list > li .btn-group label.no.active {
+        background-color: #d0021b;
+        color: white; }
+      ul.question-list > li .btn-group label.na.active {
+        background-color: #4a4a4a;
+        color: white; }
+    ul.question-list > li .btn.done {
       float: right;
-      color: #ccc;
-      font-size: 13px; }
+      text-transform: uppercase;
+      color: #03ac20; }
+  ul.question-list#completed-question-list .btn.done {
+    display: none; }
+
+.story-view #story-progress {
+  margin: -10px -5px 10px;
+  border-radius: 0px; }
+.story-view .story-done {
+  display: none;
+  padding: 20px 0px;
+  text-align: center; }
+  .story-view .story-done i, .story-view .story-done h2 {
+    color: #ffca03; }
+  .story-view .story-done .btn {
+    text-transform: uppercase;
+    color: #03ac20; }
 
 .topic-list {
   width: 100%; }
 
-#story-progress {
-  margin: -10px -5px 10px;
-  border-radius: 0px; }
+section.empty {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */
