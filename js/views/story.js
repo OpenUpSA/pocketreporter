@@ -81,7 +81,6 @@ var StoryView = Backbone.View.extend({
     });
 
     this.render();
-    $("#viewport").html(this.el);
   },
 
   updateProgress: function() {

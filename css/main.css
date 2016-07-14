@@ -44,7 +44,8 @@ body {
   #app-header a:visited,
   #app-header a:active,
   #app-header a:link {
-    color: white; }
+    color: white;
+    text-decoration: none; }
   #app-header h1 {
     margin: 0px;
     text-align: center;
@@ -60,8 +61,31 @@ body {
 
 #viewport article.with-header {
   padding-top: 60px; }
+#viewport article {
+  padding-bottom: 75px; }
 #viewport article section {
   margin-bottom: 20px; }
+
+#footer-wrapper {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 999; }
+
+#app-footer {
+  height: 65px;
+  margin-left: -15px;
+  margin-right: -15px;
+  color: white;
+  background-color: #73c619;
+  background-image: linear-gradient(to bottom, #b4ec51, #429321); }
+  #app-footer a,
+  #app-footer a:visited,
+  #app-footer a:active,
+  #app-footer a:link {
+    color: white;
+    text-decoration: none; }
 
 .box-sections > section {
   padding: 5px;
@@ -146,9 +170,7 @@ ul.question-list {
         background-color: #4a4a4a;
         color: white; }
     ul.question-list > li .btn.done {
-      float: right;
-      text-transform: uppercase;
-      color: #03ac20; }
+      float: right; }
       ul.question-list > li .btn.done.disabled {
         color: #d7d7d7; }
   ul.question-list#completed-question-list .btn.done {
@@ -163,9 +185,28 @@ ul.question-list {
   text-align: center; }
   .story-view .story-done i, .story-view .story-done h2 {
     color: #ffca03; }
-  .story-view .story-done .btn {
-    text-transform: uppercase;
-    color: #03ac20; }
+
+.btn.success {
+  text-transform: uppercase;
+  color: #03ac20; }
+  .btn.success:hover {
+    text-decoration: none; }
+
+.footer-view .nav-items {
+  list-style: none;
+  padding: 0px;
+  margin: 0px; }
+  .footer-view .nav-items li {
+    display: block;
+    float: left;
+    width: 33%;
+    text-align: center; }
+    .footer-view .nav-items li a {
+      display: block;
+      height: 65px;
+      padding: 10px; }
+    .footer-view .nav-items li a.active {
+      background-color: rgba(255, 255, 255, 0.2); }
 
 .topic-list {
   width: 100%; }
@@ -174,6 +215,7 @@ section.empty {
   display: none; }
 
 .progress-bar {
-  background-color: #03ac20; }
+  background-color: #73c619;
+  background-image: linear-gradient(to right, #b4ec51, #429321); }
 
 /*# sourceMappingURL=main.css.map */

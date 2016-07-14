@@ -2,24 +2,12 @@
 var HomeView = Backbone.View.extend({
   className: "home-view",
   template: Handlebars.compile($("#home-view-template").html()),
-
-  events: {
-    'click .topic-list button': 'newStory',
-  },
+  navTab: 'home',
 
   initialize: function() {
     this.render();
-    $("#viewport").html(this.el);
 
     StoryCheck.stories.on('add remove', _.bind(this.render, this));
-  },
-
-  newStory: function(e) {
-    var topic = $(e.target).data('topic'),
-        story = new Story({topic: topic, id: new Date().valueOf()});
-
-    StoryCheck.stories.add(story);
-    router.navigate('stories/' + story.id, {trigger: true});
   },
 
   render: function() {
