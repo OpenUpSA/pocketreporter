@@ -51,6 +51,7 @@
             {{#each stories}}
               <li>
                 <a href="#stories/{{ id }}">
+                  <div class="percent" data-value="{{ percent_complete }}"></div>
                   <h3>{{ title }}</h2>
                   <div class="topic">{{ topic }}</div>
                   <div class="date">{{ date updated_at }}</div>

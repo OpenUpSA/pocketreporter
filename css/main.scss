@@ -5,9 +5,11 @@ $header-height: 50px;
 $black: #4a4a4a;
 $white: white;
 $grey-light: #f5f6f6;
+$grey-dark: #e6e6e6;
 $grey-border: #d7d7d7;
 $red: #d0021b;
 $green: #03ac20;
+$light-green: #73c619;
 $gold: #ffca03;
 
 $header-bg: $black;
@@ -168,6 +170,22 @@ ul.story-list {
     h3 {
       font-weight: bold;
       margin-bottom: 2px;
+    }
+  }
+
+  .percent {
+    float: right;
+    width: 45px;
+    height: 45px;
+
+    .progressbar-text {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      padding: 0px;
+      margin: 0px;
+      font-size: 12px;
+      transform: translate(-50%, -50%);
     }
   }
 }
