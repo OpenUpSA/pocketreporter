@@ -1,4 +1,7 @@
 /* variables */
+body {
+  font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif; }
+
 /* forms */
 input[type=text],
 input[type=phone],
@@ -142,7 +145,7 @@ ul.story-list {
       color: #4a4a4a;
       text-decoration: none; }
     ul.story-list > li h3 {
-      font-weight: bold;
+      font-weight: 500;
       margin-bottom: 2px; }
   ul.story-list .percent {
     float: right;

@@ -23,6 +23,10 @@ $header-fg: $white;
 $footer-fg: $white;
 $footer-bg: $green-middle;
 
+body {
+  font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
 
 /* forms */
 input[type=text],
@@ -230,7 +234,7 @@ ul.story-list {
     }
 
     h3 {
-      font-weight: bold;
+      font-weight: 500;
       margin-bottom: 2px;
     }
   }
