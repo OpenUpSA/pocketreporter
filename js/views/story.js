@@ -51,7 +51,7 @@ var StoryView = Backbone.View.extend({
   template: Handlebars.compile($("#story-view-template").html()),
 
   events: {
-    'click #app-header h1': 'changeTitle',
+    'click #app-header h1': 'rename',
     'click .delete': 'deleteStory',
     'click .archive': 'archiveStory',
     'click .share': 'share',
@@ -104,9 +104,13 @@ var StoryView = Backbone.View.extend({
     }
   },
 
-  changeTitle: function(e) {
-    this.model.set('title', prompt('Rename this story', this.model.get('title')));
-    this.$('#app-header h1').text(this.model.get('title'));
+  rename: function(e) {
+    var title = prompt('Rename this story', this.model.get('title'));
+
+    if (!_.isEmpty(title)) {
+      this.model.set('title', title);
+      this.$('#app-header h1').text(title);
+    }
   },
 
   share: function(e) {
