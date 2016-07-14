@@ -45,7 +45,21 @@ var Router = Backbone.Router.extend({
     $("#viewport").empty().append(view.el);
     this.view = view;
     this.footer.viewChanged(view);
-  }
+
+    this.track();
+  },
+
+  track: function() {
+    var fragment = Backbone.history.getFragment();
+    if (!/^\//.test(fragment)) {
+      fragment = '/' + fragment;
+    }
+
+    if ('ga' in window) {
+      ga('set', 'page', fragment);
+      ga('send', 'pageview');
+    }
+  },
 });
 
 
