@@ -137,6 +137,8 @@ ul.question-list {
       float: right;
       text-transform: uppercase;
       color: #03ac20; }
+      ul.question-list > li .btn.done.disabled {
+        color: #d7d7d7; }
   ul.question-list#completed-question-list .btn.done {
     display: none; }
 

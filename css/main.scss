@@ -213,6 +213,10 @@ ul.question-list {
       float: right;
       text-transform: uppercase;
       color: $green;
+
+      &.disabled {
+        color: $grey-border;
+      }
     }
   }
 

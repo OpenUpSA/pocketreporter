@@ -103,7 +103,7 @@
   </script>
 
   <script id="story-question-template" type="text/x-handlebars-template">
-    <h3>{{ question }}</h3>
+    <h3>{{ q.question }}</h3>
 
     <form>
       <div class="btn-group" data-toggle="buttons">
@@ -121,7 +121,7 @@
 
     <textarea class="form-control" name="notes" placeholder="Notes..."></textarea>
 
-    <button class="btn btn-link done">Mark as done</button>
+    <button class="btn btn-link done {{#unless a.answer}}disabled{{/unless}}">Mark as done</button>
   </script>
 
   <script id="story-view-template" type="text/x-handlebars-template">

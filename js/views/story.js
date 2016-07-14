@@ -17,15 +17,23 @@ var QuestionView = Backbone.View.extend({
   initialize: function(options) {
     this.question = options.question;
     this.key = this.question.key;
+    this.listenTo(this.model, 'change:answer', this.answerChanged);
   },
   
   markDone: function() {
     this.model.set('done', true);
   },
 
+  answerChanged: function() {
+    this.$('.btn.done').removeClass('disabled');
+  },
+
   render: function() {
     this.$el
-      .html(this.template(this.question))
+      .html(this.template({
+        q: this.question,
+        a: this.model.attributes,
+      }))
       .data('key', this.key);
 
     // bind form elements to model
