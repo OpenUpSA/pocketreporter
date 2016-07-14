@@ -134,7 +134,7 @@
 
     <textarea class="form-control" name="notes" placeholder="Notes..."></textarea>
 
-    <button class="btn btn-link done {{#unless a.answer}}disabled{{/unless}}">Mark as done</button>
+    <button class="btn btn-link success done {{#unless a.answer}}disabled{{/unless}}">Mark as done</button>
   </script>
 
   <script id="story-view-template" type="text/x-handlebars-template">
@@ -161,7 +161,7 @@
 
         <h2>You have completed this story!</h2>
 
-        <button class="btn btn-link share">Share this story now</button>
+        <button class="btn btn-link share success">Share this story now</button>
       </div>
 
       <section>
@@ -193,7 +193,7 @@
           <div class="col-md-6 col-md-offset-3">
             <header id="app-header">
               <a href="#" class="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-              <h1>{{ story.title }}</h1>
+              <h1>Start a New Story</h1>
             </header>
           </div>
         </div>
@@ -201,7 +201,25 @@
     </div>
     
     <article class="with-header">
-    aeou
+      <section>
+        <input type="text" class="form-control" name="title" placeholder="Give your story a name">
+      </section>
+
+      <section>
+        <h3>Choose a story type:</h3>
+
+        {{#each topics}}
+        <div class="radio">
+          <label>
+            <input type="radio" name="topic" value="{{ id }}"> {{ name }}
+          </label>
+        </div>
+        {{/each}}
+      </section>
+
+      <section class="text-right">
+        <button class="btn btn-link success next disabled">Start this story <i class="fa fa-chevron-right"></i></button>
+      </section>
     </article>
   </script>
 

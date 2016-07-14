@@ -270,8 +270,6 @@ ul.question-list {
 
     .btn.done {
       float: right;
-      text-transform: uppercase;
-      color: $success;
 
       &.disabled {
         color: $grey-border;
@@ -300,11 +298,15 @@ ul.question-list {
     i, h2 {
       color: $gold;
     }
+  }
+}
 
-    .btn {
-      text-transform: uppercase;
-      color: $success;
-    }
+.btn.success {
+  text-transform: uppercase;
+  color: $success;
+
+  &:hover {
+    text-decoration: none;
   }
 }
 

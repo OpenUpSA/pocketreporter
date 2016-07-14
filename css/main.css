@@ -170,9 +170,7 @@ ul.question-list {
         background-color: #4a4a4a;
         color: white; }
     ul.question-list > li .btn.done {
-      float: right;
-      text-transform: uppercase;
-      color: #03ac20; }
+      float: right; }
       ul.question-list > li .btn.done.disabled {
         color: #d7d7d7; }
   ul.question-list#completed-question-list .btn.done {
@@ -187,9 +185,12 @@ ul.question-list {
   text-align: center; }
   .story-view .story-done i, .story-view .story-done h2 {
     color: #ffca03; }
-  .story-view .story-done .btn {
-    text-transform: uppercase;
-    color: #03ac20; }
+
+.btn.success {
+  text-transform: uppercase;
+  color: #03ac20; }
+  .btn.success:hover {
+    text-decoration: none; }
 
 .footer-view .nav-items {
   list-style: none;
