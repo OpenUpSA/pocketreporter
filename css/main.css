@@ -135,6 +135,8 @@ ul.question-list {
       float: right;
       text-transform: uppercase;
       color: #03ac20; }
+  ul.question-list#completed-question-list .btn.done {
+    display: none; }
 
 .topic-list {
   width: 100%; }
@@ -142,5 +144,8 @@ ul.question-list {
 #story-progress {
   margin: -10px -5px 10px;
   border-radius: 0px; }
+
+section.empty {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */

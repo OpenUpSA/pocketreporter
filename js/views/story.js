@@ -6,6 +6,9 @@ var QuestionView = Backbone.View.extend({
   template: Handlebars.compile($("#story-question-template").html()),
   tagName: 'li',
   className: 'question clearfix',
+  events: {
+    'click .done': 'markDone',
+  },
   bindings: {
     '[name=answer]': 'answer',
     '[name=notes]': 'notes',
@@ -15,12 +18,17 @@ var QuestionView = Backbone.View.extend({
     this.question = options.question;
     this.key = this.question.key;
   },
+  
+  markDone: function() {
+    this.model.set('done', true);
+  },
 
   render: function() {
     this.$el
       .html(this.template(this.question))
       .data('key', this.key);
 
+    // bind form elements to model
     this.stickit();
     this.$el.find('.btn-group input[type=radio]:checked').closest('label').addClass('active');
 
@@ -33,21 +41,36 @@ var QuestionView = Backbone.View.extend({
 var StoryView = Backbone.View.extend({
   className: "story-view",
   template: Handlebars.compile($("#story-view-template").html()),
-  children: [],
 
   events: {
     'click #app-header h1': 'changeTitle',
     'click button.delete': 'deleteStory',
     'click .share': 'share',
-    'click .done': 'markDone',
   },
 
   initialize: function() {
     this.topic = StoryCheck.topics.get(this.model.get('topic'));
 
     this.answers = new AnswerList(this.model.get('answers'));
-    this.answers.on('change', _.debounce(_.bind(this.saveAnswers, this), 300));
-    this.answers.on('change', this.updateProgress, this);
+    this.listenTo(this.answers, 'change', this.saveAnswers);
+    this.listenTo(this.answers, 'change', this.updateProgress);
+    this.listenTo(this.answers, 'change:done', this.questionDone);
+
+    // setup child views
+    var self = this;
+    this.children = _.map(this.topic.get('questions'), function(q) {
+      var model = self.answers.get(q.key);
+
+      if (!model) {
+        model = new Answer({key: q.key});
+        self.answers.add(model);
+      }
+
+      return new QuestionView({
+        model: model,
+        question: q,
+      });
+    });
 
     this.render();
     $("#viewport").html(this.el);
@@ -86,53 +109,53 @@ var StoryView = Backbone.View.extend({
     window.location = mailto;
   },
 
-  markDone: function(e) {
-    var key = $(e.target).closest('li').data('key');
-    this.answers.get(key).set('done', true);
+  questionDone: function(answer) {
+    var view = _.find(this.children, function(c) { return c.key == answer.get('key'); });
+    // TODO: animate this move
+    view.$el.detach().appendTo(this.$completed);
+    this.updateLists();
   },
 
   render: function() {
     var self = this;
-    var answers = this.model.get('answers');
-
-    // unanswered questions
-    var pending = _.filter(this.topic.get('questions'), function (q) { 
-      return !answers[q.key + '-done'];
-    });
-    // answered questions
-    var completed = _.filter(this.topic.get('questions'), function (q) { 
-      return !!answers[q.key + '-done'];
-    });
 
     this.$el.html(this.template({
       story: this.model.toJSON(),
       topic: this.topic.toJSON(),
-      pending: pending,
-      completed: completed,
     }));
 
-    function renderQuestions(items, ul) {
-      _.each(items, function(q) {
-        var model = self.answers.get(q.key);
-        if (!model) {
-          model = new Answer({key: q.key});
-          self.answers.add(model);
-        }
+    this.$pending = this.$('#pending-question-list');
+    this.$completed = this.$('#completed-question-list');
 
-        var view = new QuestionView({
-          model: model,
-          question: q,
-        });
+    _.each(this.children, function(view) {
+      if (view.model.get('done')) {
+        self.$completed.append(view.render().el);
+      } else {
+        self.$pending.append(view.render().el);
+      }
+    });
 
-        self.children.unshift(view);
-        ul.append(view.render().el);
-      });
-    }
-
-    renderQuestions(pending, this.$('#pending-question-list'));
-    renderQuestions(completed, this.$('#completed-question-list'));
-
+    this.updateLists();
     this.updateProgress();
+  },
+
+  updateLists: function() {
+    this.$pending
+      .closest('section')
+      .toggleClass('empty', this.$pending.is(':empty'))
+      .find('h2 .count')
+      .text(Handlebars.helpers.pluralCount(this.$pending.children().length, 'item'));
+
+    this.$completed
+      .closest('section')
+      .toggleClass('empty', this.$completed.is(':empty'))
+      .find('h2 .count')
+      .text(Handlebars.helpers.pluralCount(this.$completed.children().length, 'item'));
+
+    // complete?
+    if (this.$pending.is(":empty")) {
+      this.$('.story-done').removeClass('hidden');
+    }
   },
 
   close: function() {

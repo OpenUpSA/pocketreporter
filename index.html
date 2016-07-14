@@ -143,26 +143,20 @@
         <div class="progress-bar" style="width: 0%; min-width: 8%"></div>
       </div>
 
+      <section class="story-done hidden">
+        <h2>Hooray, your story is done!</h2>
+      </section>
+
       <section>
-        <h2 data-toggle="collapse" data-target="#pending-question-list">You still need to complete {{ pluralCount pending.length 'item' }}</h2>
+        <h2 data-toggle="collapse" data-target="#pending-question-list">You still need to complete <span class="count"></span></h2>
 
         <ul class="question-list collapse in" id="pending-question-list"></ul>
       </section>
 
-      {{#if completed.length }}
-        <section>
-          <h2 data-toggle="collapse" data-target="#completed-question-list">You have completed {{ pluralCount completed.length 'item' }}</h2>
-
-          <ul class="question-list collapse in" id="completed-question-list"></ul>
-        </section>
-      {{/if}}
-
       <section>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="archived"> Story is finished
-          </label>
-        </div>
+        <h2 data-toggle="collapse" data-target="#completed-question-list">You have completed <span class="count"></span></h2>
+
+        <ul class="question-list collapse in" id="completed-question-list"></ul>
       </section>
 
       <footer class="bottom">

@@ -210,6 +210,12 @@ ul.question-list {
       color: $green;
     }
   }
+
+  &#completed-question-list {
+    .btn.done {
+      display: none;
+    }
+  }
 }
 
 .topic-list {
@@ -219,4 +225,8 @@ ul.question-list {
 #story-progress {
   margin: -10px -5px 10px;
   border-radius: 0px;
+}
+
+section.empty {
+  display: none;
 }
