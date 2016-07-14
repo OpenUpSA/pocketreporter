@@ -1,17 +1,10 @@
 /*** FooterView ***/
 var FooterView = Backbone.View.extend({
   className: "footer-view",
-  template: Handlebars.compile($("#footer-view-template").html()),
 
-  events: {
-  },
+  viewChanged: function(view) {
+    this.$('.nav-items a').removeClass('active');
 
-  initialize: function() {
-    this.render();
-  },
-
-  render: function() {
-    this.$el.html(this.template());
-    return this;
+    if (view.navTab) this.$('.nav-items a.' + view.navTab).addClass('active');
   },
 });

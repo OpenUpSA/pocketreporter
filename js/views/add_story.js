@@ -2,6 +2,7 @@
 var AddStoryView = Backbone.View.extend({
   className: "add-story-view",
   template: Handlebars.compile($("#add-story-view-template").html()),
+  navTab: 'add',
 
   events: {
   },

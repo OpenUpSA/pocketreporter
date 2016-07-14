@@ -61,7 +61,7 @@ body {
 
 #viewport article.with-header {
   padding-top: 60px; }
-#viewport article.with-footer {
+#viewport article {
   padding-bottom: 75px; }
 #viewport article section {
   margin-bottom: 20px; }
@@ -178,9 +178,6 @@ ul.question-list {
   ul.question-list#completed-question-list .btn.done {
     display: none; }
 
-.home-view .footer-view .home {
-  background-color: rgba(255, 255, 255, 0.2); }
-
 .story-view #story-progress {
   margin: -10px -5px 10px;
   border-radius: 0px; }
@@ -207,6 +204,8 @@ ul.question-list {
       display: block;
       height: 65px;
       padding: 10px; }
+    .footer-view .nav-items li a.active {
+      background-color: rgba(255, 255, 255, 0.2); }
 
 .topic-list {
   width: 100%; }

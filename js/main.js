@@ -6,6 +6,10 @@ var Router = Backbone.Router.extend({
     "add" : "add",
   },
 
+  initialize: function() {
+    this.footer = new FooterView({el: $('#app-footer')});
+  },
+
   home: function() {
     this.loadView(new HomeView());
   },
@@ -33,7 +37,9 @@ var Router = Backbone.Router.extend({
       }
     }
 
+    $("#viewport").html(view.el);
     this.view = view;
+    this.footer.viewChanged(view);
   }
 });
 

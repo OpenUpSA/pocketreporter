@@ -2,15 +2,14 @@
 var HomeView = Backbone.View.extend({
   className: "home-view",
   template: Handlebars.compile($("#home-view-template").html()),
+  navTab: 'home',
 
   events: {
     'click .topic-list button': 'newStory',
   },
 
   initialize: function() {
-    this.footer = new FooterView();
     this.render();
-    $("#viewport").html(this.el);
 
     StoryCheck.stories.on('add remove', _.bind(this.render, this));
   },
@@ -54,13 +53,5 @@ var HomeView = Backbone.View.extend({
         },
       }).set(p);
     });
-
-    // footer
-    this.$('#app-footer').html(this.footer.el);
-  },
-
-  close: function() {
-    footer.remove();
-    this.remove();
   },
 });
