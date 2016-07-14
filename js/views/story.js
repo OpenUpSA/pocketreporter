@@ -100,6 +100,7 @@ var StoryView = Backbone.View.extend({
 
     if (confirm("Delete this story?")) {
       StoryCheck.stories.remove(this.model);
+      ga('send', 'event', 'story', 'delete');
       router.navigate('', {trigger: true});
     }
   },
@@ -129,7 +130,7 @@ var StoryView = Backbone.View.extend({
     mailto += '?subject=' + encodeURIComponent(this.model.get('title'));
     mailto += '&body=' + encodeURIComponent(this.model.shareableBody());
 
-    ga('send', 'event', 'share', 'share');
+    ga('send', 'event', 'story', 'share');
 
     window.location = mailto;
   },
@@ -186,6 +187,7 @@ var StoryView = Backbone.View.extend({
   archiveStory: function(e) {
     e.preventDefault();
     this.model.set('archived', true);
+    ga('send', 'event', 'story', 'archive');
     router.navigate('', {trigger: true});
   },
 
