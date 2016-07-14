@@ -331,6 +331,15 @@ ul.question-list {
   }
 }
 
+.btn.danger {
+  text-transform: uppercase;
+  color: $red;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .footer-view {
   .nav-items {
     list-style: none;

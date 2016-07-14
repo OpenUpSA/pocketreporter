@@ -205,6 +205,12 @@ ul.question-list {
   .btn.success:hover {
     text-decoration: none; }
 
+.btn.danger {
+  text-transform: uppercase;
+  color: #d0021b; }
+  .btn.danger:hover {
+    text-decoration: none; }
+
 .footer-view .nav-items {
   list-style: none;
   padding: 0px;
