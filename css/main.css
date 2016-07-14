@@ -149,8 +149,8 @@ ul.story-list {
       margin-bottom: 2px; }
   ul.story-list .percent {
     float: right;
-    width: 45px;
-    height: 45px; }
+    width: 55px;
+    height: 55px; }
     ul.story-list .percent .progressbar-text {
       position: absolute;
       left: 50%;
@@ -159,6 +159,10 @@ ul.story-list {
       margin: 0px;
       font-size: 12px;
       transform: translate(-50%, -50%); }
+    ul.story-list .percent.complete .progressbar-text {
+      font-family: FontAwesome;
+      font-size: 28px;
+      color: #ffca03 !important; }
 
 ul.question-list {
   padding: 0px;

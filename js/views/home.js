@@ -29,12 +29,15 @@ var HomeView = Backbone.View.extend({
     // progress bars
     this.$('.story-list .percent').each(function() {
       var p = $(this).data('value');
+
+      if (p == 1) $(this).addClass('complete');
+
       new ProgressBar.Circle(this, {
         color: '#73c619',
         trailColor: '#e6e6e6',
         strokeWidth: 15,
         text: {
-          value: Math.trunc(p * 100) + '%',
+          value: p == 1 ? '\uf005' : Math.trunc(p * 100) + '%',
           style: {
             color: '#4a4a4a',
           },

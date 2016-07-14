@@ -241,8 +241,8 @@ ul.story-list {
 
   .percent {
     float: right;
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
 
     .progressbar-text {
       position: absolute;
@@ -252,6 +252,12 @@ ul.story-list {
       margin: 0px;
       font-size: 12px;
       transform: translate(-50%, -50%);
+    }
+
+    &.complete .progressbar-text {
+      font-family: FontAwesome;
+      font-size: 28px;
+      color: $gold !important;
     }
   }
 }
