@@ -89,6 +89,7 @@ body {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    margin-left: 20px;
   }
 
   .back {
@@ -97,6 +98,26 @@ body {
     // nice big tap target
     padding: 10px;
     margin: -10px;
+  }
+
+  .nav-items {
+    float: right;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+
+    li {
+      display: inline-block;
+
+      a {
+        padding: 10px 10px;
+        margin-top: -10px;
+      }
+
+      .fa {
+        font-size: 18px;
+      }
+    }
   }
 }
 

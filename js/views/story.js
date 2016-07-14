@@ -52,7 +52,8 @@ var StoryView = Backbone.View.extend({
 
   events: {
     'click #app-header h1': 'changeTitle',
-    'click button.delete': 'deleteStory',
+    'click .delete': 'deleteStory',
+    'click .archive': 'archiveStory',
     'click .share': 'share',
   },
 
@@ -94,7 +95,9 @@ var StoryView = Backbone.View.extend({
     this.model.set('answers', this.answers.toJSON());
   },
 
-  deleteStory: function() {
+  deleteStory: function(e) {
+    e.preventDefault();
+
     if (confirm("Delete this story?")) {
       StoryCheck.stories.remove(this.model);
       router.navigate('', {trigger: true});
@@ -107,6 +110,8 @@ var StoryView = Backbone.View.extend({
   },
 
   share: function(e) {
+    e.preventDefault();
+
     // construct a completed mailto: url
     var mailto = 'mailto:you@example.com';
 
@@ -163,6 +168,12 @@ var StoryView = Backbone.View.extend({
     if (this.$pending.is(":empty")) {
       this.$('.story-done').show();
     }
+  },
+
+  archiveStory: function(e) {
+    e.preventDefault();
+    this.model.set('archived', true);
+    router.navigate('', {trigger: true});
   },
 
   close: function() {
