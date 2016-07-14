@@ -47,31 +47,40 @@ var Router = Backbone.Router.extend({
 /*** Persistence ***/
 var Persistence = Backbone.Model.extend({
   initialize: function() {
-    this.storage = localStorage;
+    if ('localStorage' in window) {
+      this.storage = localStorage;
+    } else {
+      this.storage = null;
+    }
+
     this.version = 1;
 
     this.load();
-
     StoryCheck.stories.on('change add remove', _.debounce(_.bind(this.save, this), 300));
   },
 
   load: function() {
-    var val = this.storage.getItem('StoryCheck');
-    if (val) {
-      val = JSON.parse(val);
-    } else {
-      val = {};
+    var val = {};
+
+    if (this.storage) {
+      val = this.storage.getItem('StoryCheck');
+      val = val ? JSON.parse(val) : val;
+
+      // version check
+      if (val.version != this.version) val = {};
     }
 
     StoryCheck.stories = new Stories(val.stories || [], {parse: true});
   },
 
   save: function() {
-    var val = {
-      version: this.version,
-      stories: StoryCheck.stories.toJSON(),
-    };
-    this.storage.setItem('StoryCheck', JSON.stringify(val));
+    if (this.storage) {
+      var val = {
+        version: this.version,
+        stories: StoryCheck.stories.toJSON(),
+      };
+      this.storage.setItem('StoryCheck', JSON.stringify(val));
+    }
   },
 });
 
