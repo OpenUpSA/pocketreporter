@@ -83,6 +83,8 @@ body {
   content: "\f077"; }
 .collapsible-sections > section > h2.collapsed::before {
   content: "\f078"; }
+.collapsible-sections > section > h2:hover {
+  cursor: pointer; }
 
 /* specific views */
 ul.story-list {
@@ -131,20 +133,30 @@ ul.question-list {
       ul.question-list > li .btn-group label.na.active {
         background-color: #4a4a4a;
         color: white; }
-    ul.question-list > li .num {
-      float: right;
-      color: #ccc;
-      font-size: 13px; }
     ul.question-list > li .btn.done {
       float: right;
       text-transform: uppercase;
       color: #03ac20; }
+  ul.question-list#completed-question-list .btn.done {
+    display: none; }
+
+.story-view #story-progress {
+  margin: -10px -5px 10px;
+  border-radius: 0px; }
+.story-view .story-done {
+  display: none;
+  padding: 20px 0px;
+  text-align: center; }
+  .story-view .story-done i, .story-view .story-done h2 {
+    color: #ffca03; }
+  .story-view .story-done .btn {
+    text-transform: uppercase;
+    color: #03ac20; }
 
 .topic-list {
   width: 100%; }
 
-#story-progress {
-  margin: -10px -5px 10px;
-  border-radius: 0px; }
+section.empty {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */

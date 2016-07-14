@@ -41,7 +41,7 @@ var Persistence = Backbone.Model.extend({
 
     this.load();
 
-    StoryCheck.stories.on('change add remove', _.bind(this.save, this));
+    StoryCheck.stories.on('change add remove', _.debounce(_.bind(this.save, this), 300));
   },
 
   load: function() {
