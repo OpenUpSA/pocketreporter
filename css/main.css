@@ -178,6 +178,9 @@ ul.question-list {
   ul.question-list#completed-question-list .btn.done {
     display: none; }
 
+.home-view .footer-view .home {
+  background-color: rgba(255, 255, 255, 0.2); }
+
 .story-view #story-progress {
   margin: -10px -5px 10px;
   border-radius: 0px; }
@@ -192,7 +195,9 @@ ul.question-list {
     color: #03ac20; }
 
 .footer-view .nav-items {
-  list-style: none; }
+  list-style: none;
+  padding: 0px;
+  margin: 0px; }
   .footer-view .nav-items li {
     display: block;
     float: left;

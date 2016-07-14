@@ -2,7 +2,8 @@
 var Router = Backbone.Router.extend({
   routes : {
     "" : "home",
-    "stories/:id" : "story"
+    "stories/:id" : "story",
+    "add" : "add",
   },
 
   home: function() {
@@ -17,6 +18,10 @@ var Router = Backbone.Router.extend({
     } else {
       this.navigate('', {trigger: true});
     }
+  },
+
+  add: function() {
+    this.loadView(new AddStoryView());
   },
 
   loadView: function(view) {
