@@ -196,9 +196,18 @@ ul.question-list {
   ul.question-list#completed-question-list .btn.done {
     display: none; }
 
+.story-view article.with-header {
+  padding-top: 80px !important; }
 .story-view #story-progress {
-  margin: -10px -5px 10px;
-  border-radius: 0px; }
+  position: fixed;
+  top: 50px;
+  left: 0px;
+  height: 20px;
+  right: 0px;
+  z-index: 999; }
+  .story-view #story-progress .progress {
+    border-radius: 0px;
+    margin: 0px -15px; }
 .story-view .story-done {
   display: none;
   padding: 20px 0px;

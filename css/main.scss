@@ -316,9 +316,22 @@ ul.question-list {
 }
 
 .story-view {
+  article.with-header {
+    padding-top: ($header-height + 30px) !important;
+  }
+
   #story-progress {
-    margin: -10px -5px 10px;
-    border-radius: 0px;
+    position: fixed;
+    top: $header-height;
+    left: 0px;
+    height: 20px;
+    right: 0px;
+    z-index: 999;
+
+    .progress {
+      border-radius: 0px;
+      margin: 0px -15px;
+    }
   }
 
   .story-done {
