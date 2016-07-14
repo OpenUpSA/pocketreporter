@@ -4,6 +4,7 @@ var Router = Backbone.Router.extend({
     "" : "home",
     "stories/:id" : "story",
     "add" : "add",
+    "about" : "about",
   },
 
   initialize: function() {
@@ -28,6 +29,10 @@ var Router = Backbone.Router.extend({
     this.loadView(new AddStoryView());
   },
 
+  about: function() {
+    this.loadView(new AboutView());
+  },
+
   loadView: function(view) {
     if (this.view) {
       if (this.view.close) {
@@ -37,7 +42,7 @@ var Router = Backbone.Router.extend({
       }
     }
 
-    $("#viewport").html(view.el);
+    $("#viewport").empty().append(view.el);
     this.view = view;
     this.footer.viewChanged(view);
   }
