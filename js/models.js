@@ -34,6 +34,15 @@ var Story = Backbone.Model.extend({
 
   initialize: function() {
     this.on('change', this.updated, this);
+    this.on('change:topic', this.setupTopic, this);
+  },
+
+  setupTopic: function() {
+    // clear answers and ensure we have one for every question
+    var topic = StoryCheck.topics.get(this.get('topic'));
+    this.set('answers', _.map(topic.get('questions'), function(q) {
+      return new Answer({key: q.key}).toJSON();
+    }));
   },
 
   parse: function(json, options) {
@@ -47,30 +56,33 @@ var Story = Backbone.Model.extend({
     this.set('updated_at', moment(), {silent: true});
   },
 
-  title: function() {
-    return 'Your ' + this.get('topic') + ' story ' + this.id;
+  percentComplete: function() {
+    var total = this.get('answers').length;
+    return (total === 0 ? 0 : this.completed().length / total);
   },
 
-  percentComplete: function() {
-    var answers = this.get('answers'),
-        total = answers.length,
-        completed = _.filter(answers, function(a) { return a.done; }).length;
+  pending: function() {
+    return _.filter(this.get('answers'), function(a) { return !a.done; });
+  },
 
-    return (total === 0 ? 0 : completed / total);
+  completed: function() {
+    return _.filter(this.get('answers'), function(a) { return a.done; });
   },
 
   shareableBody: function() {
     var topic = StoryCheck.topics.get(this.get('topic')),
-        answers = this.get('answers'),
+        answers = _.indexBy(this.get('answers'), 'key'),
         questions;
 
-
     questions = _.map(topic.get('questions'), function(q) {
-      var s = q.num + "/" + topic.get('length') + ": " + q.question + ': ' + (answers[q.key] || ""),
-          notes = answers[q.key + '-notes'];
+      var answer = answers[q.key] || {};
+      var s = q.num + "/" + topic.get('length') + ": " + q.question + ': ' + (answer.answer || ""),
+          notes = answer.notes;
+
       if (notes) {
         s += "\n\n" + notes;
       }
+
       return s;
     });
 

@@ -116,10 +116,17 @@ var StoryView = Backbone.View.extend({
   share: function(e) {
     e.preventDefault();
 
+    var pending = this.model.pending();
+
+    if (pending.length > 0) {
+      if (!confirm('You still have ' + Handlebars.helpers.pluralCount(pending.length, 'item') + ' to complete. Share anyway?'))
+        return;
+    }
+
     // construct a completed mailto: url
     var mailto = 'mailto:you@example.com';
 
-    mailto += '?subject=' + encodeURIComponent(this.model.title());
+    mailto += '?subject=' + encodeURIComponent(this.model.get('title'));
     mailto += '&body=' + encodeURIComponent(this.model.shareableBody());
 
     window.location = mailto;
