@@ -304,6 +304,10 @@ ul.question-list {
     text-align: center;
     font-size: 20px; }
 
+.add-story-view .radio label {
+  display: block;
+  padding: 5px 0px 5px 20px; }
+
 .about-view .logo {
   width: 100px; }
 
