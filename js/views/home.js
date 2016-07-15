@@ -5,7 +5,7 @@ var HomeView = Backbone.View.extend({
   navTab: 'home',
 
   events: {
-    'click .splash .button': 'add',
+    'click #splash .button': 'add',
   },
 
   initialize: function() {
