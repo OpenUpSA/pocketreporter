@@ -347,6 +347,11 @@ ul.question-list {
   }
 }
 
+.btn-success {
+  background-color: $green-middle;
+  border-color: $green-middle;
+}
+
 .btn.success {
   text-transform: uppercase;
   color: $success;

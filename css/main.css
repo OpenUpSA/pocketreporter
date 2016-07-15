@@ -217,6 +217,10 @@ ul.question-list {
   .story-view .story-done i, .story-view .story-done h2 {
     color: #ffca03; }
 
+.btn-success {
+  background-color: #73c619;
+  border-color: #73c619; }
+
 .btn.success {
   text-transform: uppercase;
   color: #03ac20; }
