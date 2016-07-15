@@ -4,10 +4,18 @@ var HomeView = Backbone.View.extend({
   template: Handlebars.compile($("#home-view-template").html()),
   navTab: 'home',
 
+  events: {
+    'click .splash .button': 'add',
+  },
+
   initialize: function() {
     this.render();
 
     StoryCheck.stories.on('add remove', _.bind(this.render, this));
+  },
+
+  add: function() {
+    router.navigate('add', {trigger: true});
   },
 
   render: function() {
@@ -26,7 +34,7 @@ var HomeView = Backbone.View.extend({
     }
 
     this.$el.html(this.template({
-      topics: StoryCheck.topics.toJSON(),
+      empty: (current.length === 0 && archived.length === 0),
       stories: _.map(current, serialize).reverse(),
       archived: _.map(archived, serialize).reverse(),
     }));
