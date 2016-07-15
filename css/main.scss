@@ -1,7 +1,7 @@
 /* variables */
 
 $header-height: 50px;
-$footer-height: 65px;
+$footer-height: 50px;
 
 $black: #4a4a4a;
 $white: white;
@@ -374,11 +374,15 @@ ul.question-list {
       float: left;
       width: 33.33%;
       text-align: center;
+      font-size: 12px;
+      .fa {
+        font-size: 24px;
+      }
 
       a {
         display: block;
         height: $footer-height;
-        padding: 10px;
+        padding: 5px;
       }
 
       a.active {

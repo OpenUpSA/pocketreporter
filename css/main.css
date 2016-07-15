@@ -78,7 +78,7 @@ body {
 #viewport article.with-header {
   padding-top: 60px; }
 #viewport article {
-  padding-bottom: 75px; }
+  padding-bottom: 60px; }
 #viewport article section {
   margin-bottom: 20px; }
 
@@ -90,7 +90,7 @@ body {
   z-index: 999; }
 
 #app-footer {
-  height: 65px;
+  height: 50px;
   margin-left: -15px;
   margin-right: -15px;
   color: white;
@@ -235,11 +235,14 @@ ul.question-list {
     display: block;
     float: left;
     width: 33.33%;
-    text-align: center; }
+    text-align: center;
+    font-size: 12px; }
+    .footer-view .nav-items li .fa {
+      font-size: 24px; }
     .footer-view .nav-items li a {
       display: block;
-      height: 65px;
-      padding: 10px; }
+      height: 50px;
+      padding: 5px; }
     .footer-view .nav-items li a.active {
       background-color: rgba(255, 255, 255, 0.2); }
 
