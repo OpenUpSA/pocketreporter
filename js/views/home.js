@@ -12,11 +12,16 @@ var HomeView = Backbone.View.extend({
 
   render: function() {
     var archived = StoryCheck.stories.where({archived: true}),
-        current = StoryCheck.stories.where({archived: false});
+        current = StoryCheck.stories.where({archived: false}),
+        topics = _.indexBy(StoryCheck.topics, 'id');
 
     function serialize(story) {
+      var topic = StoryCheck.topics.get(story.get('topic'));
       var d = story.toJSON();
+
       d.percent_complete = story.percentComplete();
+      d.topic_name = topic ? topic.get('name') : d.topic;
+
       return d;
     }
 
