@@ -179,7 +179,7 @@ ul.question-list {
       margin-bottom: 10px;
       width: 100%; }
       ul.question-list > li .btn-group label {
-        width: 33%;
+        width: 33.33%;
         box-shadow: none; }
       ul.question-list > li .btn-group label.yes.active {
         background-color: #03ac20;
