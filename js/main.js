@@ -81,7 +81,7 @@ var Persistence = Backbone.Model.extend({
 
     if (this.storage) {
       val = this.storage.getItem('StoryCheck');
-      val = val ? JSON.parse(val) : val;
+      val = val ? JSON.parse(val) : {};
 
       // version check
       if (val.version != this.version) val = {};
