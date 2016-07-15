@@ -93,6 +93,9 @@ body {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+  }
+
+  .back + h1 {
     margin-left: 20px;
   }
 
