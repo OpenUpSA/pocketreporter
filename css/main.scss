@@ -305,10 +305,6 @@ ul.question-list {
 
     .btn.done {
       float: right;
-
-      &.disabled {
-        color: $grey-border;
-      }
     }
   }
 
@@ -356,6 +352,10 @@ ul.question-list {
   &:hover {
     text-decoration: none;
   }
+
+  &.disabled {
+    color: $grey-border;
+  }
 }
 
 .btn.danger {
@@ -364,6 +364,10 @@ ul.question-list {
 
   &:hover {
     text-decoration: none;
+  }
+
+  &.disabled {
+    color: $grey-border;
   }
 }
 

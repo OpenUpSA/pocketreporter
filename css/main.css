@@ -193,8 +193,6 @@ ul.question-list {
         color: white; }
     ul.question-list > li .btn.done {
       float: right; }
-      ul.question-list > li .btn.done.disabled {
-        color: #d7d7d7; }
   ul.question-list#completed-question-list .btn.done {
     display: none; }
 
@@ -222,12 +220,16 @@ ul.question-list {
   color: #03ac20; }
   .btn.success:hover {
     text-decoration: none; }
+  .btn.success.disabled {
+    color: #d7d7d7; }
 
 .btn.danger {
   text-transform: uppercase;
   color: #d0021b; }
   .btn.danger:hover {
     text-decoration: none; }
+  .btn.danger.disabled {
+    color: #d7d7d7; }
 
 .footer-view .nav-items {
   list-style: none;
