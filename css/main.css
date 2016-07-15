@@ -61,8 +61,8 @@ body {
   #app-header .back {
     position: absolute;
     left: 15px;
-    padding: 10px;
-    margin: -10px; }
+    padding: 15px;
+    margin: -15px; }
   #app-header .nav-items {
     float: right;
     list-style: none;
