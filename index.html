@@ -52,67 +52,91 @@
   </div>
 
   <script id="home-view-template" type="text/x-handlebars-template">
-    <div id="header-wrapper">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3">
-            <header id="app-header">
-              <h1>StoryCheck</h1>
-            </header>
+    {{#if empty}}
+
+      <div id="splash-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+
+              <div id="splash">
+                <div class="button">
+                  <h1>StoryCheck</h1>
+                </div>
+
+                <h2>Write Better Stories</h2>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <article class="with-header with-footer box-sections collapsible-sections">
-      {{#if stories}}
+    {{else}}
 
-        <section>
-          <h2 data-toggle="collapse" data-target="#current-story-list">{{ pluralCount stories.length 'Current story' 'Current stories' }}</h2>
-
-          <ul class="story-list collapse in" id="current-story-list">
-            {{#each stories}}
-              <li>
-                <a href="#stories/{{ id }}">
-                  <div class="percent" data-value="{{ percent_complete }}"></div>
-                  <h3>{{ title }}</h2>
-                  <div class="topic">{{ topic_name }}</div>
-                  <div class="date">{{ date updated_at }}</div>
-                </a>
-              </li>
-            {{/each}}
-          </ul>
-        </section>
-
-      {{else}}
-
-        <section>
-          <div class="jumbotron">
-            <h1><b>StoryCheck</b> helps you do great journalism.</h1>
+      <div id="header-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <header id="app-header">
+                <h1>StoryCheck</h1>
+              </header>
+            </div>
           </div>
-        </section>
+        </div>
+      </div>
 
-      {{/if}}
+      <article class="with-header with-footer box-sections collapsible-sections">
 
-      {{#if archived}}
-        <section>
-          <h2 data-toggle="collapse" data-target="#archive-story-list">{{ pluralCount archived.length 'Archived story' 'Archived stories' }}</h2>
+        {{#if stories}}
 
-          <ul class="story-list collapse in" id="archive-story-list">
-            {{#each archived}}
-              <li>
-                <a href="#stories/{{ id }}">
-                  <div class="percent" data-value="{{ percent_complete }}"></div>
-                  <h3>{{ title }}</h2>
-                  <div class="topic">{{ topic_name }}</div>
-                  <div class="date">{{ date updated_at }}</div>
-                </a>
-              </li>
-            {{/each}}
-          </ul>
-        </section>
-      {{/if}}
-    </article>
+          <section>
+            <h2 data-toggle="collapse" data-target="#current-story-list">{{ pluralCount stories.length 'Current story' 'Current stories' }}</h2>
+
+            <ul class="story-list collapse in" id="current-story-list">
+              {{#each stories}}
+                <li>
+                  <a href="#stories/{{ id }}">
+                    <div class="percent" data-value="{{ percent_complete }}"></div>
+                    <h3>{{ title }}</h2>
+                    <div class="topic">{{ topic_name }}</div>
+                    <div class="date">{{ date updated_at }}</div>
+                  </a>
+                </li>
+              {{/each}}
+            </ul>
+          </section>
+
+        {{else}}
+
+          <div class="add-story-prompt">
+            <h1>We help you write better stories.</h1>
+            <br>
+            <a href="#add" class="btn btn-success btn-lg">Start a story</a>
+          </div>
+
+        {{/if}}
+
+        {{#if archived}}
+          <section>
+            <h2 data-toggle="collapse" data-target="#archive-story-list">{{ pluralCount archived.length 'Archived story' 'Archived stories' }}</h2>
+
+            <ul class="story-list collapse in" id="archive-story-list">
+              {{#each archived}}
+                <li>
+                  <a href="#stories/{{ id }}">
+                    <div class="percent" data-value="{{ percent_complete }}"></div>
+                    <h3>{{ title }}</h2>
+                    <div class="topic">{{ topic_name }}</div>
+                    <div class="date">{{ date updated_at }}</div>
+                  </a>
+                </li>
+              {{/each}}
+            </ul>
+          </section>
+        {{/if}}
+      </article>
+
+    {{/if}}
   </script>
 
   <script id="story-question-template" type="text/x-handlebars-template">
