@@ -173,8 +173,9 @@ body {
 .box-sections {
   & > section {
     padding: 5px;
+    margin-left: -5px;
+    margin-right: -5px;
     background-color: $grey-light;
-    border: 1px solid $grey-border;
   }
 
   h2 {
@@ -274,7 +275,6 @@ ul.question-list {
     display: block;
     padding: 10px;
     margin-bottom: 10px;
-    border-bottom: 1px solid #efefef;
     border: 1px solid $grey-border;
     background-color: $white;
 

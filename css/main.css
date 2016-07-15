@@ -106,8 +106,9 @@ body {
 
 .box-sections > section {
   padding: 5px;
-  background-color: #f5f6f6;
-  border: 1px solid #d7d7d7; }
+  margin-left: -5px;
+  margin-right: -5px;
+  background-color: #f5f6f6; }
 .box-sections h2 {
   margin: 5px 0px 10px 5px;
   font-size: 16px; }
@@ -173,7 +174,6 @@ ul.question-list {
     display: block;
     padding: 10px;
     margin-bottom: 10px;
-    border-bottom: 1px solid #efefef;
     border: 1px solid #d7d7d7;
     background-color: white; }
     ul.question-list > li .btn-group {
