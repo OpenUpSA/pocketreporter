@@ -262,51 +262,56 @@ ul.question-list {
   padding-bottom: 20px; }
   .home-view .add-story-prompt h1 {
     font-size: 24px; }
-.home-view #splash-wrapper {
+
+#splash-wrapper {
   position: fixed;
   top: 0px;
   bottom: 50px;
   left: 0px;
   right: 0px; }
-  .home-view #splash-wrapper .container,
-  .home-view #splash-wrapper .row,
-  .home-view #splash-wrapper .col-md-6 {
+  #splash-wrapper .container,
+  #splash-wrapper .row,
+  #splash-wrapper .col-md-6 {
     height: 100%; }
-  .home-view #splash-wrapper .container {
+  #splash-wrapper .container {
     padding: 0px; }
-.home-view #splash {
-  width: 100%;
-  height: 100%;
-  background-color: #73c619;
-  background-image: radial-gradient(circle at 50% 50%, #b4ec51, #429321); }
-  .home-view #splash .button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200px;
-    height: 200px;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    background-color: white;
-    border-radius: 50%;
-    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
-    cursor: pointer; }
-  .home-view #splash h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    font-size: 28px; }
-  .home-view #splash h2 {
-    position: fixed;
-    top: 70%;
-    left: 0px;
-    right: 0px;
-    text-align: center;
-    font-size: 20px; }
+  #splash-wrapper #splash {
+    width: 100%;
+    height: 100%;
+    background-color: #73c619;
+    background-image: radial-gradient(circle at 50% 50%, #b4ec51, #429321); }
+    #splash-wrapper #splash .button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 200px;
+      height: 200px;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      background-color: white;
+      border-radius: 50%;
+      box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+      cursor: pointer; }
+    #splash-wrapper #splash h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      font-size: 28px; }
+    #splash-wrapper #splash h2 {
+      position: fixed;
+      top: 70%;
+      left: 0px;
+      right: 0px;
+      text-align: center;
+      font-size: 20px; }
+
+#loading {
+  margin-top: 20px;
+  text-align: center; }
 
 .add-story-view .radio label {
   display: block;
