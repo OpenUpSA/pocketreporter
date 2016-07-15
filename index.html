@@ -218,7 +218,7 @@
       <footer class="text-right">
         <button type="button" class="btn btn-link success share">Share story</button>
         <br>
-        <button type="button" class="btn btn-link success archive">Archive story</button>
+        <button type="button" class="btn btn-link success archive">{{#if story.archived}}Unarchive{{else}}Archive{{/if}} story</button>
         <br>
         <button type="button" class="btn btn-link danger delete">Delete story</button>
       </footer>

@@ -186,8 +186,11 @@ var StoryView = Backbone.View.extend({
 
   archiveStory: function(e) {
     e.preventDefault();
-    this.model.set('archived', true);
-    ga('send', 'event', 'story', 'archive');
+
+    var archived = !this.model.get('archived');
+    this.model.set('archived', archived);
+
+    ga('send', 'event', 'story', archived ? 'archive' : 'unarchive');
     router.navigate('', {trigger: true});
   },
 
