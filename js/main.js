@@ -61,63 +61,68 @@ var Router = Backbone.Router.extend({
 });
 
 
-/*** Persistence ***/
-var Persistence = Backbone.Model.extend({
+/*** Globals ***/
+var StoryCheck = Backbone.Model.extend({
   initialize: function() {
+    this.topics = new Topics(STORYCHECK_TOPICS);
+    // storage version
+    this.version = 1;
+
     if ('localStorage' in window) {
       this.storage = localStorage;
     } else {
       this.storage = null;
     }
 
-    this.version = 1;
-
     this.load();
-    StoryCheck.stories.on('change add remove', _.debounce(_.bind(this.save, this), 300));
+
+    var save = _.debounce(_.bind(this.save, this), 300);
+    this.state.on('change', save);
+    this.state.get('stories').on('change add remove', save);
+
+    this.general();
   },
 
   load: function() {
-    var val = {};
+    var val;
 
     if (this.storage) {
       val = this.storage.getItem('StoryCheck');
-      val = val ? JSON.parse(val) : {};
 
-      // version check
-      if (val.version != this.version) val = {};
+      if (val) {
+        val = JSON.parse(val);
+        // version check
+        if (val.version != this.version) val = {};
+      }
     }
 
-    StoryCheck.stories = new Stories(val.stories || [], {parse: true});
+    if (!val) val = {};
+    val.version = this.version;
+
+    this.state = new Backbone.Model(val);
+    this.state.set('stories', new Stories(val.stories || [], {parse: true}));
+    this.stories = this.state.get('stories');
   },
 
   save: function() {
     if (this.storage) {
-      var val = {
-        version: this.version,
-        stories: StoryCheck.stories.toJSON(),
-      };
-      this.storage.setItem('StoryCheck', JSON.stringify(val));
+      this.storage.setItem('StoryCheck', JSON.stringify(this.state.toJSON()));
     }
   },
-});
 
-
-/*** Globals ***/
-var StoryCheck = {
-  topics: new Topics(STORYCHECK_TOPICS),
-};
-
-
-// collapsibles
-$('body').on('show.bs.collapse', '.collapsible-sections .collapse', function() {
-  $(this).prev().removeClass('collapsed');
-});
-$('body').on('hide.bs.collapse', '.collapsible-sections .collapse', function() {
-  $(this).prev().addClass('collapsed');
+  general: function() {
+    // collapsibles
+    $('body').on('show.bs.collapse', '.collapsible-sections .collapse', function() {
+      $(this).prev().removeClass('collapsed');
+    });
+    $('body').on('hide.bs.collapse', '.collapsible-sections .collapse', function() {
+      $(this).prev().addClass('collapsed');
+    });
+  }
 });
 
 
 // do it
-new Persistence();
+StoryCheck = new StoryCheck();
 var router = new Router();
 Backbone.history.start();
