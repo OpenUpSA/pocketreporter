@@ -45,20 +45,29 @@ var Story = Backbone.Model.extend({
   initialize: function() {
     this.on('change', this.updated, this);
     this.on('change:topic', this.setupTopic, this);
+    // propagate events from the answer list
+    this.get('answers').on('change add remove reset', this.answersChanged, this);
+  },
+
+  answersChanged: function(obj, options) {
+    this.trigger('change', this, options);
   },
 
   setupTopic: function() {
     // clear answers and ensure we have one for every question
     var topic = StoryCheck.topics.get(this.get('topic'));
-    this.set('answers', _.map(topic.get('questions'), function(q) {
-      return new Answer({key: q.key}).toJSON();
-    }));
+    var answers = _.map(topic.get('questions'), function(q) {
+      return new Answer({key: q.key});
+    });
+
+    this.get('answers').reset(answers);
   },
 
   parse: function(json, options) {
     // reify moments from iso8601 string
     json.created_at = moment(json.created_at);
     json.updated_at = moment(json.updated_at);
+    json.answers = new AnswerList(json.answers);
     return json;
   },
 
@@ -72,16 +81,16 @@ var Story = Backbone.Model.extend({
   },
 
   pending: function() {
-    return _.filter(this.get('answers'), function(a) { return !a.done; });
+    return this.get('answers').filter(function(a) { return !a.get('done'); });
   },
 
   completed: function() {
-    return _.filter(this.get('answers'), function(a) { return a.done; });
+    return this.get('answers').filter(function(a) { return a.get('done'); });
   },
 
   shareableBody: function() {
     var topic = StoryCheck.topics.get(this.get('topic')),
-        answers = _.indexBy(this.get('answers'), 'key'),
+        answers = _.indexBy(this.get('answers').toJSON(), 'key'),
         questions;
 
     questions = _.map(topic.get('questions'), function(q) {

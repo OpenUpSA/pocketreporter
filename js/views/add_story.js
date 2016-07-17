@@ -14,7 +14,7 @@ var AddStoryView = Backbone.View.extend({
   },
 
   initialize: function() {
-    this.model = new Story();
+    this.model = new Story({}, {parse: true});
     this.render();
     this.stickit();
 

@@ -60,8 +60,7 @@ var StoryView = Backbone.View.extend({
   initialize: function() {
     this.topic = StoryCheck.topics.get(this.model.get('topic'));
 
-    this.answers = new AnswerList(this.model.get('answers'));
-    this.listenTo(this.answers, 'change', this.saveAnswers);
+    this.answers = this.model.get('answers');
     this.listenTo(this.answers, 'change', this.updateProgress);
     this.listenTo(this.answers, 'change:done', this.questionDone);
 
@@ -89,10 +88,6 @@ var StoryView = Backbone.View.extend({
     this.$('#story-progress .progress-bar')
       .css({width: p * 100 + "%"})
       .text(Math.round(p * 100) + "% complete");
-  },
-
-  saveAnswers: function() {
-    this.model.set('answers', this.answers.toJSON());
   },
 
   deleteStory: function(e) {
