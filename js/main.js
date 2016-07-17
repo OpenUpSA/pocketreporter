@@ -66,7 +66,8 @@ var StoryCheck = Backbone.Model.extend({
   initialize: function() {
     this.topics = new Topics(STORYCHECK_TOPICS);
     // storage version
-    this.version = 1;
+    // NB: changing this will clear all stories when a user next loads the app!
+    this.version = 2;
 
     if ('localStorage' in window) {
       this.storage = localStorage;
@@ -92,15 +93,15 @@ var StoryCheck = Backbone.Model.extend({
       if (val) {
         val = JSON.parse(val);
         // version check
-        if (val.version != this.version) val = {};
+        if (val.version != this.version) val = null;
       }
     }
 
     if (!val) val = {};
-    val.version = this.version;
 
-    this.state = new Backbone.Model(val);
-    this.state.set('stories', new Stories(val.stories || [], {parse: true}));
+    this.state = new State(val);
+    this.state.set('version', this.version);
+    this.state.set('stories', new Stories(val.stories, {parse: true}));
     this.stories = this.state.get('stories');
   },
 
@@ -108,6 +109,13 @@ var StoryCheck = Backbone.Model.extend({
     if (this.storage) {
       this.storage.setItem('StoryCheck', JSON.stringify(this.state.toJSON()));
     }
+  },
+
+  // unique story id for this user
+  newStoryId: function() {
+    var id = this.state.get('nextId');
+    this.state.set('nextId', id + 1);
+    return id;
   },
 
   general: function() {

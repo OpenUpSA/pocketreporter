@@ -36,7 +36,7 @@ var AddStoryView = Backbone.View.extend({
   },
 
   create: function(topic) {
-    this.model.set('id', new Date().valueOf());
+    this.model.set('id', StoryCheck.newStoryId());
     StoryCheck.stories.add(this.model);
     router.navigate('stories/' + this.model.id, {trigger: true});
   },

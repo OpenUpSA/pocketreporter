@@ -1,4 +1,14 @@
 /*** Models ***/
+
+// StoryCheck state
+var State = Backbone.Model.extend({
+  defaults: {
+    stories: [],
+    nextId: 1,
+  },
+});
+
+
 var Topic = Backbone.Model.extend({
   initialize: function() {
     // improve the questions
