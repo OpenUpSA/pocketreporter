@@ -55,6 +55,8 @@ var Router = Backbone.Router.extend({
       fragment = '/' + fragment;
     }
 
+    fragment = '/app' + fragment;
+
     ga('set', 'page', fragment);
     ga('send', 'pageview');
   },
