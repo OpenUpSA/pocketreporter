@@ -135,6 +135,11 @@ var StoryView = Backbone.View.extend({
     // TODO: animate this move
     view.$el.detach().appendTo(this.$completed);
     this.updateLists();
+
+    // track
+    if (this.model.percentComplete() == 1) {
+      ga('send', 'event', 'story', 'complete');
+    }
   },
 
   render: function() {
