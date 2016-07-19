@@ -141,6 +141,15 @@ body {
   article section {
     margin-bottom: 20px;
   }
+
+  article.free-text {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    section {
+      margin-bottom: 30px;
+    }
+  }
 }
 
 #footer-wrapper {
@@ -498,12 +507,6 @@ ul.question-list {
   .radio label {
     display: block;
     padding: 5px 0px 5px 20px;
-  }
-}
-
-.about-view {
-  .logo {
-    width: 100px;
   }
 }
 

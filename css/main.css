@@ -82,6 +82,11 @@ body {
   padding-bottom: 60px; }
 #viewport article section {
   margin-bottom: 20px; }
+#viewport article.free-text {
+  padding-left: 15px;
+  padding-right: 15px; }
+  #viewport article.free-text section {
+    margin-bottom: 30px; }
 
 #footer-wrapper {
   position: fixed;
@@ -325,9 +330,6 @@ ul.question-list {
 .add-story-view .radio label {
   display: block;
   padding: 5px 0px 5px 20px; }
-
-.about-view .logo {
-  width: 100px; }
 
 .topic-list {
   width: 100%; }
