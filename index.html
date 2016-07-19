@@ -246,10 +246,6 @@
     
     <article class="with-header">
       <section>
-        <input type="text" class="form-control" name="title" placeholder="Give your story a name">
-      </section>
-
-      <section>
         <h3>Choose a story type:</h3>
 
         {{#each topics}}
@@ -259,6 +255,12 @@
           </label>
         </div>
         {{/each}}
+      </section>
+
+      <section>
+        <h3>Give your story a name:</h3>
+
+        <input type="text" class="form-control" name="title" placeholder="Type a name">
       </section>
 
       <section class="text-right">
