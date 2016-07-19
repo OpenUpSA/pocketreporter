@@ -282,10 +282,10 @@ ul.question-list {
     background-image: radial-gradient(circle at 50% 50%, #b4ec51, #429321); }
     #splash-wrapper #splash .button {
       position: absolute;
-      top: 50%;
+      top: 25%;
       left: 50%;
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
@@ -303,11 +303,20 @@ ul.question-list {
       font-size: 28px; }
     #splash-wrapper #splash h2 {
       position: fixed;
-      top: 70%;
+      top: 45%;
       left: 0px;
       right: 0px;
       text-align: center;
       font-size: 20px; }
+    #splash-wrapper #splash h3 {
+      position: fixed;
+      top: 60%;
+      left: 15px;
+      right: 15px;
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.3em;
+      white-space: nowrap; }
 
 #loading {
   margin-top: 20px;
