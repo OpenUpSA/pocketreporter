@@ -22,6 +22,7 @@ var Topic = Backbone.Model.extend({
 
 var Topics = Backbone.Collection.extend({
   model: Topic,
+  comparator: 'name',
 });
 
 
