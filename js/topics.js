@@ -73,7 +73,7 @@ var STORYCHECK_TOPICS = [
     "questions": [
       {
         "key": "1",
-        "question": "Do you have their name?"
+        "question": "Do you have the full names of the person you're writing about?"
       },
       {
         "key": "2",
@@ -97,7 +97,7 @@ var STORYCHECK_TOPICS = [
       },
       {
         "key": "7",
-        "question": "Do you have their character / personality?"
+        "question": "Do you have details about their character / personality?"
       },
       {
         "key": "8",
@@ -105,11 +105,11 @@ var STORYCHECK_TOPICS = [
       },
       {
         "key": "9",
-        "question": "Do you have their personal relationships (family, friends, work colleagues)?"
+        "question": "Do you have details of their personal relationships (family, friends, work colleagues)?"
       },
       {
         "key": "10",
-        "question": "Do you have their awards / honours / formal recognition?"
+        "question": "Do you have details of their awards / honours / formal recognition?"
       },
       {
         "key": "11",
@@ -121,7 +121,7 @@ var STORYCHECK_TOPICS = [
       },
       {
         "key": "13",
-        "question": "Do you have at least three major political or social events which occurred during this person's life. for each event, explain how you think it may have affected your biographical subject?"
+        "question": "Do you have at least three major political or social events which occurred during this person's life. for each event so you can explain how you think it may have affected your biographical subject?"
       }
     ]
   },
@@ -143,7 +143,7 @@ var STORYCHECK_TOPICS = [
       },
       {
         "key": "4",
-        "question": "Have you conducted a minimum of ten interviews with rally attendees from separate parts of the venue?"
+        "question": "Have you conducted a minimum of 10 interviews with rally attendees from separate parts of the venue?"
       },
       {
         "key": "5",
@@ -399,7 +399,7 @@ var STORYCHECK_TOPICS = [
   },
   {
     "id": "7",
-    "name": "Checking what health services are available",
+    "name": "What health services are available",
     "questions": [
       {
         "key": "1",
@@ -494,6 +494,566 @@ var STORYCHECK_TOPICS = [
       {
         "key": "7",
         "question": "Do you know how they traveled and what the cost of their return fare was?"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "name": "Budget adoption",
+    "questions": [
+      {
+        "key": "1",
+        "question": "What is the amount to be spent?"
+      },
+      {
+        "key": "2",
+        "question": "Are there any new or increased taxes, higher licence and permit fees, and other income that will be necessary to meet expenditure?"
+      },
+      {
+        "key": "3",
+        "question": "Are there cuts, if any, to be made in such taxes, fees, or fines?"
+      },
+      {
+        "key": "4",
+        "question": "What is the comparison with the preceding year(s)?"
+      },
+      {
+        "key": "5",
+        "question": "Is there are justification for increases sought, cuts made?"
+      },
+      {
+        "key": "6",
+        "question": "What is the rate of current spending? Is it under or over budget of previous year?"
+      },
+      {
+        "key": "7",
+        "question": "Are there patterns behind the submission and subsequent adjustments, like political motives, pressure groups, historical factors?"
+      },
+      {
+        "key": "8",
+        "question": "Are there consequences of budget for: agencies, departments, businesses, the public?"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "name": "Courts - civil action",
+    "questions": [
+      {
+        "key": "1",
+        "question": "What is the identification of person or organisation filing action?"
+      },
+      {
+        "key": "2",
+        "question": "What is the background of plaintiff or petitioner?"
+      },
+      {
+        "key": "3",
+        "question": "What is the background of the defendent or respondent?>"
+      },
+      {
+        "key": "4",
+        "question": "What type of damage is being alleged?"
+      },
+      {
+        "key": "5",
+        "question": "What remedy is being sought?"
+      },
+      {
+        "key": "6",
+        "question": "What was the date of filing of the application and the court of jurisdiction?"
+      },
+      {
+        "key": "7",
+        "question": "Is there any special motivation behind action, if any?"
+      },
+      {
+        "key": "8",
+        "question": "What is the history of the conflict, disagreement?"
+      },
+      {
+        "key": "9",
+        "question": "Are there any similar cases decided by courts (precedents)?"
+      },
+      {
+        "key": "10",
+        "question": "Could suit lead to a landmark action? Is it a precedent?"
+      },
+      {
+        "key": "11",
+        "question": "Is there a possibility of an out of court settlement?"
+      },
+      {
+        "key": "12",
+        "question": "What is the significance of the action and its effect on others?"
+      },
+      {
+        "key": "13",
+        "question": "Who are the lawyers for both sides?"
+      },
+      {
+        "key": "14",
+        "question": "What is the date and presiding judge for trial, hearing?"
+      },
+      {
+        "key": "15",
+        "question": "What is the judge's / magistrates reputation with similar cases?"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "name": "Courts - Verdict Stories",
+    "questions": [
+      {
+        "key": "1",
+        "question": "What was the verdict. What were the damages, if awarded? (Same, less, greater than those sought?)"
+      },
+      {
+        "key": "2",
+        "question": "Who are the parties involved?"
+      },
+      {
+        "key": "3",
+        "question": "Did the judge's statement, if any. Were there deviations by judge from assessors' findings?"
+      },
+      {
+        "key": "4",
+        "question": "Summary of allegations by plaintiff?"
+      },
+      {
+        "key": "5",
+        "question": "Key testimony and attorney/advocate's points"
+      },
+      {
+        "key": "6",
+        "question": "What was the length of time of deliberations before judgement?"
+      },
+      {
+        "key": "7",
+        "question": "Comment by assessors on deliberations, verdict"
+      },
+      {
+        "key": "8",
+        "question": "Any appeals or motions?"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "name": "Crime",
+    "questions": [
+      {
+        "key": "1",
+        "question": "What is the identification of victim/s?"
+      },
+      {
+        "key": "2",
+        "question": "What is the crime, how was it committed?"
+      },
+      {
+        "key": "3",
+        "question": "Date, time, location of crime?"
+      },
+      {
+        "key": "4",
+        "question": "Violent crime: what is the official cause of death, injury? weapon use?"
+      },
+      {
+        "key": "5",
+        "question": "Property crime: what is the value of the loss? method of theft or entry?"
+      },
+      {
+        "key": "6",
+        "question": "Have there been any arrests. Are there any suspects, clues?"
+      },
+      {
+        "key": "7",
+        "question": "Are there any unusual circumstances?"
+      },
+      {
+        "key": "8",
+        "question": "Quotes of victim, witnesses, police"
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "name": "Disasters",
+    "questions": [
+      {
+        "key": "1",
+        "question": "Any dead? causes of death?"
+      },
+      {
+        "key": "2",
+        "question": "Any injured? Extent of injuries?"
+      },
+      {
+        "key": "3",
+        "question": "Total affected or in danger?"
+      },
+      {
+        "key": "4",
+        "question": "Which hospitals have the injured been taken to?"
+      },
+      {
+        "key": "5",
+        "question": "Estimated death and injury toll?"
+      },
+      {
+        "key": "6",
+        "question": "Any eyewitness accounts?"
+      },
+      {
+        "key": "7",
+        "question": "Is there property loss and damage? Homes,land, public utilities, permanent damage?"
+      },
+      {
+        "key": "8",
+        "question": "Is there nformation about rescue and relief operations? Evacuations, heroism, unusual equipment used or unique rescue techniques, number of official personnel and volunteers?"
+      },
+      {
+        "key": "9",
+        "question": "Any warnings? Health department, public utility, police statements"
+      },
+      {
+        "key": "10",
+        "question": "Has there been looting?"
+      },
+      {
+        "key": "11",
+        "question": "Are the police/army/security forces visible on the ground?"
+      },
+      {
+        "key": "12",
+        "question": "Is there insurance for damage?"
+      },
+      {
+        "key": "13",
+        "question": "Are there any lawsuits as a result of the disaster?"
+      },
+      {
+        "key": "14",
+        "question": "Have any arrests been made?"
+      },
+      {
+        "key": "15",
+        "question": "Has an official investigation been launched? If so, by whom?"
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "name": "Fires",
+    "questions": [
+      {
+        "key": "1",
+        "question": "Any deaths, injuries?"
+      },
+      {
+        "key": "2",
+        "question": "Do you have the Identification of the victims?"
+      },
+      {
+        "key": "3",
+        "question": "What is the location of the fire, type of structure(s) involved?"
+      },
+      {
+        "key": "4",
+        "question": "What is the cause (from official source)?"
+      },
+      {
+        "key": "5",
+        "question": "When, where started, how did fire spread?"
+      },
+      {
+        "key": "6",
+        "question": "When was it brought under control? After how long?"
+      },
+      {
+        "key": "7",
+        "question": "How were victims killed, injured?"
+      },
+      {
+        "key": "8",
+        "question": "Property loss: what is the extent, cost of damage, is there insurance?"
+      },
+      {
+        "key": "9",
+        "question": "Has an investigation begun, are there any unusual circumstances?"
+      },
+      {
+        "key": "10",
+        "question": "Where were dead, injured taken? Extent of their injuries?"
+      },
+      {
+        "key": "11",
+        "question": "Where there any rescue attempts?"
+      },
+      {
+        "key": "12",
+        "question": "Comments of neighbours, eyewitnesses"
+      },
+      {
+        "key": "13",
+        "question": "Number of fire engines, firefighters?"
+      },
+      {
+        "key": "14",
+        "question": "Sources: Fire chief, police, hospital, mortuary, welfare agencies"
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "name": "Meetings",
+    "questions": [
+      {
+        "key": "1",
+        "question": "Major action(s): what are the details of votes, decisions, agreements, resolutions"
+      },
+      {
+        "key": "2",
+        "question": "Vote: who voted for against? (names)"
+      },
+      {
+        "key": "3",
+        "question": "Reason for action?"
+      },
+      {
+        "key": "4",
+        "question": "Purpose, time, location?"
+      },
+      {
+        "key": "5",
+        "question": "Discussion, what debates took place, length of meeting?"
+      },
+      {
+        "key": "6",
+        "question": "Any quotes from witnesses, experts, audiences?"
+      },
+      {
+        "key": "7",
+        "question": "What was the audience's makeup?"
+      },
+      {
+        "key": "8",
+        "question": "Agenda"
+      },
+      {
+        "key": "9",
+        "question": "Are the any potential consequences of action(s) taken at meeting?"
+      },
+      {
+        "key": "10",
+        "question": "What is the agenda for next meeting?"
+      }
+    ]
+  },
+  {
+    "id": "16",
+    "name": "News Conferences",
+    "questions": [
+      {
+        "key": "1",
+        "question": "What major point was made in the announcement of the press conference?"
+      },
+      {
+        "key": "2",
+        "question": "Have you got the name/s, identification of speaker(s)"
+      },
+      {
+        "key": "3",
+        "question": "What is the background of major point of conference?"
+      },
+      {
+        "key": "4",
+        "question": "What came out during the question and answer session?"
+      },
+      {
+        "key": "5",
+        "question": "Where any questions not answered?"
+      }
+    ]
+  },
+  {
+    "id": "17",
+    "name": "Obituaries",
+    "questions": [
+      {
+        "key": "1",
+        "question": "What is the name, age, address, occupation of the deceased?"
+      },
+      {
+        "key": "2",
+        "question": "What is the time, place, cause of death?"
+      },
+      {
+        "key": "3",
+        "question": "What is their birthdate, birthplace?"
+      },
+      {
+        "key": "4",
+        "question": "Are there any survivors (immediate family)?"
+      },
+      {
+        "key": "5",
+        "question": "What are the funeral and burial arrangements?"
+      },
+      {
+        "key": "6",
+        "question": "What are the deceased's accomplishments?"
+      },
+      {
+        "key": "7",
+        "question": "What are the details of their education and club, society etc memberships?"
+      },
+      {
+        "key": "8",
+        "question": "Did they do military service (formal or otherwise)?"
+      },
+      {
+        "key": "9",
+        "question": "Do you have anecdotes, recollections of friends, relatives?"
+      }
+    ]
+  },
+  {
+    "id": "18",
+    "name": "Profile",
+    "questions": [
+      {
+        "key": "1",
+        "question": "What is the name, identification of subject?"
+      },
+      {
+        "key": "2",
+        "question": "What is their background (birth, upbringing, education, jobs)"
+      },
+      {
+        "key": "3",
+        "question": "What is the theme of your profile?"
+      },
+      {
+        "key": "4",
+        "question": "What is the reason for your profile (news value)?"
+      },
+      {
+        "key": "5",
+        "question": "Do you have any anecdotes and incidents (from subject, friends, accociates)?"
+      },
+      {
+        "key": "6",
+        "question": "Use physical descriptions (do NOT use words like \"attractive\")"
+      },
+      {
+        "key": "7",
+        "question": "Make observations of subject at work, play, home"
+      },
+      {
+        "key": "8",
+        "question": "Quotes, quotes, quotes"
+      }
+    ]
+  },
+  {
+    "id": "19",
+    "name": "Speeches",
+    "questions": [
+      {
+        "key": "1",
+        "question": "What is the speaker's main point?"
+      },
+      {
+        "key": "2",
+        "question": "What is the name, identification of speaker? (Make sure name is spelt correctly!)"
+      },
+      {
+        "key": "3",
+        "question": "Do you have the right quotes to support main point?"
+      },
+      {
+        "key": "4",
+        "question": "What was the purpose, time, location of speech?"
+      },
+      {
+        "key": "5",
+        "question": "Audience: number, makeup, reactions?"
+      },
+      {
+        "key": "6",
+        "question": "What additional points were raised by speaker?"
+      },
+      {
+        "key": "7",
+        "question": "What is the background to major point they made?"
+      },
+      {
+        "key": "8",
+        "question": "Do you have any speaker's comments from before, after speech?"
+      },
+      {
+        "key": "9",
+        "question": "Question and answer period. If any what are the details?"
+      }
+    ]
+  },
+  {
+    "id": "20",
+    "name": "Sports - Game Coverage",
+    "questions": [
+      {
+        "key": "1",
+        "question": "What was the score?"
+      },
+      {
+        "key": "2",
+        "question": "What is the sport you're reporting on, name of teams?"
+      },
+      {
+        "key": "3",
+        "question": "Where and when did the game take place?"
+      },
+      {
+        "key": "4",
+        "question": "What was the key play, strategy"
+      },
+      {
+        "key": "5",
+        "question": "Who were the outstanding player(s)"
+      },
+      {
+        "key": "6",
+        "question": "Effect on standings, rankings, individual records"
+      },
+      {
+        "key": "7",
+        "question": "Scoring pattern"
+      },
+      {
+        "key": "8",
+        "question": "Winning/losing streaks, records involved by team, player"
+      },
+      {
+        "key": "9",
+        "question": "Postgame comments"
+      },
+      {
+        "key": "10",
+        "question": "Crowd size, behaviour (only if relevant)"
+      },
+      {
+        "key": "11",
+        "question": "Injuries (if any)"
+      },
+      {
+        "key": "12",
+        "question": "Duration of game"
+      },
+      {
+        "key": "13",
+        "question": "Statistics"
       }
     ]
   }
