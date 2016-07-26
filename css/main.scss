@@ -168,7 +168,6 @@ body {
 
   color: $footer-fg;
   background-color: $footer-bg;
-  background-image: linear-gradient(to bottom, $green-start, $green-end);
 
   a,
   a:visited,
@@ -176,6 +175,69 @@ body {
   a:link {
     color: $footer-fg;
     text-decoration: none;
+  }
+
+  .nav-items {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+
+    li {
+      display: block;
+      float: left;
+      width: 33.33%;
+      text-align: center;
+      font-size: 12px;
+
+      .fa {
+        font-size: 24px;
+      }
+
+      .add .fa {
+        font-size: 28px;
+      }
+    }
+  }
+
+  a {
+    display: block;
+    height: $footer-height;
+    padding: 5px;
+    position: relative;
+  }
+
+  a.active {
+    background-color: #8fd247;
+
+    .add-btn-wrapper {
+      border-color: #8fd247;
+    }
+  }
+
+  .add-btn-wrapper {
+    position: relative;
+    top: -30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75px;
+
+    border: 5px solid $footer-bg;
+    border-radius: 50%;
+  }
+
+  .add-btn {
+    padding: 15px;
+    height: 65px;
+
+    background-color: grey;
+    background-image: radial-gradient(circle at 50% 50%, #969696, #333333);
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0px 0px 2px rgba(1, 1, 1, 0.75);
+
+    .fa::before {
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    }
   }
 }
 
@@ -363,32 +425,6 @@ ul.question-list {
 }
 
 .footer-view {
-  .nav-items {
-    list-style: none;
-    padding: 0px;
-    margin: 0px;
-
-    li {
-      display: block;
-      float: left;
-      width: 33.33%;
-      text-align: center;
-      font-size: 12px;
-      .fa {
-        font-size: 24px;
-      }
-
-      a {
-        display: block;
-        height: $footer-height;
-        padding: 5px;
-      }
-
-      a.active {
-        background-color: rgba(255, 255, 255, 0.2);
-      }
-    }
-  }
 }
 
 .home-view {

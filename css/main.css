@@ -100,14 +100,54 @@ body {
   margin-left: -15px;
   margin-right: -15px;
   color: white;
-  background-color: #73c619;
-  background-image: linear-gradient(to bottom, #b4ec51, #429321); }
+  background-color: #73c619; }
   #app-footer a,
   #app-footer a:visited,
   #app-footer a:active,
   #app-footer a:link {
     color: white;
     text-decoration: none; }
+  #app-footer .nav-items {
+    list-style: none;
+    padding: 0px;
+    margin: 0px; }
+    #app-footer .nav-items li {
+      display: block;
+      float: left;
+      width: 33.33%;
+      text-align: center;
+      font-size: 12px; }
+      #app-footer .nav-items li .fa {
+        font-size: 24px; }
+      #app-footer .nav-items li .add .fa {
+        font-size: 28px; }
+  #app-footer a {
+    display: block;
+    height: 50px;
+    padding: 5px;
+    position: relative; }
+  #app-footer a.active {
+    background-color: #8fd247; }
+    #app-footer a.active .add-btn-wrapper {
+      border-color: #8fd247; }
+  #app-footer .add-btn-wrapper {
+    position: relative;
+    top: -30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75px;
+    border: 5px solid #73c619;
+    border-radius: 50%; }
+  #app-footer .add-btn {
+    padding: 15px;
+    height: 65px;
+    background-color: grey;
+    background-image: radial-gradient(circle at 50% 50%, #969696, #333333);
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0px 0px 2px rgba(1, 1, 1, 0.75); }
+    #app-footer .add-btn .fa::before {
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.5); }
 
 .box-sections > section {
   padding: 5px;
@@ -226,25 +266,6 @@ ul.question-list {
     text-decoration: none; }
   .btn.danger.disabled {
     color: #d7d7d7; }
-
-.footer-view .nav-items {
-  list-style: none;
-  padding: 0px;
-  margin: 0px; }
-  .footer-view .nav-items li {
-    display: block;
-    float: left;
-    width: 33.33%;
-    text-align: center;
-    font-size: 12px; }
-    .footer-view .nav-items li .fa {
-      font-size: 24px; }
-    .footer-view .nav-items li a {
-      display: block;
-      height: 50px;
-      padding: 5px; }
-    .footer-view .nav-items li a.active {
-      background-color: rgba(255, 255, 255, 0.2); }
 
 .home-view .add-story-prompt {
   text-align: center;
