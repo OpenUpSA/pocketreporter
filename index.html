@@ -202,8 +202,12 @@
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
             <header id="app-header">
-              <a href="#" class="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-              <h1>Start a New Story</h1>
+              {{#if topic}}
+                <a href="#add" class="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                <h1>{{ topic.name }}</h1>
+              {{else}}
+                <h1>Start a New Story</h1>
+              {{/if}}
             </header>
           </div>
         </div>
@@ -211,25 +215,25 @@
     </div>
     
     <article class="with-header">
-      <section>
-        <h3>Choose a story type:</h3>
+      <section class="topic-section">
+        <h3>What type of story are you writing?</h3>
 
+        <ul class="topic-buttons clearfix">
         {{#each topics}}
-        <div class="radio">
-          <label>
-            <input type="radio" name="topic" value="{{ id }}"> {{ name }}
-          </label>
-        </div>
+          <li>
+            <a href="#add/{{ id }}"><i class="fa {{ icon }}"></i><br>{{ name }}</a>
+          </li>
         {{/each}}
+        </ul>
       </section>
 
-      <section>
+      <section class="name-section">
         <h3>Give your story a name:</h3>
 
-        <input type="text" class="form-control" name="title" placeholder="Type a name">
+        <input type="text" class="form-control" name="title">
       </section>
 
-      <section class="text-right">
+      <section class="name-section text-right">
         <button class="btn btn-link success next disabled">Start this story <i class="fa fa-chevron-right"></i></button>
       </section>
     </article>

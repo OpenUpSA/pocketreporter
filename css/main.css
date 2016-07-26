@@ -332,9 +332,36 @@ ul.question-list {
   margin-top: 20px;
   text-align: center; }
 
-.add-story-view .radio label {
-  display: block;
-  padding: 5px 0px 5px 20px; }
+.add-story-view .topic-buttons {
+  padding-left: 0px; }
+  .add-story-view .topic-buttons li {
+    list-style: none;
+    display: block;
+    width: 30%;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px; }
+    .add-story-view .topic-buttons li:nth-child(3n) {
+      margin-right: 0px; }
+  .add-story-view .topic-buttons a,
+  .add-story-view .topic-buttons a:visited,
+  .add-story-view .topic-buttons a:active,
+  .add-story-view .topic-buttons a:hover {
+    color: white;
+    text-decoration: none; }
+  .add-story-view .topic-buttons a {
+    display: block;
+    height: 100px;
+    padding: 10px;
+    background-color: #73c619;
+    border: 1px solid #979797;
+    text-align: center; }
+    .add-story-view .topic-buttons a .fa {
+      font-size: 32px;
+      margin-top: 5px;
+      margin-bottom: 5px; }
+.add-story-view .name-section {
+  display: none; }
 
 .topic-list {
   width: 100%; }

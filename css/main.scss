@@ -8,6 +8,7 @@ $white: white;
 $grey-light: #f5f6f6;
 $grey-dark: #e6e6e6;
 $grey-border: #d7d7d7;
+$grey-darker: #979797;
 $red: #d0021b;
 $gold: #ffca03;
 
@@ -516,9 +517,50 @@ ul.question-list {
 }
 
 .add-story-view {
-  .radio label {
-    display: block;
-    padding: 5px 0px 5px 20px;
+  .topic-buttons {
+    padding-left: 0px;
+
+    li {
+      list-style: none;
+      display: block;
+      width: 30%;
+      float: left;
+
+      margin-right: 10px;
+      margin-bottom: 10px;
+
+      &:nth-child(3n) {
+        margin-right: 0px;
+      }
+    }
+
+    a,
+    a:visited,
+    a:active,
+    a:hover {
+      color: $white;
+      text-decoration: none;
+    }
+
+    a {
+      display: block;
+      height: 100px;
+      padding: 10px;
+
+      background-color: $green-middle;
+      border: 1px solid $grey-darker;
+      text-align: center;
+
+      .fa {
+        font-size: 32px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .name-section {
+    display: none;
   }
 }
 
