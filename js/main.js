@@ -43,6 +43,7 @@ var Router = Backbone.Router.extend({
     }
 
     $("#viewport").empty().append(view.el);
+    $('body').scrollTop(0);
     this.view = view;
     this.footer.viewChanged(view);
 
