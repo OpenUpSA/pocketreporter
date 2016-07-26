@@ -2,6 +2,7 @@
 
 var STORYCHECK_TOPICS = [
   {
+    "icon": "fa-bullhorn",
     "id": "3",
     "name": "Political rally",
     "questions": [
@@ -68,6 +69,7 @@ var STORYCHECK_TOPICS = [
     ]
   },
   {
+    "icon": "fa-group",
     "id": "4",
     "name": "Election meeting",
     "questions": [
@@ -138,6 +140,7 @@ var STORYCHECK_TOPICS = [
     ]
   },
   {
+    "icon": "fa-check-square-o",
     "id": "6",
     "name": "Election day",
     "questions": [
@@ -192,8 +195,9 @@ var STORYCHECK_TOPICS = [
     ]
   },
   {
+    "icon": "fa-microphone",
     "id": "16",
-    "name": "News Conferences",
+    "name": "News conference",
     "questions": [
       {
         "key": "1",
@@ -218,8 +222,9 @@ var STORYCHECK_TOPICS = [
     ]
   },
   {
+    "icon": "fa-comment",
     "id": "19",
-    "name": "Speeches",
+    "name": "Speech",
     "questions": [
       {
         "key": "1",
