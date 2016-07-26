@@ -183,21 +183,6 @@ ul.question-list {
     margin-bottom: 10px;
     border: 1px solid #d7d7d7;
     background-color: white; }
-    ul.question-list > li .btn-group {
-      margin-bottom: 10px;
-      width: 100%; }
-      ul.question-list > li .btn-group label {
-        width: 33.33%;
-        box-shadow: none; }
-      ul.question-list > li .btn-group label.yes.active {
-        background-color: #03ac20;
-        color: white; }
-      ul.question-list > li .btn-group label.no.active {
-        background-color: #d0021b;
-        color: white; }
-      ul.question-list > li .btn-group label.na.active {
-        background-color: #4a4a4a;
-        color: white; }
     ul.question-list > li .btn.done {
       float: right; }
   ul.question-list#completed-question-list .btn.done {

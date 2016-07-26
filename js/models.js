@@ -89,7 +89,7 @@ var Story = Backbone.Model.extend({
 
     questions = _.map(topic.get('questions'), function(q) {
       var answer = answers[q.key] || {};
-      var s = q.num + "/" + topic.get('length') + ": " + q.question + ': ' + (answer.answer || ""),
+      var s = q.num + "/" + topic.get('length') + ": " + q.question + ':',
           notes = answer.notes;
 
       if (notes) {
@@ -109,7 +109,6 @@ var Stories = Backbone.Collection.extend({
 });
 
 /* answers are a simple model, with attributes for each question key, such as
- * q-name: answer for the name question
  * q-name-notes: notes for the "name" question
  */
 var Answer = Backbone.Model.extend({

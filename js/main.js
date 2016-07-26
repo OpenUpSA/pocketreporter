@@ -70,7 +70,7 @@ var StoryCheck = Backbone.Model.extend({
     this.topics = new Topics(STORYCHECK_TOPICS);
     // storage version
     // NB: changing this will clear all stories when a user next loads the app!
-    this.version = 3;
+    this.version = 4;
 
     if ('localStorage' in window) {
       this.storage = localStorage;

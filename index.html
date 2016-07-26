@@ -150,21 +150,7 @@
   <script id="story-question-template" type="text/x-handlebars-template">
     <h3>{{ q.question }}</h3>
 
-    <form>
-      <div class="btn-group" data-toggle="buttons">
-        <label class="btn btn-default yes">
-          <input type="radio" value="yes" name="answer" autocomplete="off"> Yes
-        </label>
-        <label class="btn btn-default no">
-          <input type="radio" value="no" name="answer" autocomplete="off"> No
-        </label>
-        <label class="btn btn-default na">
-          <input type="radio" value="n/a" name="answer" autocomplete="off"> <span class="hidden-xs">Not applicable</span><span class="visible-xs">N/A</span>
-        </label>
-      </div>
-    </form>
-
-    <textarea class="form-control" name="notes" placeholder="Notes..."></textarea>
+    <textarea class="form-control" name="notes"></textarea>
 
     <button class="btn btn-link success done {{#unless a.answer}}disabled{{/unless}}">Mark as done</button>
   </script>

@@ -10,14 +10,13 @@ var QuestionView = Backbone.View.extend({
     'click .done': 'markDone',
   },
   bindings: {
-    '[name=answer]': 'answer',
     '[name=notes]': 'notes',
   },
 
   initialize: function(options) {
     this.question = options.question;
     this.key = this.question.key;
-    this.listenTo(this.model, 'change:answer', this.answerChanged);
+    this.listenTo(this.model, 'change:notes', this.answerChanged);
   },
   
   markDone: function() {

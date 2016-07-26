@@ -289,31 +289,6 @@ ul.question-list {
     border: 1px solid $grey-border;
     background-color: $white;
 
-    .btn-group {
-      margin-bottom: 10px;
-      width: 100%;
-
-      label {
-        width: 33.33%;
-        box-shadow: none;
-      }
-
-      label.yes.active {
-        background-color: $success;
-        color: $white;
-      }
-
-      label.no.active {
-        background-color: $red;
-        color: $white;
-      }
-
-      label.na.active {
-        background-color: $black;
-        color: $white;
-      }
-    }
-
     .btn.done {
       float: right;
     }
