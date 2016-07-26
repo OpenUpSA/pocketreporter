@@ -19,9 +19,7 @@ var HomeView = Backbone.View.extend({
   },
 
   render: function() {
-    var archived = StoryCheck.stories.where({archived: true}),
-        current = StoryCheck.stories.where({archived: false}),
-        topics = _.indexBy(StoryCheck.topics, 'id');
+    var topics = _.indexBy(StoryCheck.topics, 'id');
 
     function serialize(story) {
       var topic = StoryCheck.topics.get(story.get('topic'));
@@ -34,9 +32,8 @@ var HomeView = Backbone.View.extend({
     }
 
     this.$el.html(this.template({
-      empty: (current.length === 0 && archived.length === 0),
-      stories: _.map(current, serialize).reverse(),
-      archived: _.map(archived, serialize).reverse(),
+      empty: StoryCheck.stories.length === 0,
+      stories: StoryCheck.stories.map(serialize).reverse(),
     }));
 
     // progress bars

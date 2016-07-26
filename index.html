@@ -98,8 +98,6 @@
         {{#if stories}}
 
           <section>
-            <h2 data-toggle="collapse" data-target="#current-story-list">{{ pluralCount stories.length 'Current story' 'Current stories' }}</h2>
-
             <ul class="story-list collapse in" id="current-story-list">
               {{#each stories}}
                 <li>
@@ -124,24 +122,6 @@
 
         {{/if}}
 
-        {{#if archived}}
-          <section>
-            <h2 data-toggle="collapse" data-target="#archive-story-list">{{ pluralCount archived.length 'Archived story' 'Archived stories' }}</h2>
-
-            <ul class="story-list collapse in" id="archive-story-list">
-              {{#each archived}}
-                <li>
-                  <a href="#stories/{{ id }}">
-                    <div class="percent" data-value="{{ percent_complete }}"></div>
-                    <h3>{{ title }}</h2>
-                    <div class="topic">{{ topic_name }}</div>
-                    <div class="date">{{ date updated_at }}</div>
-                  </a>
-                </li>
-              {{/each}}
-            </ul>
-          </section>
-        {{/if}}
       </article>
 
     {{/if}}
@@ -165,7 +145,6 @@
 
               <ul class="nav-items">
                 <li><a href="#" class="share"><i class="fa fa-envelope"></i></a></li>
-                <li><a href="#" class="archive"><i class="fa fa-archive"></i></a></li>
                 <li><a href="#" class="delete"><i class="fa fa-trash"></i></a></li>
               </ul>
 
@@ -211,8 +190,6 @@
 
       <footer class="text-right">
         <button type="button" class="btn btn-link success share">Email story</button>
-        <br>
-        <button type="button" class="btn btn-link success archive">{{#if story.archived}}Unarchive{{else}}Archive{{/if}} story</button>
         <br>
         <button type="button" class="btn btn-link danger delete">Delete story</button>
       </footer>

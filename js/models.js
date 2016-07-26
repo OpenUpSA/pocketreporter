@@ -30,7 +30,6 @@ var Story = Backbone.Model.extend({
   defaults: function() {
     return {
       answers: [],
-      archived: false,
       created_at: moment(),
       updated_at: moment(),
     };

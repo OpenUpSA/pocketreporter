@@ -52,7 +52,6 @@ var StoryView = Backbone.View.extend({
   events: {
     'click #app-header h1': 'rename',
     'click .delete': 'deleteStory',
-    'click .archive': 'archiveStory',
     'click .share': 'share',
   },
 
@@ -181,16 +180,6 @@ var StoryView = Backbone.View.extend({
     if (this.$pending.is(":empty")) {
       this.$('.story-done').show();
     }
-  },
-
-  archiveStory: function(e) {
-    e.preventDefault();
-
-    var archived = !this.model.get('archived');
-    this.model.set('archived', archived);
-
-    ga('send', 'event', 'story', archived ? 'archive' : 'unarchive');
-    router.navigate('', {trigger: true});
   },
 
   close: function() {
