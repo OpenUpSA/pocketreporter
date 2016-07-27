@@ -5,6 +5,7 @@ var Router = Backbone.Router.extend({
     "stories/:id" : "story",
     "add" : "add",
     "add/:topic" : "add",
+    "userinfo" : "userinfo",
     "about" : "about",
   },
 
@@ -32,6 +33,10 @@ var Router = Backbone.Router.extend({
 
   about: function() {
     this.loadView(new AboutView());
+  },
+
+  userinfo: function() {
+    this.loadView(new UserInfoView());
   },
 
   loadView: function(view) {
@@ -106,7 +111,10 @@ var StoryCheck = Backbone.Model.extend({
     this.state = new State(val);
     this.state.set('version', this.version);
     this.state.set('stories', new Stories(val.stories, {parse: true}));
+    this.state.set('user', new Backbone.Model(val.user, {parse: true}));
+
     this.stories = this.state.get('stories');
+    this.user = this.state.get('user');
   },
 
   save: function() {
