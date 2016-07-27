@@ -13,7 +13,7 @@ var UserInfoView = Backbone.View.extend({
   },
 
   initialize: function() {
-    this.storyid = StoryCheck.stories.get(StoryCheck.stories.length-1).id;
+    this.storyid = StoryCheck.stories.at(StoryCheck.stories.length-1).id;
 
     this.model = StoryCheck.user;
     this.listenTo(this.model, 'change', this.checkOk);
