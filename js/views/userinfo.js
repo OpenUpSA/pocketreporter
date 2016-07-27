@@ -1,4 +1,9 @@
-/*** UserInfoView ***/
+/*** UserInfoView
+ *
+ * This isn't the best flow. This is shown when a user first creates
+ * a story. That's added to the list, then we come here.
+ *
+ * ***/
 var UserInfoView = Backbone.View.extend({
   className: "userinfo-view",
   template: Handlebars.compile($("#userinfo-view-template").html()),
