@@ -218,6 +218,14 @@ var STORYCHECK_TOPICS = [
       {
         "key": "5",
         "question": "Where any questions not answered?"
+      },
+      {
+        "key": "6",
+        "question": "Do you have copies of any handouts from the Press conference?"
+      },
+      {
+        "key": "7",
+        "question": "Do you have contact details (preferably phone numbers) in case of queries?"
       }
     ]
   },
@@ -261,6 +269,14 @@ var STORYCHECK_TOPICS = [
       {
         "key": "9",
         "question": "Question and answer period. If any what are the details?"
+      },
+      {
+        "key": "10",
+        "question": "Do you have copies of speeches and/or background documents?",
+      },
+      {
+        "key": "11",
+        "question": "Do you have contact details (preferably phone numbers/business cards) of speakers in case of queries?"
       }
     ]
   }
