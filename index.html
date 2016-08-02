@@ -135,11 +135,9 @@
   </script>
 
   <script id="story-question-template" type="text/x-handlebars-template">
-    <h3>{{ q.question }}</h3>
+    <h3>{{ num }}. {{ q.question }}</h3>
 
     <textarea class="form-control" name="notes"></textarea>
-
-    <button class="btn btn-link success done {{#unless a.answer}}disabled{{/unless}}">Mark as done</button>
   </script>
 
   <script id="story-view-template" type="text/x-handlebars-template">
@@ -162,7 +160,7 @@
       </div>
     </div>
     
-    <article class="with-header box-sections collapsible-sections">
+    <article class="with-header box-sections">
       <div id="story-progress">
         <div class="container">
           <div class="row">
@@ -184,15 +182,7 @@
       </div>
 
       <section>
-        <h2 data-toggle="collapse" data-target="#pending-question-list">You still need to complete <span class="count"></span></h2>
-
-        <ul class="question-list collapse in" id="pending-question-list"></ul>
-      </section>
-
-      <section>
-        <h2 data-toggle="collapse" data-target="#completed-question-list">You have completed <span class="count"></span></h2>
-
-        <ul class="question-list collapse in" id="completed-question-list"></ul>
+        <ul class="question-list collapse in" id="question-list"></ul>
       </section>
 
       <footer class="text-right">
