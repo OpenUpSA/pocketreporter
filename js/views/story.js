@@ -20,7 +20,9 @@ var QuestionView = Backbone.View.extend({
   },
   
   answerChanged: function() {
-    this.$('.btn.done').removeClass('disabled');
+    var done = !_.isEmpty(this.model.get('notes'));
+    this.$el.toggleClass('answered', done);
+    this.model.set('done', done);
   },
 
   render: function() {
@@ -35,6 +37,7 @@ var QuestionView = Backbone.View.extend({
     // bind form elements to model
     this.stickit();
     this.$el.find('.btn-group input[type=radio]:checked').closest('label').addClass('active');
+    this.answerChanged();
 
     return this;
   },

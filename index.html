@@ -105,7 +105,7 @@
         {{#if stories}}
 
           <section>
-            <ul class="story-list collapse in" id="current-story-list">
+            <ul class="story-list" id="current-story-list">
               {{#each stories}}
                 <li>
                   <a href="#stories/{{ id }}">
@@ -135,9 +135,10 @@
   </script>
 
   <script id="story-question-template" type="text/x-handlebars-template">
+    <i class="fa fa-check-circle"></i>
     <h3>{{ num }}. {{ q.question }}</h3>
 
-    <textarea class="form-control" name="notes"></textarea>
+    <textarea name="notes" placeholder="Write your answer here"></textarea>
   </script>
 
   <script id="story-view-template" type="text/x-handlebars-template">
@@ -160,7 +161,7 @@
       </div>
     </div>
     
-    <article class="with-header box-sections">
+    <article class="with-header">
       <div id="story-progress">
         <div class="container">
           <div class="row">
@@ -182,7 +183,7 @@
       </div>
 
       <section>
-        <ul class="question-list collapse in" id="question-list"></ul>
+        <ul class="question-list" id="question-list"></ul>
       </section>
 
       <footer class="text-right">

@@ -347,19 +347,39 @@ ul.question-list {
 
   > li {
     display: block;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid $grey-border;
-    background-color: $white;
+    padding: 5px;
+    margin-bottom: 20px;
 
     .btn.done {
       float: right;
     }
-  }
 
-  &#completed-question-list {
-    .btn.done {
-      display: none;
+    .fa-check-circle {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s linear;
+      float: right;
+      color: $green-middle;
+      font-size: 22px;
+      margin-left: 5px;
+      margin-top: -2px;
+    }
+
+    &.answered {
+      .fa-check-circle {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    textarea {
+      display: block;
+      width: 100%;
+      height: auto;
+      background-color: transparent;
+      border-width: 0px;
+      outline-width: 0px;
+      resize: none;
     }
   }
 }
