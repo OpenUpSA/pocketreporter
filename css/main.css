@@ -242,7 +242,8 @@ ul.question-list {
       background-color: transparent;
       border-width: 0px;
       outline-width: 0px;
-      resize: none; }
+      resize: none;
+      padding: 0px; }
 
 .story-view article.with-header {
   padding-top: 80px !important; }

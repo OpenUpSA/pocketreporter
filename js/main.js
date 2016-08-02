@@ -51,6 +51,7 @@ var Router = Backbone.Router.extend({
     $("#viewport").empty().append(view.el);
     $('body').scrollTop(0);
     this.view = view;
+    this.view.trigger('view-inserted');
     this.footer.viewChanged(view);
 
     this.track();

@@ -21,8 +21,8 @@ var QuestionView = Backbone.View.extend({
   
   answerChanged: function() {
     var done = !_.isEmpty(this.model.get('notes'));
-    this.$el.toggleClass('answered', done);
     this.model.set('done', done);
+    this.$el.toggleClass('answered', done);
   },
 
   render: function() {
@@ -37,9 +37,14 @@ var QuestionView = Backbone.View.extend({
     // bind form elements to model
     this.stickit();
     this.$el.find('.btn-group input[type=radio]:checked').closest('label').addClass('active');
+    // this.$el.find('textarea').autogrow();
     this.answerChanged();
 
     return this;
+  },
+
+  inserted: function() {
+    this.$el.find('textarea').autogrow();
   },
 });
 
@@ -61,6 +66,9 @@ var StoryView = Backbone.View.extend({
     this.answers = this.model.get('answers');
     this.listenTo(this.answers, 'change', this.updateProgress);
     this.listenTo(this.answers, 'change:done', this.questionDone);
+    this.on('view-inserted', function() {
+      self.$el.find('textarea').autogrow();
+    });
 
     // setup child views
     var self = this;
