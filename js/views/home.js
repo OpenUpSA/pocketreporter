@@ -47,7 +47,7 @@ var HomeView = Backbone.View.extend({
         trailColor: '#e6e6e6',
         strokeWidth: 15,
         text: {
-          value: p == 1 ? '\uf005' : Math.trunc(p * 100) + '%',
+          value: p == 1 ? '\uf005' : '',
           style: {
             color: '#4a4a4a',
           },

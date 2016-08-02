@@ -219,14 +219,31 @@ ul.question-list {
   margin: 0px; }
   ul.question-list > li {
     display: block;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #d7d7d7;
-    background-color: white; }
+    padding: 5px;
+    margin-bottom: 20px; }
     ul.question-list > li .btn.done {
       float: right; }
-  ul.question-list#completed-question-list .btn.done {
-    display: none; }
+    ul.question-list > li .fa-check-circle {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s linear;
+      float: right;
+      color: #73c619;
+      font-size: 22px;
+      margin-left: 5px;
+      margin-top: -2px; }
+    ul.question-list > li.answered .fa-check-circle {
+      opacity: 1;
+      visibility: visible; }
+    ul.question-list > li textarea {
+      display: block;
+      width: 100%;
+      height: auto;
+      background-color: transparent;
+      border-width: 0px;
+      outline-width: 0px;
+      resize: none;
+      padding: 0px; }
 
 .story-view article.with-header {
   padding-top: 80px !important; }

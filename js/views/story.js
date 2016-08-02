@@ -7,7 +7,6 @@ var QuestionView = Backbone.View.extend({
   tagName: 'li',
   className: 'question clearfix',
   events: {
-    'click .done': 'markDone',
   },
   bindings: {
     '[name=notes]': 'notes',
@@ -16,15 +15,14 @@ var QuestionView = Backbone.View.extend({
   initialize: function(options) {
     this.question = options.question;
     this.key = this.question.key;
+    this.num = options.num;
     this.listenTo(this.model, 'change:notes', this.answerChanged);
   },
   
-  markDone: function() {
-    this.model.set('done', true);
-  },
-
   answerChanged: function() {
-    this.$('.btn.done').removeClass('disabled');
+    var done = !_.isEmpty(this.model.get('notes'));
+    this.model.set('done', done);
+    this.$el.toggleClass('answered', done);
   },
 
   render: function() {
@@ -32,14 +30,21 @@ var QuestionView = Backbone.View.extend({
       .html(this.template({
         q: this.question,
         a: this.model.attributes,
+        num: this.num,
       }))
       .data('key', this.key);
 
     // bind form elements to model
     this.stickit();
     this.$el.find('.btn-group input[type=radio]:checked').closest('label').addClass('active');
+    // this.$el.find('textarea').autogrow();
+    this.answerChanged();
 
     return this;
+  },
+
+  inserted: function() {
+    this.$el.find('textarea').autogrow();
   },
 });
 
@@ -61,10 +66,13 @@ var StoryView = Backbone.View.extend({
     this.answers = this.model.get('answers');
     this.listenTo(this.answers, 'change', this.updateProgress);
     this.listenTo(this.answers, 'change:done', this.questionDone);
+    this.on('view-inserted', function() {
+      self.$el.find('textarea').autogrow();
+    });
 
     // setup child views
     var self = this;
-    this.children = _.map(this.topic.get('questions'), function(q) {
+    this.children = _.map(this.topic.get('questions'), function(q, i) {
       var model = self.answers.get(q.key);
 
       if (!model) {
@@ -73,6 +81,7 @@ var StoryView = Backbone.View.extend({
       }
 
       return new QuestionView({
+        num: i+1,
         model: model,
         question: q,
       });
@@ -86,6 +95,8 @@ var StoryView = Backbone.View.extend({
     this.$('#story-progress .progress-bar')
       .css({width: p * 100 + "%"})
       .text(Math.round(p * 100) + "% complete");
+
+    this.$('.story-done').toggle(this.model.percentComplete() == 1.0);
   },
 
   deleteStory: function(e) {
@@ -128,18 +139,6 @@ var StoryView = Backbone.View.extend({
     window.location = mailto;
   },
 
-  questionDone: function(answer) {
-    var view = _.find(this.children, function(c) { return c.key == answer.get('key'); });
-    // TODO: animate this move
-    view.$el.detach().appendTo(this.$completed);
-    this.updateLists();
-
-    // track
-    if (this.model.percentComplete() == 1) {
-      ga('send', 'event', 'story', 'complete');
-    }
-  },
-
   render: function() {
     var self = this;
 
@@ -148,38 +147,13 @@ var StoryView = Backbone.View.extend({
       topic: this.topic.toJSON(),
     }));
 
-    this.$pending = this.$('#pending-question-list');
-    this.$completed = this.$('#completed-question-list');
+    var $questions = this.$('#question-list');
 
     _.each(this.children, function(view) {
-      if (view.model.get('done')) {
-        self.$completed.append(view.render().el);
-      } else {
-        self.$pending.append(view.render().el);
-      }
+      $questions.append(view.render().el);
     });
 
-    this.updateLists();
     this.updateProgress();
-  },
-
-  updateLists: function() {
-    this.$pending
-      .closest('section')
-      .toggleClass('empty', this.$pending.is(':empty'))
-      .find('h2 .count')
-      .text(Handlebars.helpers.pluralCount(this.$pending.children().length, 'item'));
-
-    this.$completed
-      .closest('section')
-      .toggleClass('empty', this.$completed.is(':empty'))
-      .find('h2 .count')
-      .text(Handlebars.helpers.pluralCount(this.$completed.children().length, 'item'));
-
-    // complete?
-    if (this.$pending.is(":empty")) {
-      this.$('.story-done').show();
-    }
   },
 
   close: function() {

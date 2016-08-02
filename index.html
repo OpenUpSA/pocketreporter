@@ -105,7 +105,7 @@
         {{#if stories}}
 
           <section>
-            <ul class="story-list collapse in" id="current-story-list">
+            <ul class="story-list" id="current-story-list">
               {{#each stories}}
                 <li>
                   <a href="#stories/{{ id }}">
@@ -135,11 +135,10 @@
   </script>
 
   <script id="story-question-template" type="text/x-handlebars-template">
-    <h3>{{ q.question }}</h3>
+    <i class="fa fa-check-circle"></i>
+    <h3>{{ num }}. {{ q.question }}</h3>
 
-    <textarea class="form-control" name="notes"></textarea>
-
-    <button class="btn btn-link success done {{#unless a.answer}}disabled{{/unless}}">Mark as done</button>
+    <textarea name="notes" placeholder="Write your answer here"></textarea>
   </script>
 
   <script id="story-view-template" type="text/x-handlebars-template">
@@ -162,7 +161,7 @@
       </div>
     </div>
     
-    <article class="with-header box-sections collapsible-sections">
+    <article class="with-header">
       <div id="story-progress">
         <div class="container">
           <div class="row">
@@ -184,16 +183,16 @@
       </div>
 
       <section>
-        <h2 data-toggle="collapse" data-target="#pending-question-list">You still need to complete <span class="count"></span></h2>
-
-        <ul class="question-list collapse in" id="pending-question-list"></ul>
+        <ul class="question-list" id="question-list"></ul>
       </section>
 
-      <section>
-        <h2 data-toggle="collapse" data-target="#completed-question-list">You have completed <span class="count"></span></h2>
+      <div class="story-done">
+        <i class="fa fa-star fa-4x"></i>
 
-        <ul class="question-list collapse in" id="completed-question-list"></ul>
-      </section>
+        <h2>You have completed this story!</h2>
+
+        <button class="btn btn-link share success">Email this story now</button>
+      </div>
 
       <footer class="text-right">
         <button type="button" class="btn btn-link success share">Email story</button>
@@ -342,6 +341,7 @@
   <script src="js/vendor/backbone.stickit-0.9.2.js"></script>
   <script src="js/vendor/moment-2.14.1.min.js"></script>
   <script src="js/vendor/progressbar-1.0.1.min.js"></script>
+  <script src="js/vendor/jquery.autogrow-textarea.js"></script>
 
   <script src="js/helpers.js"></script>
   <script src="js/models.js"></script>
