@@ -105,6 +105,7 @@ var Story = Backbone.Model.extend({
 var Stories = Backbone.Collection.extend({
   model: Story,
   comparator: 'updated_at',
+  localStorage: new Backbone.LocalStorage('stories')
 });
 
 /* answers are a simple model, with attributes for each question key, such as

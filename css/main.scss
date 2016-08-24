@@ -28,6 +28,14 @@ body {
   font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+/* Mixins */
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 
 /* forms */
 input[type=text],
@@ -292,6 +300,7 @@ ul.story-list {
   > li {
     display: block;
     padding: 10px;
+    padding-right:0;
     margin-bottom: 10px;
 
     background-color: white;
@@ -299,6 +308,11 @@ ul.story-list {
 
     &:last-child {
       margin-bottom: 0px;
+    }
+
+    .story-link {
+      width:81%;
+      display:inline-block;
     }
 
     a,
@@ -313,6 +327,28 @@ ul.story-list {
       font-weight: 500;
       margin-bottom: 2px;
       font-size: 18px;
+    }
+
+    .delete {
+      height:55px;
+      width:65px;
+      position:relative;
+      display:inline-block;
+      text-align:center;
+      border-left:1px solid $grey-border;
+      float:right;
+
+      i {
+        font-size:30px;
+        position:absolute;
+        margin:auto;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        height:30px;
+        color:$green-end;
+      }
     }
   }
 
@@ -454,7 +490,7 @@ ul.question-list {
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    
+
     h1 {
       font-size: 24px;
     }

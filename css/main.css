@@ -2,6 +2,7 @@
 body {
   font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif; }
 
+/* Mixins */
 /* forms */
 input[type=text],
 input[type=phone],
@@ -180,11 +181,15 @@ ul.story-list {
   ul.story-list > li {
     display: block;
     padding: 10px;
+    padding-right: 0;
     margin-bottom: 10px;
     background-color: white;
     border: 1px solid #d7d7d7; }
     ul.story-list > li:last-child {
       margin-bottom: 0px; }
+    ul.story-list > li .story-link {
+      width: 81%;
+      display: inline-block; }
     ul.story-list > li a,
     ul.story-list > li a:visited,
     ul.story-list > li a:active,
@@ -195,6 +200,24 @@ ul.story-list {
       font-weight: 500;
       margin-bottom: 2px;
       font-size: 18px; }
+    ul.story-list > li .delete {
+      height: 55px;
+      width: 65px;
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      border-left: 1px solid #d7d7d7;
+      float: right; }
+      ul.story-list > li .delete i {
+        font-size: 30px;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 30px;
+        color: #429321; }
   ul.story-list .percent {
     float: right;
     width: 55px;

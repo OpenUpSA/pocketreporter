@@ -18,7 +18,7 @@ var QuestionView = Backbone.View.extend({
     this.num = options.num;
     this.listenTo(this.model, 'change:notes', this.answerChanged);
   },
-  
+
   answerChanged: function() {
     var done = !_.isEmpty(this.model.get('notes'));
     this.model.set('done', done);
