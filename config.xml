@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Storycheck</name>
+    <description>App to help young journalists structure their stories.</description>
+    <author email="lion@code4sa.org" href="http://code4sa.org">Code4SA</author>
+    <content src="index.html" />
+    <access origin="*" />
+    <access launch-external="yes" origin="mailto:*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="14" />
+    <platform name="android">
+        <icon src="res/icon/android/ldpi.png" platform="android" qualifier="ldpi" />
+        <icon src="res/icon/android/mdpi.png" platform="android" qualifier="mdpi" />
+        <icon src="res/icon/android/hdpi.png" platform="android" qualifier="hdpi" />
+        <icon src="res/icon/android/xhdpi.png" platform="android" qualifier="xhdpi" />
+    </platform>
+    <splash src="splash.png" />
+</widget>
