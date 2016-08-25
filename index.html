@@ -107,14 +107,18 @@
           <section>
             <ul class="story-list" id="current-story-list">
               {{#each stories}}
-                <li class="story-item" data-id="{{ id }}">
-                  <a class="story-link" href="#stories/{{ id }}">
-                    <div class="percent" data-value="{{ percent_complete }}"></div>
-                    <h3>{{ title }}</h2>
-                    <div class="topic">{{ topic_name }}</div>
-                    <div class="date">{{ date updated_at }}</div>
-                  </a>
-                  <a href="#" class="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                <li class="story-item row" data-id="{{ id }}">
+                  <div class="col-xs-10">
+                    <a class="story-link" href="#stories/{{ id }}">
+                      <div class="percent" data-value="{{ percent_complete }}"></div>
+                      <h3>{{ title }}</h2>
+                      <div class="topic">{{ topic_name }}</div>
+                      <div class="date">{{ date updated_at }}</div>
+                    </a>
+                  </div>
+                  <div class="col-xs-2 delete-box">
+                    <a href="#" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                  </div>
                 </li>
               {{/each}}
             </ul>

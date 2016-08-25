@@ -298,21 +298,29 @@ ul.story-list {
   margin: 0px;
 
   > li {
-    display: block;
-    padding: 10px;
-    padding-right:0;
-    margin-bottom: 10px;
-
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom:10px;
     background-color: white;
-    border: 1px solid $grey-border;
+    padding:0 10px;
+
+    > [class*='col-'] {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid $grey-border;
+      padding-top:10px;
+      padding-bottom:10px;
+    }
 
     &:last-child {
       margin-bottom: 0px;
     }
 
-    .story-link {
-      width:81%;
-      display:inline-block;
+    .percent {
+      margin-top:3px;
     }
 
     a,
@@ -329,25 +337,17 @@ ul.story-list {
       font-size: 18px;
     }
 
+    .delete-box {
+        border-left:none;
+    }
+
     .delete {
-      height:55px;
-      width:65px;
-      position:relative;
-      display:inline-block;
       text-align:center;
-      border-left:1px solid $grey-border;
-      float:right;
+      margin-top:10px;
 
       i {
-        font-size:30px;
-        position:absolute;
-        margin:auto;
-        top:0;
-        right:0;
-        bottom:0;
-        left:0;
-        height:30px;
-        color:$green-end;
+        font-size:40px;
+        
       }
     }
   }
