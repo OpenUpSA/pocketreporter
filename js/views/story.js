@@ -129,7 +129,7 @@ var StoryView = Backbone.View.extend({
     }
 
     // construct a completed mailto: url
-    var mailto = 'mailto:' + StoryCheck.user.get('email');
+    var mailto = 'mailto:';
 
     mailto += '?subject=' + encodeURIComponent(this.model.get('title'));
     mailto += '&body=' + encodeURIComponent(this.model.shareableBody());

@@ -302,6 +302,7 @@ ul.story-list {
     padding: 10px;
     padding-right:0;
     margin-bottom: 10px;
+    position:relative;
 
     background-color: white;
     border: 1px solid $grey-border;
@@ -312,7 +313,11 @@ ul.story-list {
 
     .story-link {
       width:81%;
-      display:inline-block;
+      display:block;
+    }
+
+    .percent {
+      margin-top:3px;
     }
 
     a,
@@ -330,13 +335,15 @@ ul.story-list {
     }
 
     .delete {
+      position:absolute;
+      top:0;
       height:55px;
       width:65px;
-      position:relative;
-      display:inline-block;
+      right:0;
+      bottom:0;
+      margin:auto 0;
       text-align:center;
       border-left:1px solid $grey-border;
-      float:right;
 
       i {
         font-size:30px;
