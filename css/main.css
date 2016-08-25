@@ -177,22 +177,17 @@ body {
 /* specific views */
 ul.story-list {
   padding: 0px;
-  margin: 0px; }
+  margin: 0px;
+  list-style: none; }
   ul.story-list > li {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    flex-wrap: wrap;
     margin-bottom: 10px;
     background-color: white;
     padding: 0 10px; }
     ul.story-list > li > [class*='col-'] {
-      display: flex;
-      flex-direction: column;
       border: 1px solid #d7d7d7;
       padding-top: 10px;
-      padding-bottom: 10px; }
+      padding-bottom: 10px;
+      height: 83px; }
     ul.story-list > li:last-child {
       margin-bottom: 0px; }
     ul.story-list > li .percent {
@@ -211,7 +206,8 @@ ul.story-list {
       border-left: none; }
     ul.story-list > li .delete {
       text-align: center;
-      margin-top: 10px; }
+      margin-top: 10px;
+      display: inline-block; }
       ul.story-list > li .delete i {
         font-size: 40px; }
   ul.story-list .percent {

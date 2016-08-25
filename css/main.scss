@@ -296,23 +296,18 @@ body {
 ul.story-list {
   padding: 0px;
   margin: 0px;
+  list-style:none;
 
   > li {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    flex-wrap: wrap;
     margin-bottom:10px;
     background-color: white;
     padding:0 10px;
 
     > [class*='col-'] {
-      display: flex;
-      flex-direction: column;
       border: 1px solid $grey-border;
       padding-top:10px;
       padding-bottom:10px;
+      height:83px;
     }
 
     &:last-child {
@@ -344,6 +339,7 @@ ul.story-list {
     .delete {
       text-align:center;
       margin-top:10px;
+      display:inline-block;
 
       i {
         font-size:40px;
