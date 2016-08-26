@@ -122,21 +122,35 @@ var StoryView = Backbone.View.extend({
     e.preventDefault();
 
     var pending = this.model.pending();
+    var cordova = window.cordova || null;
 
     if (pending.length > 0) {
       if (!confirm('You still have ' + Handlebars.helpers.pluralCount(pending.length, 'item') + ' to complete. Share anyway?'))
         return;
     }
 
-    // construct a completed mailto: url
-    var mailto = 'mailto:';
+    if(!!cordova) {
+      cordova.plugins.email.isAvailable(
+        function (isAvailable) {
+          if(isAvailable) {
+            cordova.plugins.email.open({
+                subject:    encodeURIComponent(this.model.get('title')), // subject of the email
+                body:       encodeURIComponent(this.model.shareableBody()), // email body (for HTML, set isHtml to true)
+            }, callback, scope);
+          }
+        }
+      );
+    } else {
+      var mailto = 'mailto:';
 
-    mailto += '?subject=' + encodeURIComponent(this.model.get('title'));
-    mailto += '&body=' + encodeURIComponent(this.model.shareableBody());
+      mailto += '?subject=' + encodeURIComponent(this.model.get('title'));
+      mailto += '&body=' + encodeURIComponent(this.model.shareableBody());
+
+      window.location = mailto;
+    }
 
     ga('send', 'event', 'story', 'share');
-
-    window.location = mailto;
+    router.navigate('', {trigger: true});
   },
 
   render: function() {

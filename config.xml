@@ -20,4 +20,5 @@
         <icon src="res/icon/android/xhdpi.png" platform="android" qualifier="xhdpi" />
     </platform>
     <splash src="splash.png" />
+    <plugin name="de.appplant.cordova.plugin.email-composer" source="pgb" />
 </widget>
