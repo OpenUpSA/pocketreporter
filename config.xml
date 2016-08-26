@@ -4,7 +4,6 @@
     <description>App to help young journalists structure their stories.</description>
     <author email="lion@code4sa.org" href="http://code4sa.org">Code4SA</author>
     <content src="index.html" />
-    <access origin="*" />
     <access origin="mailto:*" launch-external="yes" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
