@@ -5,7 +5,7 @@
     <author email="lion@code4sa.org" href="http://code4sa.org">Code4SA</author>
     <content src="index.html" />
     <access origin="*" />
-    <access launch-external="yes" origin="mailto:*" />
+    <access origin="mailto:*" launch-external="yes" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
