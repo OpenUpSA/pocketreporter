@@ -23,7 +23,6 @@
         <splash src="res/splash/splash-xhdpi.png" density="land-hdpi"/>
         <splash src="res/splash/splash-xhdpi.png" density="port-hdpi"/>
     </platform>
-    <splash src="splash.png" />
     <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
     <plugin name="br.com.paveisitemas.splashscreen" spec="2.1.1" source="pgb" />
 </widget>
