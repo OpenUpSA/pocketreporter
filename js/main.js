@@ -155,10 +155,9 @@ var app = {
       this.bindEvents();
   },
   bindEvents: function() {
-      document.addEventListener('deviceready', this.onDeviceReady, false);
+      document.addEventListener('deviceready', app.onDeviceReady, false);
   },
   onDeviceReady: function() {
-      app.receivedEvent('deviceready');
       app.createApp();
   },
   createApp: function() {
