@@ -13,5 +13,9 @@
         <icon src="res/icon/android/xhdpi.png" platform="android" qualifier="xhdpi" />
     </platform>
     <splash src="splash.png" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="SplashMaintainAspectRatio" value="true|false" />
+    <preference name="SplashShowOnlyFirstTime" value="true|false" />
     <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
+    <plugin name="br.com.paveisitemas.splashscreen" spec="2.1.1" source="pgb" />
 </widget>
