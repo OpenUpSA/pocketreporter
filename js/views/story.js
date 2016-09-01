@@ -134,7 +134,7 @@ var StoryView = Backbone.View.extend({
     mailto += '?subject=' + encodeURIComponent(this.model.get('title'));
     mailto += '&body=' + encodeURIComponent(this.model.shareableBody());
 
-    window.location.href = mailto;
+    window.open(mailto,'_system');
 
     ga('send', 'event', 'story', 'share');
   },

@@ -150,11 +150,23 @@ var isMobileOrTablet = function() {
 
 var router = null;
 
-var init = function() {
-  StoryCheck = new StoryCheck();
-  router = new Router();
-  Backbone.history.start();
-};
+var app = {
+  initialize: function() {
+      this.bindEvents();
+  },
+  bindEvents: function() {
+      document.addEventListener('deviceready', this.onDeviceReady, false);
+  },
+  onDeviceReady: function() {
+      app.receivedEvent('deviceready');
+      app.createApp();
+  },
+  createApp: function() {
+    StoryCheck = new StoryCheck();
+    router = new Router();
+    Backbone.history.start();
+  }
+}
 
-// do it
-init();
+app.initialize();
+//app.createApp();
