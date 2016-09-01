@@ -6,6 +6,7 @@
     <content src="index.html" />
     <access origin="mailto:*" launch-external="yes" />
     <allow-intent href="mailto:*" />
+    <allow-navigation href="mailto:*" />
     <platform name="android">
         <icon src="res/icon/android/ldpi.png" platform="android" qualifier="ldpi" />
         <icon src="res/icon/android/mdpi.png" platform="android" qualifier="mdpi" />
