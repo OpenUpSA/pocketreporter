@@ -4,17 +4,8 @@
     <description>App to help young journalists structure their stories.</description>
     <author email="lion@code4sa.org" href="http://code4sa.org">Code4SA</author>
     <content src="index.html" />
-    <access origin="*" />
     <access origin="mailto:*" launch-external="yes" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" launch-external="yes" />
-    <allow-intent href="geo:*" />
-    <allow-navigation	href="*"/>
-    <preference name="DisallowOverscroll" value="true" />
-    <preference name="android-minSdkVersion" value="14" />
+    <allow-intent href="mailto:*" />
     <platform name="android">
         <icon src="res/icon/android/ldpi.png" platform="android" qualifier="ldpi" />
         <icon src="res/icon/android/mdpi.png" platform="android" qualifier="mdpi" />
@@ -22,4 +13,5 @@
         <icon src="res/icon/android/xhdpi.png" platform="android" qualifier="xhdpi" />
     </platform>
     <splash src="splash.png" />
+    <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
 </widget>
