@@ -157,10 +157,4 @@ var init = function() {
 };
 
 // do it
-if(isMobileOrTablet()) {
-  document.addEventListener('deviceready', function() {
-    init();
-  });
-} else {
-  init();
-}
+init();
