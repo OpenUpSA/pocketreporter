@@ -11,11 +11,19 @@
         <icon src="res/icon/android/mdpi.png" platform="android" qualifier="mdpi" />
         <icon src="res/icon/android/hdpi.png" platform="android" qualifier="hdpi" />
         <icon src="res/icon/android/xhdpi.png" platform="android" qualifier="xhdpi" />
+        <preference name="SplashScreenDelay" value="3000" />
+        <preference name="SplashMaintainAspectRatio" value="true|false" />
+        <preference name="SplashShowOnlyFirstTime" value="true|false" />
+        <splash src="res/splash/splash-hdpi.png" density="land-hdpi"/>
+        <splash src="res/splash/splash-hdpi.png" density="port-hdpi"/>
+        <splash src="res/splash/splash-mdpi.png" density="land-hdpi"/>
+        <splash src="res/splash/splash-mdpi.png" density="port-hdpi"/>
+        <splash src="res/splash/splash-ldpi.png" density="land-hdpi"/>
+        <splash src="res/splash/splash-ldpi.png" density="port-hdpi"/>
+        <splash src="res/splash/splash-xhdpi.png" density="land-hdpi"/>
+        <splash src="res/splash/splash-xhdpi.png" density="port-hdpi"/>
     </platform>
     <splash src="splash.png" />
-    <preference name="SplashScreenDelay" value="3000" />
-    <preference name="SplashMaintainAspectRatio" value="true|false" />
-    <preference name="SplashShowOnlyFirstTime" value="true|false" />
     <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
     <plugin name="br.com.paveisitemas.splashscreen" spec="2.1.1" source="pgb" />
 </widget>
