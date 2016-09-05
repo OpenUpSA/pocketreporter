@@ -46,12 +46,7 @@ var AddStoryView = Backbone.View.extend({
   create: function(topic) {
     this.model.set('id', StoryCheck.newStoryId());
     StoryCheck.stories.add(this.model);
-    
-    // do we have user info yet?
-    if (_.isEmpty(StoryCheck.user.get('email'))) {
-      router.navigate('userinfo', {trigger: true});
-    } else {
-      router.navigate('stories/' + this.model.id, {trigger: true});
-    }
+
+    router.navigate('stories/' + this.model.id, {trigger: true});
   },
 });
