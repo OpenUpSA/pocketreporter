@@ -9,7 +9,7 @@
     <meta name="description" content="Storycheck: A News Editor for">
     <meta name="author" content="Code for South Africa">
 
-    <title>Storycheck</title>
+    <title>StoryCheck</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -40,7 +40,7 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand page-scroll" href="#page-top">Storycheck</a>
+                <a class="navbar-brand page-scroll" href="#page-top">StoryCheck</a>
             </div>
         </div>
         <!-- /.container-fluid -->
@@ -52,21 +52,29 @@
                 <div class="col-sm-7">
                     <div class="header-content">
                         <div class="header-content-inner">
-                            <h1 style="text-align:center;">Your personal news editor <br> in your pocket</h1>
+                            <h1>Your personal news editor in your pocket</h1>
+                            <p>StoryCheck helps you be a better reporter by guiding you through the news gathering process. <span class="tagline">Fill in what you know, find out what you don't.</span></p>
                             <div class="badges">
                                 <a class="badge-link" href="#"><img class="gplay-logo" src="img/google-play-badge.svg" alt=""></a>
-                                <a class="badge-link" href="#"><img class="istore-logo" src="img/app-store-badge.svg" alt=""></a>
+                                <!--<a class="badge-link" href="#"><img class="istore-logo" src="img/app-store-badge.svg" alt=""></a>-->
+                            </div>
+                            <div class="credit">
+                                <a href="http://code4sa.org/" target="_blank"><img src="../img/c4sa-logo-white.png" width="15%"></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-5">
                     <div class="device-container">
-                        <div class="device-mockup iphone6_plus portrait white">
+                        <div class="device-mockup galaxy_s3 portrait white">
                             <div class="device">
                                 <div class="screen">
-                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                    <img src="img/demo-screen-2.jpg" class="img-responsive" alt="">
+
+                                    <div id="rotating-item-wrapper">
+                                        <img class="rotating-item img-responsive" src="img/demo-screen-2.jpg" alt="" />
+                                        <img class="rotating-item img-responsive" src="img/demo-screen-1.jpg" alt="" />
+                                    </div>
+
                                 </div>
                                 <div class="button">
                                     <!-- You can hook the "home button" to some JavaScript events or just remove it -->
@@ -79,7 +87,6 @@
         </div>
     </header>
 
-   
 <!--    <footer>
         <div class="container">
             <p>&copy; 2016 Start Bootstrap. All Rights Reserved.</p>
@@ -110,6 +117,52 @@
 
     <!-- Theme JavaScript -->
     <script src="js/new-age.min.js"></script>
+
+    <!-- Infinite Rotator -->
+    <script>
+            $(window).load(function() { //start after HTML, images have loaded
+             
+                var InfiniteRotator =
+                {
+                    init: function()
+                    {
+                        //initial fade-in time (in milliseconds)
+                        var initialFadeIn = 1000;
+             
+                        //interval between items (in milliseconds)
+                        var itemInterval = 5000;
+             
+                        //cross-fade time (in milliseconds)
+                        var fadeTime = 2500;
+             
+                        //count number of items
+                        var numberOfItems = $('.rotating-item').length;
+             
+                        //set current item
+                        var currentItem = 0;
+             
+                        //show first item
+                        $('.rotating-item').eq(currentItem).fadeIn(initialFadeIn);
+             
+                        //loop through the items
+                        var infiniteLoop = setInterval(function(){
+                            $('.rotating-item').eq(currentItem).fadeOut(fadeTime);
+             
+                            if(currentItem == numberOfItems -1){
+                                currentItem = 0;
+                            }else{
+                                currentItem++;
+                            }
+                            $('.rotating-item').eq(currentItem).fadeIn(fadeTime);
+             
+                        }, itemInterval);
+                    }
+                };
+             
+                InfiniteRotator.init();
+             
+            });
+    </script>
 
 </body>
 

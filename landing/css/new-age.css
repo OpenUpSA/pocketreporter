@@ -3,6 +3,9 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
+
+ @import 'https://fonts.googleapis.com/css?family=Roboto';
+
 .heading-font {
   font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 200;
@@ -454,7 +457,7 @@ body {
   width:20%;
 }
 .badges {
-  margin-top: 25px;
+  margin-top: 30px;
 }
 #mainNav {
   background-color: transparent!important;
@@ -462,4 +465,22 @@ body {
 .navbar-default .navbar-header .navbar-brand {
   margin-top: 25px!important;
   font-size: 30px!important;
+  color: #fff!important;
+}
+.credit {
+  margin-top: 30px;
+}
+.tagline {
+  color: #73c619;
+  font-weight: 600;
+}
+
+#rotating-item-wrapper {
+  position: relative;
+}
+.rotating-item {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
