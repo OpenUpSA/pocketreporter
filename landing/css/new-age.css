@@ -454,7 +454,7 @@ body {
   webkit-tap-highlight-color: #222222;
 }
 .gplay-logo, .istore-logo {
-  width:20%;
+  width:35%;
 }
 .badges {
   margin-top: 30px;
@@ -468,7 +468,13 @@ body {
   color: #fff!important;
 }
 .credit {
-  margin-top: 30px;
+  position: absolute;
+  bottom: 20px;
+  margin-left: 15px;
+}
+.credit a {
+  color: #777;
+  text-decoration: none;
 }
 .tagline {
   color: #73c619;
