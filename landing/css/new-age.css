@@ -490,3 +490,17 @@ body {
   top: 0;
   left: 0;
 }
+.head-logo {
+  padding-top: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .head-logo {
+    margin-left: 40%;
+    margin-bottom: 20px;
+  }
+  header .header-content {
+    padding-top: 5px;
+  }
+}
+
