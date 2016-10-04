@@ -8,7 +8,7 @@ var STORYCHECK_TOPICS = [
     "questions": [
       {
         "key": "1",
-        "question": "What were the major points made in the announcement of the press conference"
+        "question": "What were the major points made in the announcement of the press conference?"
       },
       {
         "key": "2",
@@ -55,11 +55,11 @@ var STORYCHECK_TOPICS = [
       },
       {
         "key": "4",
-        "question": "What was the purpose, time and location of the speech"
+        "question": "What was the purpose, time and location of the speech?"
       },
       {
         "key": "5",
-        "question": "How many oeople attended and what was their makeuo and reactions?"
+        "question": "How many people attended and what was their makeup and reactions?"
       },
       {
         "key": "6",
@@ -75,7 +75,7 @@ var STORYCHECK_TOPICS = [
       },
       {
         "key": "9",
-        "question": "Is therer any additional info from the question and answer period"
+        "question": "Is there any additional info from the question and answer period"
       },
       {
         "key": "10",
@@ -102,7 +102,7 @@ var STORYCHECK_TOPICS = [
       },
       {
         "key": "3",
-        "question": "Who are the main organisers of the protest? Get their official title, organisation and contact details"
+        "question": "Who are the main organisers of the protest? Get their official title, organisation and contact details."
       },
       {
         "key": "4",
@@ -110,23 +110,23 @@ var STORYCHECK_TOPICS = [
       },
       {
         "key": "5",
-        "question": "What is the reason for the protest."
+        "question": "What is the reason for the protest?"
       },
       {
         "key": "6",
-        "question": "Were any ngos or political parties involved or related to the protest? Get their names, organisation, contact details and reason for involved."
+        "question": "Were any NGOs or political parties involved or related to the protest? Get their names, organisation, contact details and reason for involved."
       },
       {
         "key": "7",
-        "question": "What is the size of the crowd: don't guess! Check with organisors and police."
+        "question": "What is the size of the crowd: don't guess! Check with organisers and police."
       },
       {
         "key": "8",
-        "question": "Get a quote from the organisors about the protest"
+        "question": "Get a quote from the organisers about the protest"
       },
       {
         "key": "9",
-        "question": "Interview a minimum of 10 protestors: get their name, age, where they live, why they are protesting, what do they want to achieve?"
+        "question": "Interview a minimum of 10 protesters: get their name, age, where they live, why they are protesting, what do they want to achieve?"
       },
       {
         "key": "10",
@@ -150,7 +150,7 @@ var STORYCHECK_TOPICS = [
       },
       {
         "key": "15",
-        "question": "If there are reports of violent force from police, do you have evidence and do you have a response from the police about this."
+        "question": "If there are reports of violent force from police, do you have evidence and do you have a response from the police about this?"
       },
       {
         "key": "16",
@@ -229,7 +229,7 @@ var STORYCHECK_TOPICS = [
       },
       {
         "key": "17",
-        "question": "What happened according to eye witnesses, investigating officers and people involved in incident?"
+        "question": "What happened according to eyewitnesses, investigating officers and people involved in incident?"
       },
       {
         "key": "18",
@@ -272,7 +272,7 @@ var STORYCHECK_TOPICS = [
       },
       {
         "key": "8",
-        "question": "Is there sufficient - and the correct - medication available"
+        "question": "Is there sufficient - and the correct - medication available?"
       },
       {
         "key": "9",
@@ -315,7 +315,7 @@ var STORYCHECK_TOPICS = [
       },
       {
         "key": "3",
-        "question": "What is the background of the defendent or respondent?"
+        "question": "What is the background of the defendant or respondent?"
       },
       {
         "key": "4",
@@ -370,7 +370,7 @@ var STORYCHECK_TOPICS = [
     "questions": [
       {
         "key": "1",
-        "question": "What is the verdict and damages, if awarded? (Same, less, greater than the damanges sought?)"
+        "question": "What is the verdict and damages, if awarded? (Same, less, greater than the damages sought?)"
       },
       {
         "key": "2",
@@ -378,7 +378,7 @@ var STORYCHECK_TOPICS = [
       },
       {
         "key": "3",
-        "question": "Did the judge  make a statement? Did it deviate from assessors' findings?"
+        "question": "Did the judge  make a statement? Did it deviate from assessor's findings?"
       },
       {
         "key": "4",
@@ -456,7 +456,7 @@ var STORYCHECK_TOPICS = [
       },
       {
         "key": "3",
-        "question": "Where was the fire and what was burning (a building, house, field?)"
+        "question": "Where was the fire and what was burning (a building, house, field, etc.)?"
       },
       {
         "key": "4",
@@ -468,7 +468,7 @@ var STORYCHECK_TOPICS = [
       },
       {
         "key": "6",
-        "question": "How were victims killed and injured and what is the extent of the injuries."
+        "question": "How were victims killed and injured and what is the extent of the injuries?"
       },
       {
         "key": "7",
@@ -656,7 +656,7 @@ var STORYCHECK_TOPICS = [
     "questions": [
       {
         "key": "1",
-        "question": "What is the name, age, address, occupation of the deceased"
+        "question": "What is the name, age, address, occupation of the deceased?"
       },
       {
         "key": "2",
