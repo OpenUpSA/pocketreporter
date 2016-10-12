@@ -18,7 +18,7 @@ var QuestionView = Backbone.View.extend({
     this.num = options.num;
     this.listenTo(this.model, 'change:notes', this.answerChanged);
   },
-  
+
   answerChanged: function() {
     var done = !_.isEmpty(this.model.get('notes'));
     this.model.set('done', done);
@@ -122,21 +122,21 @@ var StoryView = Backbone.View.extend({
     e.preventDefault();
 
     var pending = this.model.pending();
+    var cordova = window.cordova || null;
 
     if (pending.length > 0) {
       if (!confirm('You still have ' + Handlebars.helpers.pluralCount(pending.length, 'item') + ' to complete. Share anyway?'))
         return;
     }
 
-    // construct a completed mailto: url
-    var mailto = 'mailto:' + StoryCheck.user.get('email');
+    var mailto = 'mailto:';
 
     mailto += '?subject=' + encodeURIComponent(this.model.get('title'));
     mailto += '&body=' + encodeURIComponent(this.model.shareableBody());
 
-    ga('send', 'event', 'story', 'share');
+    window.open(mailto,'_system');
 
-    window.location = mailto;
+    ga('send', 'event', 'story', 'share');
   },
 
   render: function() {

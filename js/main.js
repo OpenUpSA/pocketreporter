@@ -5,7 +5,6 @@ var Router = Backbone.Router.extend({
     "stories/:id" : "story",
     "add" : "add",
     "add/:topic" : "add",
-    "userinfo" : "userinfo",
     "about" : "about",
   },
 
@@ -33,10 +32,6 @@ var Router = Backbone.Router.extend({
 
   about: function() {
     this.loadView(new AboutView());
-  },
-
-  userinfo: function() {
-    this.loadView(new UserInfoView());
   },
 
   loadView: function(view) {
@@ -74,6 +69,7 @@ var Router = Backbone.Router.extend({
 /*** Globals ***/
 var StoryCheck = Backbone.Model.extend({
   initialize: function() {
+
     this.topics = new Topics(STORYCHECK_TOPICS);
     // storage version
     // NB: changing this will clear all stories when a user next loads the app!
@@ -115,7 +111,9 @@ var StoryCheck = Backbone.Model.extend({
     this.state.set('user', new Backbone.Model(val.user, {parse: true}));
 
     this.stories = this.state.get('stories');
+
     this.user = this.state.get('user');
+
   },
 
   save: function() {
@@ -139,11 +137,43 @@ var StoryCheck = Backbone.Model.extend({
     $('body').on('hide.bs.collapse', '.collapsible-sections .collapse', function() {
       $(this).prev().addClass('collapsed');
     });
+    var originalHeight = document.documentElement.clientHeight;
+    var originalWidth = document.documentElement.clientWidth;
+    $(window).resize(function() {
+      // Control landscape/portrait mode switch
+      if (document.documentElement.clientHeight == originalWidth &&
+        document.documentElement.clientWidth == originalHeight) {
+        originalHeight = document.documentElement.clientHeight;
+        originalWidth = document.documentElement.clientWidth;
+      }
+      // Check if the available height is smaller (keyboard is shown) so we hide the footer.
+     if (document.documentElement.clientHeight < originalHeight) {
+       $('#footer-wrapper').hide();
+     } else {
+       $('#footer-wrapper').show();
+     }
+    });
   }
 });
 
+var router = null;
 
-// do it
-StoryCheck = new StoryCheck();
-var router = new Router();
-Backbone.history.start();
+var app = {
+  initialize: function() {
+      this.bindEvents();
+  },
+  bindEvents: function() {
+      document.addEventListener('deviceready', app.onDeviceReady, false);
+  },
+  onDeviceReady: function() {
+      app.createApp();
+  },
+  createApp: function() {
+    StoryCheck = new StoryCheck();
+    router = new Router();
+    Backbone.history.start();
+  }
+}
+
+app.initialize();
+//app.createApp();

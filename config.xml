@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.phonegap.storycheck" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Storycheck</name>
+    <description>App to help young journalists structure their stories.</description>
+    <author email="lion@code4sa.org" href="http://code4sa.org">Code4SA</author>
+    <content src="index.html" />
+    <access origin="mailto:*" launch-external="yes" />
+    <allow-intent href="mailto:*" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="SplashMaintainAspectRatio" value="true|false" />
+    <preference name="SplashShowOnlyFirstTime" value="true|false" />
+    <platform name="android">
+        <icon src="res/icon/android/ldpi.png" platform="android" qualifier="ldpi" />
+        <icon src="res/icon/android/mdpi.png" platform="android" qualifier="mdpi" />
+        <icon src="res/icon/android/hdpi.png" platform="android" qualifier="hdpi" />
+        <icon src="res/icon/android/xhdpi.png" platform="android" qualifier="xhdpi" />
+        <splash src="res/splash/splash-land-hdpi.png" density="land-hdpi"/>
+        <splash src="res/splash/splash-land-mdpi.png" density="land-hdpi"/>
+        <splash src="res/splash/splash-land-ldpi.png" density="land-hdpi"/>
+        <splash src="res/splash/splash-land-xhdpi.png" density="land-hdpi"/>
+
+        <splash src="res/splash/splash-port-xhdpi.png" density="port-hdpi"/>
+        <splash src="res/splash/splash-port-ldpi.png" density="port-hdpi"/>
+        <splash src="res/splash/splash-port-mdpi.png" density="port-hdpi"/>
+        <splash src="res/splash/splash-port-hdpi.png" density="port-hdpi"/>
+    </platform>
+    <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
+    <plugin name="br.com.paveisitemas.splashscreen" spec="2.1.1" source="pgb" />
+</widget>

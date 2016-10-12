@@ -1,7 +1,11 @@
 /* variables */
+* {
+  box-sizing: border-box; }
+
 body {
   font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif; }
 
+/* Mixins */
 /* forms */
 input[type=text],
 input[type=phone],
@@ -80,8 +84,6 @@ body {
   padding-top: 60px; }
 #viewport article {
   padding-bottom: 60px; }
-#viewport article section {
-  margin-bottom: 20px; }
 #viewport article.free-text {
   padding-left: 15px;
   padding-right: 15px; }
@@ -173,18 +175,30 @@ body {
 .collapsible-sections > section > h2:hover {
   cursor: pointer; }
 
+.center-col {
+  margin: 0 auto;
+  float: none; }
+
 /* specific views */
 ul.story-list {
   padding: 0px;
-  margin: 0px; }
+  margin: 0px;
+  list-style: none; }
   ul.story-list > li {
-    display: block;
-    padding: 10px;
     margin-bottom: 10px;
     background-color: white;
-    border: 1px solid #d7d7d7; }
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0; }
+    ul.story-list > li > [class*='col-'] {
+      border: 1px solid #d7d7d7;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      height: 83px; }
     ul.story-list > li:last-child {
       margin-bottom: 0px; }
+    ul.story-list > li .percent {
+      margin-top: 3px; }
     ul.story-list > li a,
     ul.story-list > li a:visited,
     ul.story-list > li a:active,
@@ -195,6 +209,14 @@ ul.story-list {
       font-weight: 500;
       margin-bottom: 2px;
       font-size: 18px; }
+    ul.story-list > li .delete-box {
+      border-left: none; }
+    ul.story-list > li .delete {
+      text-align: center;
+      margin-top: 10px;
+      display: inline-block; }
+      ul.story-list > li .delete i {
+        font-size: 40px; }
   ul.story-list .percent {
     float: right;
     width: 55px;
