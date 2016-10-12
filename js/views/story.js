@@ -61,7 +61,7 @@ var StoryView = Backbone.View.extend({
   },
 
   initialize: function() {
-    this.topic = StoryCheck.topics.get(this.model.get('topic'));
+    this.topic = PocketReporter.topics.get(this.model.get('topic'));
 
     this.answers = this.model.get('answers');
     this.listenTo(this.answers, 'change', this.updateProgress);
@@ -103,7 +103,7 @@ var StoryView = Backbone.View.extend({
     e.preventDefault();
 
     if (confirm("Delete this story?")) {
-      StoryCheck.stories.remove(this.model);
+      PocketReporter.stories.remove(this.model);
       ga('send', 'event', 'story', 'delete');
       router.navigate('', {trigger: true});
     }

@@ -17,7 +17,7 @@ var Router = Backbone.Router.extend({
   },
 
   story: function(id) {
-    var story = StoryCheck.stories.get(id);
+    var story = PocketReporter.stories.get(id);
 
     if (story) {
       this.loadView(new StoryView({model: story}));
@@ -67,7 +67,7 @@ var Router = Backbone.Router.extend({
 
 
 /*** Globals ***/
-var StoryCheck = Backbone.Model.extend({
+var PocketReporter = Backbone.Model.extend({
   initialize: function() {
 
     this.topics = new Topics(STORYCHECK_TOPICS);
@@ -94,7 +94,7 @@ var StoryCheck = Backbone.Model.extend({
     var val;
 
     if (this.storage) {
-      val = this.storage.getItem('StoryCheck');
+      val = this.storage.getItem('PocketReporter');
 
       if (val) {
         val = JSON.parse(val);
@@ -118,7 +118,7 @@ var StoryCheck = Backbone.Model.extend({
 
   save: function() {
     if (this.storage) {
-      this.storage.setItem('StoryCheck', JSON.stringify(this.state.toJSON()));
+      this.storage.setItem('PocketReporter', JSON.stringify(this.state.toJSON()));
     }
   },
 
@@ -169,7 +169,7 @@ var app = {
       app.createApp();
   },
   createApp: function() {
-    StoryCheck = new StoryCheck();
+    PocketReporter = new PocketReporter();
     router = new Router();
     Backbone.history.start();
   }

@@ -22,10 +22,10 @@ var AddStoryView = Backbone.View.extend({
 
   render: function() {
     var topic = this.model.get('topic');
-    if (topic) topic = StoryCheck.topics.get(topic).attributes;
+    if (topic) topic = PocketReporter.topics.get(topic).attributes;
 
     this.$el.html(this.template({
-      topics: StoryCheck.topics.toJSON(),
+      topics: PocketReporter.topics.toJSON(),
       topic: topic,
     }));
 
@@ -44,8 +44,8 @@ var AddStoryView = Backbone.View.extend({
   },
 
   create: function(topic) {
-    this.model.set('id', StoryCheck.newStoryId());
-    StoryCheck.stories.add(this.model);
+    this.model.set('id', PocketReporter.newStoryId());
+    PocketReporter.stories.add(this.model);
 
     router.navigate('stories/' + this.model.id, {trigger: true});
   },
