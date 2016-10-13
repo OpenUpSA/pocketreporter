@@ -1,0 +1,358 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>StoryCheck</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/logo-152.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <meta name="description" content="StoryCheck helps you be a better reporter by guiding you through the news gathering process.">
+  <meta property="og:title" content="StoryCheck helps you be a better reporter" />
+  <meta property="og:site_name" content="StoryCheck" />
+  <meta property="og:description" content="StoryCheck guides you through the news gathering process to help you be a better reporter." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://storycheck.co.za/img/logo.png" />
+  <meta property="og:url" content="http://storycheck.co.za" />
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/roboto.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div id="viewport">
+          <div id="loading">
+            <h2>Loading StoryCheck...</h2>
+          </div>
+        </div>
+
+        <div id="footer-wrapper">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3">
+                <footer id="app-footer" class="footer-view">
+                  <ul class="nav-items">
+                    <li>
+                      <a href="#" class="home"><i class="fa fa-list fa-2x"></i><br>My Stories</a>
+                    </li>
+
+                    <li>
+                      <a href="#add" class="add"><div class="add-btn-wrapper"><div class="add-btn"><i class="fa fa-plus fa-2x"></i></div></div></a>
+                    </li>
+
+                    <li>
+                      <a href="#about" class="about"><i class="fa fa-question-circle fa-2x"></i><br>About</a>
+                    </li>
+                  </ul>
+                </footer>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script id="home-view-template" type="text/x-handlebars-template">
+    {{#if empty}}
+
+      <div id="splash-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+
+              <div id="splash">
+                <div class="button">
+                  <img src="img/logo.png" class="logo">
+                </div>
+
+                <h2>A News Editor in Your Pocket</h2>
+                <h3>StoryCheck helps you be a<br>better reporter by guiding you<br>through the news gathering process.</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    {{else}}
+
+      <div id="header-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <header id="app-header">
+                <h1>StoryCheck</h1>
+              </header>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <article class="with-header with-footer box-sections collapsible-sections">
+
+        {{#if stories}}
+
+          <section>
+            <ul class="story-list" id="current-story-list">
+              {{#each stories}}
+                <li>
+                  <a href="#stories/{{ id }}">
+                    <div class="percent" data-value="{{ percent_complete }}"></div>
+                    <h3>{{ title }}</h2>
+                    <div class="topic">{{ topic_name }}</div>
+                    <div class="date">{{ date updated_at }}</div>
+                  </a>
+                </li>
+              {{/each}}
+            </ul>
+          </section>
+
+        {{else}}
+
+          <div class="add-story-prompt">
+            <h1>We help you write better stories.</h1>
+            <br>
+            <a href="#add" class="btn btn-success btn-lg">Start a story</a>
+          </div>
+
+        {{/if}}
+
+      </article>
+
+    {{/if}}
+  </script>
+
+  <script id="story-question-template" type="text/x-handlebars-template">
+    <i class="fa fa-check-circle"></i>
+    <h3>{{ num }}. {{ q.question }}</h3>
+
+    <textarea name="notes" placeholder="Write your answer here"></textarea>
+  </script>
+
+  <script id="story-view-template" type="text/x-handlebars-template">
+    <div id="header-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <header id="app-header">
+              <a href="#" class="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+
+              <ul class="nav-items">
+                <li><a href="#" class="share"><i class="fa fa-envelope"></i></a></li>
+                <li><a href="#" class="delete"><i class="fa fa-trash"></i></a></li>
+              </ul>
+
+              <h1>{{ story.title }}</h1>
+            </header>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <article class="with-header">
+      <div id="story-progress">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <div class="progress">
+                <div class="progress-bar" style="width: 0%; min-width: 8%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-done">
+        <i class="fa fa-star fa-4x"></i>
+
+        <h2>You have completed this story!</h2>
+
+        <button class="btn btn-link share success">Email this story now</button>
+      </div>
+
+      <section>
+        <ul class="question-list" id="question-list"></ul>
+      </section>
+
+      <div class="story-done">
+        <i class="fa fa-star fa-4x"></i>
+
+        <h2>You have completed this story!</h2>
+
+        <button class="btn btn-link share success">Email this story now</button>
+      </div>
+
+      <footer class="text-right">
+        <button type="button" class="btn btn-link success share">Email story</button>
+        <br>
+        <button type="button" class="btn btn-link danger delete">Delete story</button>
+      </footer>
+    </article>
+  </script>
+
+  <script id="add-story-view-template" type="text/x-handlebars-template">
+    <div id="header-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <header id="app-header">
+              {{#if topic}}
+                <a href="#add" class="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                <h1>{{ topic.name }}</h1>
+              {{else}}
+                <h1>Start a New Story</h1>
+              {{/if}}
+            </header>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <article class="with-header">
+      <section class="topic-section">
+        <h3>What type of story are you writing?</h3>
+
+        <ul class="topic-buttons clearfix">
+        {{#each topics}}
+          <li>
+            <a href="#add/{{ id }}"><i class="fa {{ icon }}"></i><br>{{ name }}</a>
+          </li>
+        {{/each}}
+        </ul>
+      </section>
+
+      <section class="name-section">
+        <h3>Give your story a name:</h3>
+
+        <input type="text" class="form-control" name="title">
+      </section>
+
+      <section class="name-section text-right">
+        <button class="btn btn-link success next disabled">Start this story <i class="fa fa-chevron-right"></i></button>
+      </section>
+    </article>
+  </script>
+
+  <script id="userinfo-view-template" type="text/x-handlebars-template">
+    <div id="header-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <header id="app-header">
+              <a href="#add" class="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+              <h1>One more thing</h1>
+            </header>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <article class="with-header">
+      <section>
+        <h3>What's your email address?</h3>
+
+        <input type="email" class="form-control" name="email">
+      </section>
+
+      <section class="name-section text-right">
+        <a href="#stories/{{ storyid }}" class="btn btn-link success next disabled">Get started <i class="fa fa-chevron-right"></i></a>
+      </section>
+    </article>
+  </script>
+
+  <script id="about-view-template" type="text/x-handlebars-template">
+    <div id="header-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <header id="app-header">
+              <a href="#" class="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+              <h1>About StoryCheck</h1>
+            </header>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <article class="with-header free-text">
+      <section>
+        <p class="lead">StoryCheck is a news editor in your pocket that helps you be a better reporter.</p>
+
+        <p class="lead">Simply answer the questions as StoryCheck guides you through the news gathering process.</p>
+
+        <a href="mailto:info@code4sa.org?subject=StoryCheck+Feedback" class="btn btn-success">Send us feedback</a>
+      </section>
+
+      <section>
+        <h2>Background</h2>
+
+        <p>StoryCheck is built by <a href="http://code4sa.org" target="_blank">Code for South Africa</a>
+        and is inspired by the <a href="http://nqabile.co.za/virtual" target="_blank">Virtual Reporter tool</a> by
+        <a href="http://kanthanpillay.com/content/about" target="_blank">Kanthan Pillay</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2>Code for South Africa</h2>
+
+        <p>Code for South Africa is a non-profit organisation that promotes informed decision-making that drives social change.
+        Find out more at <a href="http://code4sa.org" target="_blank">code4sa.org</a>.</p>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <img src="img/code4sa-logo.png" class="logo img-responsive">
+          </div>
+          <div class="col-xs-4">
+            <img src="img/aip-logo.png" class="logo img-responsive">
+          </div>
+          <div class="col-xs-4">
+            <img src="img/nqabile-logo.png" class="logo nqabile img-responsive">
+          </div>
+      </section>
+    </article>
+  </script>
+
+  <script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-48399585-42','auto');
+  </script>
+
+  <script src="js/vendor/jquery-1.11.2.min.js"></script>
+  <script src="js/vendor/bootstrap-3.3.1.min.js"></script>
+  <script src="js/vendor/handlebars-v4.0.5.js"></script>
+  <script src="js/vendor/underscore-1.8.3-min.js"></script>
+  <script src="js/vendor/backbone-1.3.3-min.js"></script>
+  <script src="js/vendor/backbone.stickit-0.9.2.js"></script>
+  <script src="js/vendor/moment-2.14.1.min.js"></script>
+  <script src="js/vendor/progressbar-1.0.1.min.js"></script>
+  <script src="js/vendor/jquery.autogrow-textarea.js"></script>
+
+  <script src="js/helpers.js"></script>
+  <script src="js/models.js"></script>
+  <script src="js/topics.js"></script>
+  <script src="js/views/footer.js"></script>
+  <script src="js/views/home.js"></script>
+  <script src="js/views/add_story.js"></script>
+  <script src="js/views/story.js"></script>
+  <script src="js/views/about.js"></script>
+  <script src="js/views/userinfo.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
