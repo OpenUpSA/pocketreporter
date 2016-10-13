@@ -115,8 +115,8 @@ var Answer = Backbone.Model.extend({
   idAttribute: 'key',
   defaults: {
     done: false,
-  },
+  }
 });
 var AnswerList = Backbone.Collection.extend({
-  model: Answer,
+  model: Answer
 });

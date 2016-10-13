@@ -158,7 +158,11 @@ var PocketReporter = Backbone.Model.extend({
 
 var router = null;
 
-var app = {
+PocketReporter = new PocketReporter();
+router = new Router();
+Backbone.history.start();
+
+/*var app = {
   initialize: function() {
       this.bindEvents();
   },
@@ -166,14 +170,17 @@ var app = {
       document.addEventListener('deviceready', app.onDeviceReady, false);
   },
   onDeviceReady: function() {
+      app.eventReceived('deviceready');
       app.createApp();
   },
   createApp: function() {
     PocketReporter = new PocketReporter();
     router = new Router();
     Backbone.history.start();
+  },
+  eventReceived: function() {
+    console.log('event received');
   }
 }
 
-app.initialize();
-//app.createApp();
+app.initialize();*/
