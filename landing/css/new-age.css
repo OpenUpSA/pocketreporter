@@ -473,7 +473,7 @@ body {
   margin-left: 15px;
 }
 .credit a {
-  color: #777;
+  color: #fff;
   text-decoration: none;
 }
 .tagline {
@@ -490,3 +490,20 @@ body {
   top: 0;
   left: 0;
 }
+.head-logo {
+  padding-top: 30px;
+}
+.contactemail {
+  color: #73c619;
+}
+
+@media screen and (max-width: 767px) {
+  .head-logo {
+    margin-left: 40%;
+    margin-bottom: 20px;
+  }
+  header .header-content {
+    padding-top: 5px;
+  }
+}
+
