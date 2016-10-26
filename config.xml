@@ -25,6 +25,8 @@
         <splash src="res/splash/mdpi-portrait.png" density="port-mdpi"/>
         <splash src="res/splash/hdpi-portrait.png" density="port-hdpi"/>
     </platform>
-    <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
-    <plugin name="br.com.paveisitemas.splashscreen" spec="2.1.1" source="pgb" />
+    <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
+    <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
+    <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
+    <plugin name="cordova-plugin-google-analytics" source="npm" />
 </widget>

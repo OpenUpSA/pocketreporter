@@ -60,8 +60,7 @@ var Router = Backbone.Router.extend({
 
     fragment = '/app' + fragment;
 
-    ga('set', 'page', fragment);
-    ga('send', 'pageview');
+    window.ga.trackView(fragment);
   },
 });
 
@@ -158,29 +157,23 @@ var PocketReporter = Backbone.Model.extend({
 
 var router = null;
 
-PocketReporter = new PocketReporter();
-router = new Router();
-Backbone.history.start();
-
-/*var app = {
+var app = {
   initialize: function() {
       this.bindEvents();
   },
   bindEvents: function() {
-      document.addEventListener('deviceready', app.onDeviceReady, false);
+      document.addEventListener('deviceready', this.onDeviceReady, false);
   },
   onDeviceReady: function() {
       app.eventReceived('deviceready');
-      app.createApp();
   },
-  createApp: function() {
+  eventReceived: function(id) {
     PocketReporter = new PocketReporter();
     router = new Router();
     Backbone.history.start();
-  },
-  eventReceived: function() {
-    console.log('event received');
+    window.ga.startTrackerWithId('UA-48399585-42');
+    console.log('Event received: ',id);
   }
 }
 
-app.initialize();*/
+app.initialize();

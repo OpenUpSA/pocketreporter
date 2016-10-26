@@ -27,7 +27,7 @@ var HomeView = Backbone.View.extend({
       var story = PocketReporter.stories.get(id);
 
       PocketReporter.stories.remove(story);
-      ga('send', 'event', 'story', 'delete');
+      window.ga.trackEvent('story','delete');
       router.navigate('', {trigger: true});
     }
   },

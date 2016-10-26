@@ -104,7 +104,7 @@ var StoryView = Backbone.View.extend({
 
     if (confirm("Delete this story?")) {
       PocketReporter.stories.remove(this.model);
-      ga('send', 'event', 'story', 'delete');
+      window.ga.trackEvent('story','delete');
       router.navigate('', {trigger: true});
     }
   },
@@ -136,7 +136,7 @@ var StoryView = Backbone.View.extend({
 
     window.open(mailto,'_system');
 
-    ga('send', 'event', 'story', 'share');
+    window.ga.trackEvent('story','share');
   },
 
   render: function() {
