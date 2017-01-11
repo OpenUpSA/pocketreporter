@@ -476,6 +476,17 @@ body {
   color: #fff;
   text-decoration: none;
 }
+
+.credit p {
+  float: left;
+  font-size: 14px;
+}
+
+.credit img {
+  float: left;
+  margin-right: 20px;
+}
+
 .tagline {
   color: #73c619;
   font-weight: 600;
