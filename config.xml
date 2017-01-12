@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.storycheck" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Storycheck</name>
+<widget id="com.phonegap.pocketreporter" version="1.0.1" versionCode="3" android-versionCode="3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Pocket Reporter</name>
     <description>App to help young journalists structure their stories.</description>
     <author email="lion@code4sa.org" href="http://code4sa.org">Code4SA</author>
     <content src="index.html" />
@@ -10,21 +10,24 @@
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="SplashMaintainAspectRatio" value="true|false" />
     <preference name="SplashShowOnlyFirstTime" value="true|false" />
+    <preference name="Orientation" value="portrait"/>
     <platform name="android">
         <icon src="res/icon/android/ldpi.png" platform="android" qualifier="ldpi" />
         <icon src="res/icon/android/mdpi.png" platform="android" qualifier="mdpi" />
         <icon src="res/icon/android/hdpi.png" platform="android" qualifier="hdpi" />
         <icon src="res/icon/android/xhdpi.png" platform="android" qualifier="xhdpi" />
-        <splash src="res/splash/splash-land-hdpi.png" density="land-hdpi"/>
-        <splash src="res/splash/splash-land-mdpi.png" density="land-hdpi"/>
-        <splash src="res/splash/splash-land-ldpi.png" density="land-hdpi"/>
-        <splash src="res/splash/splash-land-xhdpi.png" density="land-hdpi"/>
+        <splash src="res/splash/hdpi-landscape.png" density="land-hdpi"/>
+        <splash src="res/splash/mdpi-landscape.png" density="land-mdpi"/>
+        <splash src="res/splash/ldpi-landscape.png" density="land-ldpi"/>
+        <splash src="res/splash/xhdpi-landscape.png" density="land-xhdpi"/>
 
-        <splash src="res/splash/splash-port-xhdpi.png" density="port-hdpi"/>
-        <splash src="res/splash/splash-port-ldpi.png" density="port-hdpi"/>
-        <splash src="res/splash/splash-port-mdpi.png" density="port-hdpi"/>
-        <splash src="res/splash/splash-port-hdpi.png" density="port-hdpi"/>
+        <splash src="res/splash/xhdpi-portrait.png" density="port-xhdpi"/>
+        <splash src="res/splash/ldpi-portrait.png" density="port-ldpi"/>
+        <splash src="res/splash/mdpi-portrait.png" density="port-mdpi"/>
+        <splash src="res/splash/hdpi-portrait.png" density="port-hdpi"/>
     </platform>
-    <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
-    <plugin name="br.com.paveisitemas.splashscreen" spec="2.1.1" source="pgb" />
+    <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
+    <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
+    <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
+    <plugin name="cordova-plugin-google-analytics" source="npm" />
 </widget>

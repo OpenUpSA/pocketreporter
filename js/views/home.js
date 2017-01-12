@@ -12,7 +12,7 @@ var HomeView = Backbone.View.extend({
   initialize: function() {
     this.render();
 
-    StoryCheck.stories.on('add remove', _.bind(this.render, this));
+    PocketReporter.stories.on('add remove', _.bind(this.render, this));
   },
 
   add: function() {
@@ -24,19 +24,19 @@ var HomeView = Backbone.View.extend({
 
     if (confirm("Delete this story?")) {
       var id = $(e.target).closest('.story-item').attr('data-id');
-      var story = StoryCheck.stories.get(id);
+      var story = PocketReporter.stories.get(id);
 
-      StoryCheck.stories.remove(story);
-      ga('send', 'event', 'story', 'delete');
+      PocketReporter.stories.remove(story);
+      window.ga.trackEvent('story','delete');
       router.navigate('', {trigger: true});
     }
   },
 
   render: function() {
-    var topics = _.indexBy(StoryCheck.topics, 'id');
+    var topics = _.indexBy(PocketReporter.topics, 'id');
 
     function serialize(story) {
-      var topic = StoryCheck.topics.get(story.get('topic'));
+      var topic = PocketReporter.topics.get(story.get('topic'));
       var d = story.toJSON();
 
       d.percent_complete = story.percentComplete();
@@ -46,8 +46,8 @@ var HomeView = Backbone.View.extend({
     }
 
     this.$el.html(this.template({
-      empty: StoryCheck.stories.length === 0,
-      stories: StoryCheck.stories.map(serialize).reverse(),
+      empty: PocketReporter.stories.length === 0,
+      stories: PocketReporter.stories.map(serialize).reverse(),
     }));
 
     // progress bars

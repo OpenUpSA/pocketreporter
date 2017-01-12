@@ -17,7 +17,7 @@ var Router = Backbone.Router.extend({
   },
 
   story: function(id) {
-    var story = StoryCheck.stories.get(id);
+    var story = PocketReporter.stories.get(id);
 
     if (story) {
       this.loadView(new StoryView({model: story}));
@@ -60,14 +60,13 @@ var Router = Backbone.Router.extend({
 
     fragment = '/app' + fragment;
 
-    ga('set', 'page', fragment);
-    ga('send', 'pageview');
+    window.ga.trackView(fragment);
   },
 });
 
 
 /*** Globals ***/
-var StoryCheck = Backbone.Model.extend({
+var PocketReporter = Backbone.Model.extend({
   initialize: function() {
     var self = this;
 
@@ -108,7 +107,7 @@ var StoryCheck = Backbone.Model.extend({
     var val;
 
     if (this.storage) {
-      val = this.storage.getItem('StoryCheck');
+      val = this.storage.getItem('PocketReporter');
 
       if (val) {
         val = JSON.parse(val);
@@ -132,7 +131,7 @@ var StoryCheck = Backbone.Model.extend({
 
   save: function() {
     if (this.storage) {
-      this.storage.setItem('StoryCheck', JSON.stringify(this.state.toJSON()));
+      this.storage.setItem('PocketReporter', JSON.stringify(this.state.toJSON()));
     }
   },
 
@@ -177,17 +176,18 @@ var app = {
       this.bindEvents();
   },
   bindEvents: function() {
-      document.addEventListener('deviceready', app.onDeviceReady, false);
+      document.addEventListener('deviceready', this.onDeviceReady, false);
   },
   onDeviceReady: function() {
-      app.createApp();
+      app.eventReceived('deviceready');
   },
-  createApp: function() {
-    StoryCheck = new StoryCheck();
+  eventReceived: function(id) {
+    PocketReporter = new PocketReporter();
     router = new Router();
     Backbone.history.start();
+    window.ga.startTrackerWithId('UA-48399585-42');
+    console.log('Event received: ',id);
   }
 }
 
 app.initialize();
-//app.createApp();

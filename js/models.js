@@ -1,6 +1,6 @@
 /*** Models ***/
 
-// StoryCheck state
+// PocketReporter state
 var State = Backbone.Model.extend({
   defaults: {
     stories: [],
@@ -48,7 +48,7 @@ var Story = Backbone.Model.extend({
 
   setupTopic: function() {
     // clear answers and ensure we have one for every question
-    var topic = StoryCheck.topics.get(this.get('topic'));
+    var topic = PocketReporter.topics.get(this.get('topic'));
     var answers = _.map(topic.get('questions'), function(q) {
       return new Answer({key: q.key});
     });
@@ -82,7 +82,7 @@ var Story = Backbone.Model.extend({
   },
 
   shareableBody: function() {
-    var topic = StoryCheck.topics.get(this.get('topic')),
+    var topic = PocketReporter.topics.get(this.get('topic')),
         answers = _.indexBy(this.get('answers').toJSON(), 'key'),
         questions;
 
@@ -115,8 +115,8 @@ var Answer = Backbone.Model.extend({
   idAttribute: 'key',
   defaults: {
     done: false,
-  },
+  }
 });
 var AnswerList = Backbone.Collection.extend({
-  model: Answer,
+  model: Answer
 });

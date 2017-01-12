@@ -1,4 +1,6 @@
 _site/
 .sass-cache/
 .jekyll-metadata
-.DS_STORE
+.DS_Store
+res/icon/.DS_Store
+res/icon/android/.DS_Store
