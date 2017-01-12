@@ -16,6 +16,7 @@ var QuestionView = Backbone.View.extend({
     this.question = options.question;
     this.key = this.question.key;
     this.num = options.num;
+    this.story = options.story;
     this.listenTo(this.model, 'change:notes', this.answerChanged);
   },
 
@@ -26,9 +27,12 @@ var QuestionView = Backbone.View.extend({
   },
 
   render: function() {
+    var q = this.question;
+    q.question = StoryCheck.polyglot.t('topic-' + this.story.get('topic') + '.question-' + q.num);
+
     this.$el
       .html(this.template({
-        q: this.question,
+        q: q,
         a: this.model.attributes,
         num: this.num,
       }))
@@ -84,6 +88,7 @@ var StoryView = Backbone.View.extend({
         num: i+1,
         model: model,
         question: q,
+        story: self.model,
       });
     });
 

@@ -69,6 +69,7 @@ var Router = Backbone.Router.extend({
 /*** Globals ***/
 var StoryCheck = Backbone.Model.extend({
   initialize: function() {
+    var self = this;
 
     this.topics = new Topics(STORYCHECK_TOPICS);
     // storage version
@@ -86,6 +87,18 @@ var StoryCheck = Backbone.Model.extend({
     var save = _.debounce(_.bind(this.save, this), 300);
     this.state.on('change', save);
     this.state.get('stories').on('change add remove', save);
+
+    // TODO: load this from somewhere, correct language
+    this.polyglot = new Polyglot({
+      phrases: {
+        "Election meeting": "3l3ct10n m33t1n6",
+        "What is the main topic or theme?": "wHAT IS THE MAIN TOPIC OR THEME?",
+        "A News Editor in Your Pocket": "santoeuhsntaoheusnthaoeu",
+      }
+    });
+    Handlebars.registerHelper("_", function(text) {
+      return self.polyglot.t(text);
+    });
 
     this.general();
   },

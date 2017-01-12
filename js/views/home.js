@@ -40,7 +40,7 @@ var HomeView = Backbone.View.extend({
       var d = story.toJSON();
 
       d.percent_complete = story.percentComplete();
-      d.topic_name = topic ? topic.get('name') : d.topic;
+      d.topic_name = StoryCheck.polyglot.t(topic ? topic.get('name') : d.topic);
 
       return d;
     }
