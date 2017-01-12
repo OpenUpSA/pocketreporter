@@ -42,28 +42,29 @@
           <div class="container">
             <div class="row">
               <div class="col-md-6 center-col">
-                <footer id="app-footer" class="footer-view">
-                  <ul class="nav-items">
-                    <li>
-                      <a href="#" class="home"><i class="fa fa-list fa-2x"></i><br>My Stories</a>
-                    </li>
-
-                    <li>
-                      <a href="#add" class="add"><div class="add-btn-wrapper"><div class="add-btn"><i class="fa fa-plus fa-2x"></i></div></div></a>
-                    </li>
-
-                    <li>
-                      <a href="#about" class="about"><i class="fa fa-question-circle fa-2x"></i><br>About</a>
-                    </li>
-                  </ul>
-                </footer>
+                <footer id="app-footer" class="footer-view"></footer>
               </div>
             </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
+
+  <script id="footer-view-template" type="text/x-handlebars-template">
+    <ul class="nav-items">
+      <li>
+        <a href="#" class="home"><i class="fa fa-list fa-2x"></i><br>{{_ 'My Stories' }}</span></a>
+      </li>
+
+      <li>
+        <a href="#add" class="add"><div class="add-btn-wrapper"><div class="add-btn"><i class="fa fa-plus fa-2x"></i></div></div></a>
+      </li>
+
+      <li>
+        <a href="#about" class="about"><i class="fa fa-question-circle fa-2x"></i><br>About</a>
+      </li>
+    </ul>
+  </script>
 
   <script id="home-view-template" type="text/x-handlebars-template">
     {{#if empty}}
