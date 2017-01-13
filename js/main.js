@@ -81,24 +81,17 @@ var PocketReporter = Backbone.Model.extend({
       this.storage = null;
     }
 
+    // localisation
+    this.polyglot = new Polyglot();
+    Handlebars.registerHelper("_", function(text) {
+      return self.polyglot.t(text);
+    });
+
     this.load();
 
     var save = _.debounce(_.bind(this.save, this), 300);
     this.state.on('change', save);
     this.state.get('stories').on('change add remove', save);
-
-    // TODO: load this from somewhere, correct language
-    this.polyglot = new Polyglot({
-      phrases: {
-        "Election meeting": "3l3ct10n m33t1n6",
-        "What is the main topic or theme?": "wHAT IS THE MAIN TOPIC OR THEME?",
-        "A News Editor in Your Pocket": "santoeuhsntaoheusnthaoeu",
-        "My Stories": "Mis Historias",
-      }
-    });
-    Handlebars.registerHelper("_", function(text) {
-      return self.polyglot.t(text);
-    });
 
     this.general();
   },
@@ -124,9 +117,10 @@ var PocketReporter = Backbone.Model.extend({
     this.state.set('user', new Backbone.Model(val.user, {parse: true}));
 
     this.stories = this.state.get('stories');
-
     this.user = this.state.get('user');
 
+    this.state.on('change:locale', this.loadLocale, this);
+    this.loadLocale();
   },
 
   save: function() {
@@ -140,6 +134,14 @@ var PocketReporter = Backbone.Model.extend({
     var id = this.state.get('nextId');
     this.state.set('nextId', id + 1);
     return id;
+  },
+
+  loadLocale: function() {
+    // load new localised phrases
+    var locale = this.state.get('locale'),
+        phrases = L10N[locale];
+
+    this.polyglot.replace(phrases);
   },
 
   general: function() {
