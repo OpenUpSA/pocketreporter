@@ -175,13 +175,13 @@ var router = null;
 
 var app = {
   initialize: function() {
-      this.bindEvents();
+    this.bindEvents();
   },
   bindEvents: function() {
-      document.addEventListener('deviceready', this.onDeviceReady, false);
+    document.addEventListener('deviceready', this.onDeviceReady, false);
   },
   onDeviceReady: function() {
-      app.eventReceived('deviceready');
+    app.eventReceived('deviceready');
   },
   eventReceived: function(id) {
     PocketReporter = new PocketReporter();
@@ -190,6 +190,6 @@ var app = {
     window.ga.startTrackerWithId('UA-48399585-42');
     console.log('Event received: ',id);
   }
-}
+};
 
 app.initialize();
