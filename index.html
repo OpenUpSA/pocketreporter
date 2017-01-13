@@ -52,7 +52,7 @@
   <script id="footer-view-template" type="text/x-handlebars-template">
     <ul class="nav-items">
       <li>
-        <a href="#" class="home"><i class="fa fa-list fa-2x"></i><br>{{_ 'My Stories' }}</span></a>
+        <a href="#" class="home"><i class="fa fa-list fa-2x"></i><br>{{_ 'nav.my_stories' }}</span></a>
       </li>
 
       <li>
@@ -60,7 +60,7 @@
       </li>
 
       <li>
-        <a href="#about" class="about"><i class="fa fa-question-circle fa-2x"></i><br>About</a>
+        <a href="#about" class="about"><i class="fa fa-question-circle fa-2x"></i><br>{{_ 'About' }}</a>
       </li>
     </ul>
   </script>
@@ -78,8 +78,8 @@
                   <img src="img/logo.png" class="logo">
                 </div>
 
-                <h2>{{_ 'A News Editor in Your Pocket' }}</h2>
-                <h3>Pocket Reporter helps you be a<br>better reporter by guiding you<br>through the news gathering process.</h3>
+                <h2>{{_ 'splash.tagline' }}</h2>
+                <h3>{{_ 'splash.description' }}</h3>
               </div>
             </div>
           </div>
@@ -127,9 +127,9 @@
         {{else}}
 
           <div class="add-story-prompt">
-            <h1>We help you write better stories.</h1>
+            <h1>{{_ 'We help you write better stories.' }}</h1>
             <br>
-            <a href="#add" class="btn btn-success btn-lg">Start a story</a>
+            <a href="#add" class="btn btn-success btn-lg">{{_ 'Start a story' }}</a>
           </div>
 
         {{/if}}
@@ -143,7 +143,7 @@
     <i class="fa fa-check-circle"></i>
     <h3>{{ num }}. {{ q.question }}</h3>
 
-    <textarea name="notes" placeholder="Write your answer here"></textarea>
+    <textarea name="notes" placeholder="{{_ 'Write your answer here' }}"></textarea>
   </script>
 
   <script id="story-view-template" type="text/x-handlebars-template">
@@ -182,9 +182,9 @@
       <div class="story-done">
         <i class="fa fa-star fa-4x"></i>
 
-        <h2>You have completed this story!</h2>
+        <h2>{{_ 'You have completed this story!' }}</h2>
 
-        <button class="btn btn-link share success">Email this story now</button>
+        <button class="btn btn-link share success">{{_ 'Email this story now' }}</button>
       </div>
 
       <section>
@@ -194,15 +194,15 @@
       <div class="story-done">
         <i class="fa fa-star fa-4x"></i>
 
-        <h2>You have completed this story!</h2>
+        <h2>{{_ 'You have completed this story!' }}</h2>
 
-        <button class="btn btn-link share success">Email this story now</button>
+        <button class="btn btn-link share success">{{_ 'Email this story now' }}</button>
       </div>
 
       <footer class="text-right">
-        <button type="button" class="btn btn-link success share">Email story</button>
+        <button type="button" class="btn btn-link success share">{{_ 'Email story' }}</button>
         <br>
-        <button type="button" class="btn btn-link danger delete">Delete story</button>
+        <button type="button" class="btn btn-link danger delete">{{_ 'Delete story' }}</button>
       </footer>
     </article>
   </script>
@@ -217,7 +217,7 @@
                 <a href="#add" class="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
                 <h1>{{ topic.name }}</h1>
               {{else}}
-                <h1>Start a New Story</h1>
+                <h1>{{_ 'Start a New Story' }}</h1>
               {{/if}}
             </header>
           </div>
@@ -227,7 +227,7 @@
 
     <article class="with-header">
       <section class="topic-section">
-        <h3>What type of story are you writing?</h3>
+        <h3>{{_ 'What type of story are you writing?' }}</h3>
 
         <ul class="topic-buttons clearfix">
         {{#each topics}}
@@ -239,13 +239,13 @@
       </section>
 
       <section class="name-section">
-        <h3>Give your story a name:</h3>
+        <h3>{{_ 'Give your story a name' }}:</h3>
 
         <input type="text" class="form-control" name="title">
       </section>
 
       <section class="name-section text-right">
-        <button class="btn btn-link success next disabled">Start this story <i class="fa fa-chevron-right"></i></button>
+        <button class="btn btn-link success next disabled">{{_ 'Start this story' }} <i class="fa fa-chevron-right"></i></button>
       </section>
     </article>
   </script>
@@ -284,7 +284,7 @@
           <div class="col-md-6 center-col">
             <header id="app-header">
               <a href="#" class="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-              <h1>About Pocket Reporter</h1>
+              <h1>{{_ 'About Pocket Reporter' }}</h1>
             </header>
           </div>
         </div>

@@ -29,7 +29,7 @@ var QuestionView = Backbone.View.extend({
 
   render: function() {
     var q = this.question;
-    q.question = PocketReporter.polyglot.t('topic-' + this.story.get('topic') + '.question-' + q.num);
+    q.question = PocketReporter.polyglot.t('topics.' + this.story.get('topic') + '.questions.' + q.num);
 
     this.$el
       .html(this.template({

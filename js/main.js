@@ -84,7 +84,7 @@ var PocketReporter = Backbone.Model.extend({
     // localisation
     this.polyglot = new Polyglot();
     Handlebars.registerHelper("_", function(text) {
-      return self.polyglot.t(text);
+      return new Handlebars.SafeString(self.polyglot.t(text));
     });
 
     this.load();
