@@ -6,6 +6,7 @@ var AboutView = Backbone.View.extend({
 
   initialize: function() {
     this.render();
+    this.listenTo(PocketReporter.state, 'change:locale', this.render);
   },
 
   render: function() {

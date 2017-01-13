@@ -12,7 +12,8 @@ var HomeView = Backbone.View.extend({
   initialize: function() {
     this.render();
 
-    PocketReporter.stories.on('add remove', _.bind(this.render, this));
+    this.listenTo(PocketReporter.stories, 'add remove', this.render);
+    this.listenTo(PocketReporter.state, 'change:locale', this.render);
   },
 
   add: function() {
@@ -40,7 +41,7 @@ var HomeView = Backbone.View.extend({
       var d = story.toJSON();
 
       d.percent_complete = story.percentComplete();
-      d.topic_name = StoryCheck.polyglot.t(topic ? topic.get('name') : d.topic);
+      d.topic_name = PocketReporter.polyglot.t(topic ? topic.get('name') : d.topic);
 
       return d;
     }

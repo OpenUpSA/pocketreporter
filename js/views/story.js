@@ -18,6 +18,7 @@ var QuestionView = Backbone.View.extend({
     this.num = options.num;
     this.story = options.story;
     this.listenTo(this.model, 'change:notes', this.answerChanged);
+    this.listenTo(PocketReporter.state, 'change:locale', this.render);
   },
 
   answerChanged: function() {
@@ -28,7 +29,7 @@ var QuestionView = Backbone.View.extend({
 
   render: function() {
     var q = this.question;
-    q.question = StoryCheck.polyglot.t('topic-' + this.story.get('topic') + '.question-' + q.num);
+    q.question = PocketReporter.polyglot.t('topic-' + this.story.get('topic') + '.question-' + q.num);
 
     this.$el
       .html(this.template({
