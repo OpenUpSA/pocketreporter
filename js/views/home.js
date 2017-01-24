@@ -48,7 +48,7 @@ var HomeView = Backbone.View.extend({
 
     this.$el.html(this.template({
       empty: PocketReporter.stories.length === 0,
-      stories: PocketReporter.stories.map(serialize).reverse(),
+      stories: PocketReporter.stories.map(serialize).reverse()
     }));
 
     // progress bars
@@ -64,10 +64,10 @@ var HomeView = Backbone.View.extend({
         text: {
           value: p == 1 ? '\uf005' : '',
           style: {
-            color: '#4a4a4a',
-          },
-        },
+            color: '#4a4a4a'
+          }
+        }
       }).set(p);
     });
-  },
+  }
 });

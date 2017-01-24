@@ -5,7 +5,7 @@ var Router = Backbone.Router.extend({
     "stories/:id" : "story",
     "add" : "add",
     "add/:topic" : "add",
-    "about" : "about",
+    "about" : "about"
   },
 
   initialize: function() {
@@ -61,7 +61,7 @@ var Router = Backbone.Router.extend({
     fragment = '/app' + fragment;
 
     window.ga.trackView(fragment);
-  },
+  }
 });
 
 

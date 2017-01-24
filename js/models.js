@@ -5,8 +5,8 @@ var State = Backbone.Model.extend({
   defaults: {
     stories: [],
     nextId: 1,
-    locale: 'en-za',
-  },
+    locale: 'en-za'
+  }
 });
 
 
@@ -17,13 +17,13 @@ var Topic = Backbone.Model.extend({
     _.each(this.get('questions'), function(q, i) {
       q.num = i+1;
     });
-  },
+  }
 });
 
 
 var Topics = Backbone.Collection.extend({
   model: Topic,
-  comparator: 'name',
+  comparator: 'name'
 });
 
 
@@ -32,7 +32,7 @@ var Story = Backbone.Model.extend({
     return {
       answers: [],
       created_at: moment(),
-      updated_at: moment(),
+      updated_at: moment()
     };
   },
 
@@ -100,7 +100,7 @@ var Story = Backbone.Model.extend({
     });
 
     return questions.join('\n---\n\n');
-  },
+  }
 });
 
 var Stories = Backbone.Collection.extend({
@@ -115,7 +115,7 @@ var Stories = Backbone.Collection.extend({
 var Answer = Backbone.Model.extend({
   idAttribute: 'key',
   defaults: {
-    done: false,
+    done: false
   }
 });
 var AnswerList = Backbone.Collection.extend({

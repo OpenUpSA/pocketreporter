@@ -16,5 +16,5 @@ var FooterView = Backbone.View.extend({
     this.$('.nav-items a').removeClass('active');
 
     if (view.navTab) this.$('.nav-items a.' + view.navTab).addClass('active');
-  },
+  }
 });
