@@ -572,6 +572,22 @@ ul.question-list {
       line-height: 1.3em;
       white-space: nowrap;
     }
+
+    h4 {
+      position: fixed;
+      top: 75%;
+      left: 15px;
+      right: 15px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.3em;
+      white-space: nowrap;
+
+      a, a:hover, a:active, a:visited {
+        color: $white;
+        text-decoration: none;
+      }
+    }
   }
 }
 

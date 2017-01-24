@@ -5,7 +5,8 @@ var Router = Backbone.Router.extend({
     "stories/:id" : "story",
     "add" : "add",
     "add/:topic" : "add",
-    "about" : "about"
+    "about" : "about",
+    "settings": "settings"
   },
 
   initialize: function() {
@@ -32,6 +33,10 @@ var Router = Backbone.Router.extend({
 
   about: function() {
     this.loadView(new AboutView());
+  },
+
+  settings: function() {
+    this.loadView(new SettingsView());
   },
 
   loadView: function(view) {

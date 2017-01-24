@@ -1,11 +1,19 @@
 var L10N = {
   'en-za': {
+    name: 'English',
     splash: {
       description: 'Pocket Reporter helps you be a<br>better reporter by guiding you<br>through the news gathering process.',
-      tagline: 'A News Editor in Your Pocket'
+      tagline: 'A News Editor in Your Pocket',
+      language_sel: 'If you have not already, please<br><a href="#settings">select your desired language</a>.'
     },
     nav: {
-      my_stories: "My Stories"
+      my_stories: "My Stories",
+      about: "About"
+    },
+    settings: {
+      heading: "Settings",
+      select_lang: "Please select your desired language",
+      save: "Save Settings"
     },
     topics: {
       1: {
@@ -227,12 +235,20 @@ var L10N = {
     }
   },
   'af-za': {
+    name: 'Afrikaans',
     splash: {
       description: 'Pocket Reporter helps you be a<br>better reporter by guiding you<br>through the news gathering process.',
-      tagline: "'n Nuusredakteur in Jou Sak"
+      tagline: "'n Nuusredakteur in Jou Sak",
+      language_sel: 'As jy nie al het nie,<br><a href="#settings">kies asseblief jou taal</a>.'
     },
     nav: {
-      my_stories: "My Stories"
+      my_stories: "My Stories",
+      about: "Meer"
+    },
+    settings: {
+      heading: "Stellings",
+      select_lang: "Kies asseblief jou taal",
+      save: "Stoor stellings"
     },
     "Start a New Story": "Begin 'n Nuwe Storie",
     "Give your story a name": "Gee jou storie 'n naam",

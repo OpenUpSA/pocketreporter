@@ -60,7 +60,7 @@
       </li>
 
       <li>
-        <a href="#about" class="about"><i class="fa fa-question-circle fa-2x"></i><br>{{_ 'About' }}</a>
+        <a href="#about" class="about"><i class="fa fa-question-circle fa-2x"></i><br>{{_ 'nav.about' }}</a>
       </li>
     </ul>
   </script>
@@ -80,6 +80,7 @@
 
                 <h2>{{_ 'splash.tagline' }}</h2>
                 <h3>{{_ 'splash.description' }}</h3>
+                <h4>{{_ 'splash.language_sel' }}</h4>
               </div>
             </div>
           </div>
@@ -277,6 +278,36 @@
     </article>
   </script>
 
+  <script id="settings-view-template" type="text/x-handlebars-template">
+    <div id="header-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 center-col">
+            <header id="app-header">
+              <a href="#" class="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+              <h1>{{_ 'settings.heading' }}</h1>
+            </header>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <article class="with-header">
+      <section>
+        <h3>{{_ 'settings.select_lang' }}</h3>
+        <select name="locale" id="localeSelect" class="form-control">
+          {{#each locales}}
+            <option value="{{ locale }}"{{#if selected}} selected="selected"{{/if}}>{{ name }}</option>
+          {{/each}}
+        </select>
+      </section>
+
+      <section class="name-section text-right">
+        <a href="#" class="btn btn-link success next save">{{_ 'settings.save' }} <i class="fa fa-chevron-right"></i></a>
+      </section>
+    </article>
+  </script>
+
   <script id="about-view-template" type="text/x-handlebars-template">
     <div id="header-wrapper">
       <div class="container">
@@ -352,6 +383,7 @@
   <script src="js/views/story.js"></script>
   <script src="js/views/about.js"></script>
   <script src="js/views/userinfo.js"></script>
+  <script src="js/views/settings.js"></script>
   <script src="js/main.js"></script>
 
 </body>

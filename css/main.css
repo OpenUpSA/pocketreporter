@@ -366,6 +366,18 @@ ul.question-list {
       font-size: 16px;
       line-height: 1.3em;
       white-space: nowrap; }
+    #splash-wrapper #splash h4 {
+      position: fixed;
+      top: 75%;
+      left: 15px;
+      right: 15px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.3em;
+      white-space: nowrap; }
+      #splash-wrapper #splash h4 a, #splash-wrapper #splash h4 a:hover, #splash-wrapper #splash h4 a:active, #splash-wrapper #splash h4 a:visited {
+        color: white;
+        text-decoration: none; }
 
 #loading {
   margin-top: 20px;
