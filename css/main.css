@@ -313,6 +313,19 @@ ul.question-list {
   .home-view .add-story-prompt h1 {
     font-size: 24px; }
 
+#settings-header-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  text-align: right;
+  padding: 7px 15px 0 0;
+  z-index: 1000; }
+  #settings-header-wrapper a, #settings-header-wrapper a:active, #settings-header-wrapper a:visited, #settings-header-wrapper a:hover {
+    color: white;
+    font-size: 24px; }
+
 #splash-wrapper {
   position: fixed;
   top: 0px;

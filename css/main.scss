@@ -504,6 +504,22 @@ ul.question-list {
   }
 }
 
+#settings-header-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: $header-height;
+  text-align: right;
+  padding: 7px 15px 0 0;
+  z-index: 1000;
+
+  a, a:active, a:visited, a:hover {
+    color: $white;
+    font-size: 24px;
+  }
+}
+
 #splash-wrapper {
   position: fixed;
   top: 0px;
