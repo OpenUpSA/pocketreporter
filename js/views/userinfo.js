@@ -9,7 +9,7 @@ var UserInfoView = Backbone.View.extend({
   template: Handlebars.compile($("#userinfo-view-template").html()),
 
   bindings: {
-    '[name=email]': 'email',
+    '[name=email]': 'email'
   },
 
   initialize: function() {
@@ -24,12 +24,12 @@ var UserInfoView = Backbone.View.extend({
 
   render: function() {
     this.$el.html(this.template({
-      storyid: this.storyid,
+      storyid: this.storyid
     }));
     return this;
   },
 
   checkOk: function() {
     this.$('.btn.success').toggleClass('disabled', _.isEmpty(this.model.get('email')));
-  },
+  }
 });

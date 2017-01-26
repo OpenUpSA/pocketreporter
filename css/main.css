@@ -313,6 +313,19 @@ ul.question-list {
   .home-view .add-story-prompt h1 {
     font-size: 24px; }
 
+#settings-header-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  text-align: right;
+  padding: 7px 15px 0 0;
+  z-index: 1000; }
+  #settings-header-wrapper a, #settings-header-wrapper a:active, #settings-header-wrapper a:visited, #settings-header-wrapper a:hover {
+    color: white;
+    font-size: 24px; }
+
 #splash-wrapper {
   position: fixed;
   top: 0px;
@@ -366,6 +379,18 @@ ul.question-list {
       font-size: 16px;
       line-height: 1.3em;
       white-space: nowrap; }
+    #splash-wrapper #splash h4 {
+      position: fixed;
+      top: 75%;
+      left: 15px;
+      right: 15px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.3em;
+      white-space: nowrap; }
+      #splash-wrapper #splash h4 a, #splash-wrapper #splash h4 a:hover, #splash-wrapper #splash h4 a:active, #splash-wrapper #splash h4 a:visited {
+        color: white;
+        text-decoration: none; }
 
 #loading {
   margin-top: 20px;

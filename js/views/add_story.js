@@ -5,11 +5,11 @@ var AddStoryView = Backbone.View.extend({
   navTab: 'add',
 
   bindings: {
-    '[name=title]': 'title',
+    '[name=title]': 'title'
   },
 
   events: {
-    'click button.next': 'create',
+    'click button.next': 'create'
   },
 
   initialize: function(options) {
@@ -26,7 +26,7 @@ var AddStoryView = Backbone.View.extend({
 
     this.$el.html(this.template({
       topics: PocketReporter.topics.toJSON(),
-      topic: topic,
+      topic: topic
     }));
 
     if (topic) {
@@ -48,5 +48,5 @@ var AddStoryView = Backbone.View.extend({
     PocketReporter.stories.add(this.model);
 
     router.navigate('stories/' + this.model.id, {trigger: true});
-  },
+  }
 });

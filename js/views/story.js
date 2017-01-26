@@ -9,7 +9,7 @@ var QuestionView = Backbone.View.extend({
   events: {
   },
   bindings: {
-    '[name=notes]': 'notes',
+    '[name=notes]': 'notes'
   },
 
   initialize: function(options) {
@@ -35,7 +35,7 @@ var QuestionView = Backbone.View.extend({
       .html(this.template({
         q: q,
         a: this.model.attributes,
-        num: this.num,
+        num: this.num
       }))
       .data('key', this.key);
 
@@ -50,7 +50,7 @@ var QuestionView = Backbone.View.extend({
 
   inserted: function() {
     this.$el.find('textarea').autogrow();
-  },
+  }
 });
 
 
@@ -62,7 +62,7 @@ var StoryView = Backbone.View.extend({
   events: {
     'click #app-header h1': 'rename',
     'click .delete': 'deleteStory',
-    'click .share': 'share',
+    'click .share': 'share'
   },
 
   initialize: function() {
@@ -89,7 +89,7 @@ var StoryView = Backbone.View.extend({
         num: i+1,
         model: model,
         question: q,
-        story: self.model,
+        story: self.model
       });
     });
 
@@ -150,7 +150,7 @@ var StoryView = Backbone.View.extend({
 
     this.$el.html(this.template({
       story: this.model.toJSON(),
-      topic: this.topic.toJSON(),
+      topic: this.topic.toJSON()
     }));
 
     var $questions = this.$('#question-list');
@@ -165,5 +165,5 @@ var StoryView = Backbone.View.extend({
   close: function() {
     this.remove();
     _.each(this.children, function(c) { c.remove(); });
-  },
+  }
 });
