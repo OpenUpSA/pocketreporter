@@ -8,7 +8,7 @@ var SettingsView = Backbone.View.extend({
   template: Handlebars.compile($("#settings-view-template").html()),
 
   events: {
-    'click .save': 'save'
+    'change #localeChooser': 'changed',
   },
 
   initialize: function() {
@@ -18,13 +18,13 @@ var SettingsView = Backbone.View.extend({
       if (L10N.hasOwnProperty(locale)) {
         this.languages.push({
           locale: locale,
-          name: L10N[locale]['name']
+          name: L10N[locale].name
         });
       }
     }
 
     this.render();
-    console.log(PocketReporter.state.get('locale'));
+    this.listenTo(PocketReporter.state, 'change:locale', this.render);
   },
 
   render: function() {
@@ -59,8 +59,8 @@ var SettingsView = Backbone.View.extend({
     });
   },
 
-  save: function() {
-    var desiredLocale = this.$el.find('#localeSelect').val();
+  changed: function() {
+    var desiredLocale = this.$('#localeChooser').val();
     console.log("Switching to locale: "+desiredLocale);
     PocketReporter.state.set('locale', desiredLocale);
   }

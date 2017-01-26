@@ -300,15 +300,11 @@
     <article class="with-header">
       <section>
         <h3>{{_ 'settings.select_lang' }}</h3>
-        <select name="locale" id="localeSelect" class="form-control">
+        <select name="locale" id="localeChooser" class="form-control">
           {{#each locales}}
             <option value="{{ locale }}"{{#if selected}} selected="selected"{{/if}}>{{ name }}</option>
           {{/each}}
         </select>
-      </section>
-
-      <section class="name-section text-right">
-        <a href="#" class="btn btn-link success next save">{{_ 'settings.save' }} <i class="fa fa-chevron-right"></i></a>
       </section>
     </article>
   </script>

@@ -13,7 +13,6 @@ var L10N = {
     settings: {
       heading: "Settings",
       select_lang: "Please select your desired language",
-      save: "Save Settings"
     },
     topics: {
       1: {
@@ -248,7 +247,6 @@ var L10N = {
     settings: {
       heading: "Stellings",
       select_lang: "Kies asseblief jou taal",
-      save: "Stoor stellings"
     },
     "Start a New Story": "Begin 'n Nuwe Storie",
     "Give your story a name": "Gee jou storie 'n naam",
