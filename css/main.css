@@ -437,4 +437,7 @@ section.empty {
   background-color: #73c619;
   background-image: linear-gradient(to right, #b4ec51, #429321); }
 
+.language-choices .radio {
+  margin-top: 20px; }
+
 /*# sourceMappingURL=main.css.map */

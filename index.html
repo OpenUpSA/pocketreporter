@@ -300,11 +300,17 @@
     <article class="with-header">
       <section>
         <h3>{{_ 'settings.select_lang' }}</h3>
-        <select name="locale" id="localeChooser" class="form-control">
-          {{#each locales}}
-            <option value="{{ locale }}"{{#if selected}} selected="selected"{{/if}}>{{ name }}</option>
-          {{/each}}
-        </select>
+
+        <div class="language-choices">
+        {{#each locales}}
+          <div class="radio">
+            <label>
+              <input type="radio" class="locale" name="locale" value="{{ locale }}" {{#if selected}} checked{{/if}}>
+              {{ name }}
+            </label>
+          </div>
+        {{/each}}
+        </div>
       </section>
     </article>
   </script>
