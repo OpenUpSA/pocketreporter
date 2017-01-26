@@ -12,7 +12,7 @@ var L10N = {
     },
     settings: {
       heading: "Settings",
-      select_lang: "Choose your language:",
+      select_lang: "Choose your language",
     },
     topics: {
       1: {
