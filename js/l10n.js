@@ -4,7 +4,7 @@ var L10N = {
     splash: {
       description: 'Pocket Reporter helps you be a<br>better reporter by guiding you<br>through the news gathering process.',
       tagline: 'A News Editor in Your Pocket',
-      language_sel: 'If you have not already, please<br><a href="#settings">select your desired language</a>.'
+      language_sel: 'Change language',
     },
     nav: {
       my_stories: "My Stories",
@@ -239,7 +239,7 @@ var L10N = {
     splash: {
       description: 'Pocket Reporter helps you be a<br>better reporter by guiding you<br>through the news gathering process.',
       tagline: "'n Nuusredakteur in Jou Sak",
-      language_sel: 'As jy nie al het nie,<br><a href="#settings">kies asseblief jou taal</a>.'
+      language_sel: 'Verander taal',
     },
     nav: {
       my_stories: "My Stories",
