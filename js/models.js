@@ -100,6 +100,25 @@ var Story = Backbone.Model.extend({
     });
 
     return questions.join('\n---\n\n');
+  },
+
+  share: function() {
+    var pending = this.pending();
+    var cordova = window.cordova || null;
+
+    if (pending.length > 0) {
+      if (!confirm('You still have ' + Handlebars.helpers.pluralCount(pending.length, 'item') + ' to complete. Share anyway?'))
+        return;
+    }
+
+    var mailto = 'mailto:';
+
+    mailto += '?subject=' + encodeURIComponent(this.get('title'));
+    mailto += '&body=' + encodeURIComponent(this.shareableBody());
+
+    window.open(mailto, '_system');
+
+    window.ga.trackEvent('story', 'share');
   }
 });
 

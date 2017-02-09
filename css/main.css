@@ -209,14 +209,14 @@ ul.story-list {
       font-weight: 500;
       margin-bottom: 2px;
       font-size: 18px; }
-    ul.story-list > li .delete-box {
+    ul.story-list > li .buttons {
       border-left: none; }
-    ul.story-list > li .delete {
-      text-align: center;
-      margin-top: 10px;
-      display: inline-block; }
-      ul.story-list > li .delete i {
-        font-size: 40px; }
+      ul.story-list > li .buttons a {
+        text-align: center;
+        margin-top: 10px;
+        display: inline-block; }
+        ul.story-list > li .buttons a i {
+          font-size: 40px; }
   ul.story-list .percent {
     float: right;
     width: 55px;

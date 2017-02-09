@@ -344,18 +344,17 @@ ul.story-list {
       font-size: 18px;
     }
 
-    .delete-box {
-        border-left:none;
-    }
+    .buttons {
+      border-left:none;
 
-    .delete {
-      text-align:center;
-      margin-top:10px;
-      display:inline-block;
+      a {
+        text-align: center;
+        margin-top: 10px;
+        display: inline-block;
 
-      i {
-        font-size:40px;
-
+        i {
+          font-size: 40px;
+        }
       }
     }
   }

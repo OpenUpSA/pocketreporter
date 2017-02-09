@@ -126,23 +126,7 @@ var StoryView = Backbone.View.extend({
 
   share: function(e) {
     e.preventDefault();
-
-    var pending = this.model.pending();
-    var cordova = window.cordova || null;
-
-    if (pending.length > 0) {
-      if (!confirm('You still have ' + Handlebars.helpers.pluralCount(pending.length, 'item') + ' to complete. Share anyway?'))
-        return;
-    }
-
-    var mailto = 'mailto:';
-
-    mailto += '?subject=' + encodeURIComponent(this.model.get('title'));
-    mailto += '&body=' + encodeURIComponent(this.model.shareableBody());
-
-    window.open(mailto,'_system');
-
-    window.ga.trackEvent('story','share');
+    this.model.share();
   },
 
   render: function() {
