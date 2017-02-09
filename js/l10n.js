@@ -14,6 +14,7 @@ var L10N = {
       about_c4sa: 'Code for South Africa is a non-profit organisation that promotes informed decision-making that drives social change. Find out more at <a href="http://code4sa.org" target="_blank">code4sa.org</a>.',
       contributors: "Contributors",
       builtby: 'Code for South Africa is a non-profit organisation that promotes informed decision-making that drives social change. Find out more at <a href="http://code4sa.org" target="_blank">code4sa.org</a>.',
+      title: 'About Pocket Reporter'
     },
     nav: {
       my_stories: "My Stories",
@@ -22,6 +23,13 @@ var L10N = {
     settings: {
       heading: "Settings",
       select_lang: "Choose your language",
+    },
+    "story": {
+      "completed": "You have completed this story!",
+      "email_now": "Email this story now",
+      "email_story": "Email story",
+      "delete_story": "Delete story",
+      "write_your_answer": "Write your answer now"
     },
     topics: {
       1: {

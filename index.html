@@ -148,7 +148,7 @@
     <i class="fa fa-check-circle"></i>
     <h3>{{ num }}. {{ q.question }}</h3>
 
-    <textarea name="notes" placeholder="{{_ 'Write your answer here' }}"></textarea>
+    <textarea name="notes" placeholder="{{_ 'story.write_your_answer' }}"></textarea>
   </script>
 
   <script id="story-view-template" type="text/x-handlebars-template">
@@ -187,9 +187,9 @@
       <div class="story-done">
         <i class="fa fa-star fa-4x"></i>
 
-        <h2>{{_ 'You have completed this story!' }}</h2>
+        <h2>{{_ 'story.completed' }}</h2>
 
-        <button class="btn btn-link share success">{{_ 'Email this story now' }}</button>
+        <button class="btn btn-link share success">{{_ 'story.email_now' }}</button>
       </div>
 
       <section>
@@ -199,15 +199,15 @@
       <div class="story-done">
         <i class="fa fa-star fa-4x"></i>
 
-        <h2>{{_ 'You have completed this story!' }}</h2>
+        <h2>{{_ 'story.completed' }}</h2>
 
-        <button class="btn btn-link share success">{{_ 'Email this story now' }}</button>
+        <button class="btn btn-link share success">{{_ 'story.email_now' }}</button>
       </div>
 
       <footer class="text-right">
-        <button type="button" class="btn btn-link success share">{{_ 'Email story' }}</button>
+        <button type="button" class="btn btn-link success share">{{_ 'story.email_story' }}</button>
         <br>
-        <button type="button" class="btn btn-link danger delete">{{_ 'Delete story' }}</button>
+        <button type="button" class="btn btn-link danger delete">{{_ 'story.delete_story' }}</button>
       </footer>
     </article>
   </script>
@@ -321,7 +321,7 @@
           <div class="col-md-6 center-col">
             <header id="app-header">
               <a href="#" class="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-              <h1>{{_ 'About Pocket Reporter' }}</h1>
+              <h1>{{_ 'about.title' }}</h1>
             </header>
           </div>
         </div>
