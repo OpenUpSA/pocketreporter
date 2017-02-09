@@ -250,26 +250,7 @@ var L10N = {
       }
     }
   },
-  'af-za': {
-    name: 'Afrikaans',
-    splash: {
-      description: 'Pocket Reporter helps you be a<br>better reporter by guiding you<br>through the news gathering process.',
-      tagline: "'n Nuusredakteur in Jou Sak",
-      language_sel: 'Verander taal',
-    },
-    nav: {
-      my_stories: "My Stories",
-      about: "Meer"
-    },
-    settings: {
-      heading: "Stellings",
-      select_lang: "Kies asseblief jou taal",
-    },
-    "Start a New Story": "Begin 'n Nuwe Storie",
-    "Give your story a name": "Gee jou storie 'n naam",
-    "Start this story": "Begin die storie"
-  },
-  'xh-za': {
+  'xh': {
     'name': 'Xhosa',
     "about": {
       "about_c4sa": "I-Code for South Africa liqela elingasekwanga ngeenjongo zokwenza imali neli khuthaza izigqibo ezidala utshintsho eluntwini. Ungafumana okuthe vetshe ku <a href=\"http://code4sa.org\" target=\"_blank\">code4sa.org</a>.",
