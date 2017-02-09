@@ -65,7 +65,7 @@ var Router = Backbone.Router.extend({
 
     fragment = '/app' + fragment;
 
-    window.ga.trackView(fragment);
+    if ('ga' in window) window.ga.trackView(fragment);
   }
 });
 
@@ -196,7 +196,7 @@ var app = {
     PocketReporter = new PocketReporter();
     router = new Router();
     Backbone.history.start();
-    window.ga.startTrackerWithId('UA-48399585-42');
+    if ('ga' in window) window.ga.startTrackerWithId('UA-48399585-42');
     console.log('Event received: ',id);
   }
 };
