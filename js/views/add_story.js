@@ -18,14 +18,22 @@ var AddStoryView = Backbone.View.extend({
 
     this.render();
     this.listenTo(this.model, 'change', this.checkOk);
+    this.listenTo(PocketReporter.state, 'change:locale', this.render);
   },
 
   render: function() {
+    var topics = PocketReporter.topics.toJSON();
     var topic = this.model.get('topic');
-    if (topic) topic = PocketReporter.topics.get(topic).attributes;
+
+    // translate
+    _.each(topics, function(t) {
+      t.name = PocketReporter.polyglot.t('topics.' + t.id + '.name');
+    });
+
+    if (topic) topic = _.find(topics, function(t) { return t.id == topic; });
 
     this.$el.html(this.template({
-      topics: PocketReporter.topics.toJSON(),
+      topics: topics,
       topic: topic
     }));
 

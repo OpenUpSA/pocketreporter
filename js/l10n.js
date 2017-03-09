@@ -29,7 +29,11 @@ var L10N = {
       "email_now": "Email this story now",
       "email_story": "Email story",
       "delete_story": "Delete story",
-      "write_your_answer": "Write your answer now"
+      "write_your_answer": "Write your answer now",
+      "type_of_story": "What type of story are you writing?",
+      "story_name": "Give your story a name",
+      "start_story": "Start this story",
+      "new_story": "Start a New Story",
     },
     topics: {
       1: {
