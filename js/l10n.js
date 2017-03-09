@@ -13,7 +13,7 @@ var L10N = {
       background: "Background",
       about_c4sa: 'Code for South Africa is a non-profit organisation that promotes informed decision-making that drives social change. Find out more at <a href="http://code4sa.org" target="_blank">code4sa.org</a>.',
       contributors: "Contributors",
-      builtby: 'Code for South Africa is a non-profit organisation that promotes informed decision-making that drives social change. Find out more at <a href="http://code4sa.org" target="_blank">code4sa.org</a>.',
+      builtby: 'Pocket Reporter is built by <a href="http://code4sa.org" target="_blank">Code for South Africa</a> and is inspired by the <a href="http://nqabile.co.za/virtual" target="_blank">Virtual Reporter tool</a> by <a href="http://kanthanpillay.com/content/about" target="_blank">Kanthan Pillay</a>.',
       title: 'About Pocket Reporter'
     },
     nav: {
