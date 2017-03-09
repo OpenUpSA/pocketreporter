@@ -21,6 +21,18 @@ Local development is simple because the app is client-side only and has no serve
 4. You can also use python: ``python -m SimpleHTTPServer 4000``
 5. Visit the site in your browser: [http://localhost:4000](http://localhost:4000)
 
+## Updating translations
+
+1. Download the translations file [from CrowdIn.com](https://crowdin.com/project/pocketreporter/settings#translations)
+2. Make a note of the language code (eg. ``en-za`` or ``xh``)
+3. Import it into ``js/l10n.js`` by running:
+
+    python strings.py --file download.csv --language LANGUAGE_CODE
+
+4. Check the new strings in the app
+5. Sanity check the changes using ``git diff``
+6. Commit as usual
+
 ## Building and deploying
 
 Phonegap is built on [Phonegap Build](https://build.phonegap.com/apps/2227365/builds) by pulling directly from the ``app`` branch of the repo.
