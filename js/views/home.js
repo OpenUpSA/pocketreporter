@@ -6,13 +6,15 @@ var HomeView = Backbone.View.extend({
 
   events: {
     'click #splash .button': 'add',
-    'click .delete': 'deleteStory'
+    'click .delete': 'deleteStory',
+    'click .share': 'shareStory',
   },
 
   initialize: function() {
     this.render();
 
-    PocketReporter.stories.on('add remove', _.bind(this.render, this));
+    this.listenTo(PocketReporter.stories, 'add remove', this.render);
+    this.listenTo(PocketReporter.state, 'change:locale', this.render);
   },
 
   add: function() {
@@ -32,6 +34,14 @@ var HomeView = Backbone.View.extend({
     }
   },
 
+  shareStory: function(e) {
+    e.preventDefault();
+
+    var id = $(e.target).closest('.story-item').attr('data-id');
+    var story = PocketReporter.stories.get(id);
+    story.share();
+  },
+
   render: function() {
     var topics = _.indexBy(PocketReporter.topics, 'id');
 
@@ -40,14 +50,14 @@ var HomeView = Backbone.View.extend({
       var d = story.toJSON();
 
       d.percent_complete = story.percentComplete();
-      d.topic_name = topic ? topic.get('name') : d.topic;
+      d.topic_name = topic ? PocketReporter.polyglot.t('topics.' + topic.id + '.name') : d.topic;
 
       return d;
     }
 
     this.$el.html(this.template({
       empty: PocketReporter.stories.length === 0,
-      stories: PocketReporter.stories.map(serialize).reverse(),
+      stories: PocketReporter.stories.map(serialize).reverse()
     }));
 
     // progress bars
@@ -63,10 +73,10 @@ var HomeView = Backbone.View.extend({
         text: {
           value: p == 1 ? '\uf005' : '',
           style: {
-            color: '#4a4a4a',
-          },
-        },
+            color: '#4a4a4a'
+          }
+        }
       }).set(p);
     });
-  },
+  }
 });

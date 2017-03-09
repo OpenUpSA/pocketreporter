@@ -32,6 +32,7 @@ body {
   font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+
 /* Mixins */
 @mixin vertical-align($position: relative) {
   position: $position;
@@ -343,18 +344,17 @@ ul.story-list {
       font-size: 18px;
     }
 
-    .delete-box {
-        border-left:none;
-    }
+    .buttons {
+      border-left:none;
 
-    .delete {
-      text-align:center;
-      margin-top:10px;
-      display:inline-block;
+      a {
+        text-align: center;
+        margin-top: 10px;
+        display: inline-block;
 
-      i {
-        font-size:40px;
-
+        i {
+          font-size: 40px;
+        }
       }
     }
   }
@@ -572,6 +572,22 @@ ul.question-list {
       line-height: 1.3em;
       white-space: nowrap;
     }
+
+    h4 {
+      position: fixed;
+      top: 75%;
+      left: 15px;
+      right: 15px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.3em;
+      white-space: nowrap;
+
+      a, a:hover, a:active, a:visited {
+        color: $white;
+        text-decoration: none;
+      }
+    }
   }
 }
 
@@ -639,4 +655,10 @@ section.empty {
 .progress-bar {
   background-color: $green-middle;
   background-image: linear-gradient(to right, $green-start, $green-end);
+}
+
+.language-choices {
+  .radio {
+    margin-top: 20px;
+  }
 }

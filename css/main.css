@@ -209,14 +209,14 @@ ul.story-list {
       font-weight: 500;
       margin-bottom: 2px;
       font-size: 18px; }
-    ul.story-list > li .delete-box {
+    ul.story-list > li .buttons {
       border-left: none; }
-    ul.story-list > li .delete {
-      text-align: center;
-      margin-top: 10px;
-      display: inline-block; }
-      ul.story-list > li .delete i {
-        font-size: 40px; }
+      ul.story-list > li .buttons a {
+        text-align: center;
+        margin-top: 10px;
+        display: inline-block; }
+        ul.story-list > li .buttons a i {
+          font-size: 40px; }
   ul.story-list .percent {
     float: right;
     width: 55px;
@@ -366,6 +366,18 @@ ul.question-list {
       font-size: 16px;
       line-height: 1.3em;
       white-space: nowrap; }
+    #splash-wrapper #splash h4 {
+      position: fixed;
+      top: 75%;
+      left: 15px;
+      right: 15px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.3em;
+      white-space: nowrap; }
+      #splash-wrapper #splash h4 a, #splash-wrapper #splash h4 a:hover, #splash-wrapper #splash h4 a:active, #splash-wrapper #splash h4 a:visited {
+        color: white;
+        text-decoration: none; }
 
 #loading {
   margin-top: 20px;
@@ -411,5 +423,8 @@ section.empty {
 .progress-bar {
   background-color: #73c619;
   background-image: linear-gradient(to right, #b4ec51, #429321); }
+
+.language-choices .radio {
+  margin-top: 20px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -41,28 +41,29 @@
           <div class="container">
             <div class="row">
               <div class="col-md-6 center-col">
-                <footer id="app-footer" class="footer-view">
-                  <ul class="nav-items">
-                    <li>
-                      <a href="#" class="home"><i class="fa fa-list fa-2x"></i><br>My Stories</a>
-                    </li>
-
-                    <li>
-                      <a href="#add" class="add"><div class="add-btn-wrapper"><div class="add-btn"><i class="fa fa-plus fa-2x"></i></div></div></a>
-                    </li>
-
-                    <li>
-                      <a href="#about" class="about"><i class="fa fa-question-circle fa-2x"></i><br>About</a>
-                    </li>
-                  </ul>
-                </footer>
+                <footer id="app-footer" class="footer-view"></footer>
               </div>
             </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
+
+  <script id="footer-view-template" type="text/x-handlebars-template">
+    <ul class="nav-items">
+      <li>
+        <a href="#" class="home"><i class="fa fa-list fa-2x"></i><br>{{_ 'nav.my_stories' }}</span></a>
+      </li>
+
+      <li>
+        <a href="#add" class="add"><div class="add-btn-wrapper"><div class="add-btn"><i class="fa fa-plus fa-2x"></i></div></div></a>
+      </li>
+
+      <li>
+        <a href="#about" class="about"><i class="fa fa-question-circle fa-2x"></i><br>{{_ 'nav.about' }}</a>
+      </li>
+    </ul>
+  </script>
 
   <script id="home-view-template" type="text/x-handlebars-template">
     {{#if empty}}
@@ -77,8 +78,9 @@
                   <img src="img/logo.png" class="logo">
                 </div>
 
-                <h2>A News Editor in Your Pocket</h2>
-                <h3>Pocket Reporter helps you be a<br>better reporter by guiding you<br>through the news gathering process.</h3>
+                <h2>{{_ 'splash.tagline' }}</h2>
+                <h3>{{_ 'splash.description' }}</h3>
+                <h4><a href="#settings">{{_ 'splash.language_sel' }}</a></h4>
               </div>
             </div>
           </div>
@@ -92,6 +94,10 @@
           <div class="row">
             <div class="col-md-6 center-col">
               <header id="app-header">
+                <ul class="nav-items">
+                  <li><a href="#settings"><i class="fa fa-gear"></i></a></li>
+                </ul>
+
                 <h1>Pocket Reporter</h1>
               </header>
             </div>
@@ -115,8 +121,8 @@
                       <div class="date">{{ date updated_at }}</div>
                     </a>
                   </div>
-                  <div class="col-xs-2 delete-box text-center">
-                    <a href="#" class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                  <div class="col-xs-2 buttons text-center">
+                    <a href="#" class="share"><i class="fa fa-envelope"></i></a>
                   </div>
                 </li>
               {{/each}}
@@ -126,9 +132,9 @@
         {{else}}
 
           <div class="add-story-prompt">
-            <h1>We help you write better stories.</h1>
+            <h1>{{_ 'We help you write better stories.' }}</h1>
             <br>
-            <a href="#add" class="btn btn-success btn-lg">Start a story</a>
+            <a href="#add" class="btn btn-success btn-lg">{{_ 'Start a story' }}</a>
           </div>
 
         {{/if}}
@@ -142,7 +148,7 @@
     <i class="fa fa-check-circle"></i>
     <h3>{{ num }}. {{ q.question }}</h3>
 
-    <textarea name="notes" placeholder="Write your answer here"></textarea>
+    <textarea name="notes" placeholder="{{_ 'story.write_your_answer' }}"></textarea>
   </script>
 
   <script id="story-view-template" type="text/x-handlebars-template">
@@ -181,9 +187,9 @@
       <div class="story-done">
         <i class="fa fa-star fa-4x"></i>
 
-        <h2>You have completed this story!</h2>
+        <h2>{{_ 'story.completed' }}</h2>
 
-        <button class="btn btn-link share success">Email this story now</button>
+        <button class="btn btn-link share success">{{_ 'story.email_now' }}</button>
       </div>
 
       <section>
@@ -193,15 +199,15 @@
       <div class="story-done">
         <i class="fa fa-star fa-4x"></i>
 
-        <h2>You have completed this story!</h2>
+        <h2>{{_ 'story.completed' }}</h2>
 
-        <button class="btn btn-link share success">Email this story now</button>
+        <button class="btn btn-link share success">{{_ 'story.email_now' }}</button>
       </div>
 
       <footer class="text-right">
-        <button type="button" class="btn btn-link success share">Email story</button>
+        <button type="button" class="btn btn-link success share">{{_ 'story.email_story' }}</button>
         <br>
-        <button type="button" class="btn btn-link danger delete">Delete story</button>
+        <button type="button" class="btn btn-link danger delete">{{_ 'story.delete_story' }}</button>
       </footer>
     </article>
   </script>
@@ -216,7 +222,7 @@
                 <a href="#add" class="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
                 <h1>{{ topic.name }}</h1>
               {{else}}
-                <h1>Start a New Story</h1>
+                <h1>{{_ 'Start a New Story' }}</h1>
               {{/if}}
             </header>
           </div>
@@ -226,7 +232,7 @@
 
     <article class="with-header">
       <section class="topic-section">
-        <h3>What type of story are you writing?</h3>
+        <h3>{{_ 'What type of story are you writing?' }}</h3>
 
         <ul class="topic-buttons clearfix">
         {{#each topics}}
@@ -238,13 +244,13 @@
       </section>
 
       <section class="name-section">
-        <h3>Give your story a name:</h3>
+        <h3>{{_ 'Give your story a name' }}:</h3>
 
         <input type="text" class="form-control" name="title">
       </section>
 
       <section class="name-section text-right">
-        <button class="btn btn-link success next disabled">Start this story <i class="fa fa-chevron-right"></i></button>
+        <button class="btn btn-link success next disabled">{{_ 'Start this story' }} <i class="fa fa-chevron-right"></i></button>
       </section>
     </article>
   </script>
@@ -276,6 +282,38 @@
     </article>
   </script>
 
+  <script id="settings-view-template" type="text/x-handlebars-template">
+    <div id="header-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 center-col">
+            <header id="app-header">
+              <a href="#" class="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+              <h1>{{_ 'settings.heading' }}</h1>
+            </header>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <article class="with-header">
+      <section>
+        <h3>{{_ 'settings.select_lang' }}:</h3>
+
+        <div class="language-choices">
+        {{#each locales}}
+          <div class="radio">
+            <label>
+              <input type="radio" class="locale" name="locale" value="{{ locale }}" {{#if selected}} checked{{/if}}>
+              {{ name }}
+            </label>
+          </div>
+        {{/each}}
+        </div>
+      </section>
+    </article>
+  </script>
+
   <script id="about-view-template" type="text/x-handlebars-template">
     <div id="header-wrapper">
       <div class="container">
@@ -283,7 +321,7 @@
           <div class="col-md-6 center-col">
             <header id="app-header">
               <a href="#" class="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-              <h1>About Pocket Reporter</h1>
+              <h1>{{_ 'about.title' }}</h1>
             </header>
           </div>
         </div>
@@ -292,27 +330,24 @@
 
     <article class="with-header free-text">
       <section>
-        <p class="lead">Pocket Reporter is a news editor in your pocket that helps you be a better reporter.</p>
+        <p class="lead">{{_ 'about.line1' }}</p>
+        <p class="lead">{{_ 'about.line2' }}</p>
 
-        <p class="lead">Simply answer the questions as Pocket Reporter guides you through the news gathering process.</p>
+        <p><a href="http://pocketreporter.co.za/">pocketreporter.co.za</a></p>
 
-        <a href="mailto:info@code4sa.org?subject=Pocket Reporter+Feedback" class="btn btn-success">Send us feedback</a>
+        <a href="mailto:info@code4sa.org?subject=Pocket Reporter+Feedback" class="btn btn-success">{{_ 'about.feedback' }}</a>
       </section>
 
       <section>
-        <h2>Background</h2>
+        <h2>{{_ 'about.background' }}</h2>
 
-        <p>Pocket Reporter is built by <a href="http://code4sa.org" target="_blank">Code for South Africa</a>
-        and is inspired by the <a href="http://nqabile.co.za/virtual" target="_blank">Virtual Reporter tool</a> by
-        <a href="http://kanthanpillay.com/content/about" target="_blank">Kanthan Pillay</a>.
-        </p>
+        <p>{{_ 'about.builtby' }}</p>
       </section>
 
       <section>
         <h2>Code for South Africa</h2>
 
-        <p>Code for South Africa is a non-profit organisation that promotes informed decision-making that drives social change.
-        Find out more at <a href="http://code4sa.org" target="_blank">code4sa.org</a>.</p>
+        <p>{{_ 'about.about_c4sa' }}</p>
 
         <div class="row">
           <div class="col-xs-4">
@@ -324,6 +359,20 @@
           <div class="col-xs-4">
             <img src="img/nqabile-logo.png" class="logo nqabile img-responsive">
           </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>{{_ 'about.contributors' }}</h2>
+
+        <ul>
+          <li>Raymond Joseph - <a href="https://twitter.com/@rayjoe" target="_blank">@rayjoe</a></li>
+          <li>Raoul de Villiers</li>
+          <li>Juan Barrios - <a href="https://twitter.com/@knucklesnack" target="_blank">@knucklesnack</a></li>
+          <li>Thane Thomson</li>
+          <li>Mihlali Somi</li>
+          <li>Wara Fana</li>
+        </ul>
       </section>
     </article>
   </script>
@@ -339,7 +388,9 @@
   <script src="js/vendor/moment-2.14.1.min.js"></script>
   <script src="js/vendor/progressbar-1.0.1.min.js"></script>
   <script src="js/vendor/jquery.autogrow-textarea.js"></script>
+  <script src="js/vendor/polyglot.min.js"></script>
 
+  <script src="js/l10n.js"></script>
   <script src="js/helpers.js"></script>
   <script src="js/models.js"></script>
   <script src="js/topics.js"></script>
@@ -349,6 +400,7 @@
   <script src="js/views/story.js"></script>
   <script src="js/views/about.js"></script>
   <script src="js/views/userinfo.js"></script>
+  <script src="js/views/settings.js"></script>
   <script src="js/main.js"></script>
 
 </body>

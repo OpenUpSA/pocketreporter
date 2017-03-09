@@ -9,14 +9,16 @@ var QuestionView = Backbone.View.extend({
   events: {
   },
   bindings: {
-    '[name=notes]': 'notes',
+    '[name=notes]': 'notes'
   },
 
   initialize: function(options) {
     this.question = options.question;
     this.key = this.question.key;
     this.num = options.num;
+    this.story = options.story;
     this.listenTo(this.model, 'change:notes', this.answerChanged);
+    this.listenTo(PocketReporter.state, 'change:locale', this.render);
   },
 
   answerChanged: function() {
@@ -26,11 +28,14 @@ var QuestionView = Backbone.View.extend({
   },
 
   render: function() {
+    var q = this.question;
+    q.question = PocketReporter.polyglot.t('topics.' + this.story.get('topic') + '.questions.' + q.num);
+
     this.$el
       .html(this.template({
-        q: this.question,
+        q: q,
         a: this.model.attributes,
-        num: this.num,
+        num: this.num
       }))
       .data('key', this.key);
 
@@ -45,7 +50,7 @@ var QuestionView = Backbone.View.extend({
 
   inserted: function() {
     this.$el.find('textarea').autogrow();
-  },
+  }
 });
 
 
@@ -57,7 +62,7 @@ var StoryView = Backbone.View.extend({
   events: {
     'click #app-header h1': 'rename',
     'click .delete': 'deleteStory',
-    'click .share': 'share',
+    'click .share': 'share'
   },
 
   initialize: function() {
@@ -84,6 +89,7 @@ var StoryView = Backbone.View.extend({
         num: i+1,
         model: model,
         question: q,
+        story: self.model
       });
     });
 
@@ -120,23 +126,7 @@ var StoryView = Backbone.View.extend({
 
   share: function(e) {
     e.preventDefault();
-
-    var pending = this.model.pending();
-    var cordova = window.cordova || null;
-
-    if (pending.length > 0) {
-      if (!confirm('You still have ' + Handlebars.helpers.pluralCount(pending.length, 'item') + ' to complete. Share anyway?'))
-        return;
-    }
-
-    var mailto = 'mailto:';
-
-    mailto += '?subject=' + encodeURIComponent(this.model.get('title'));
-    mailto += '&body=' + encodeURIComponent(this.model.shareableBody());
-
-    window.open(mailto,'_system');
-
-    window.ga.trackEvent('story','share');
+    this.model.share();
   },
 
   render: function() {
@@ -144,7 +134,7 @@ var StoryView = Backbone.View.extend({
 
     this.$el.html(this.template({
       story: this.model.toJSON(),
-      topic: this.topic.toJSON(),
+      topic: this.topic.toJSON()
     }));
 
     var $questions = this.$('#question-list');
@@ -159,5 +149,5 @@ var StoryView = Backbone.View.extend({
   close: function() {
     this.remove();
     _.each(this.children, function(c) { c.remove(); });
-  },
+  }
 });

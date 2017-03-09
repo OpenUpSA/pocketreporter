@@ -6,6 +6,7 @@ var Router = Backbone.Router.extend({
     "add" : "add",
     "add/:topic" : "add",
     "about" : "about",
+    "settings": "settings"
   },
 
   initialize: function() {
@@ -34,6 +35,10 @@ var Router = Backbone.Router.extend({
     this.loadView(new AboutView());
   },
 
+  settings: function() {
+    this.loadView(new SettingsView());
+  },
+
   loadView: function(view) {
     if (this.view) {
       if (this.view.close) {
@@ -60,14 +65,15 @@ var Router = Backbone.Router.extend({
 
     fragment = '/app' + fragment;
 
-    window.ga.trackView(fragment);
-  },
+    if ('ga' in window) window.ga.trackView(fragment);
+  }
 });
 
 
 /*** Globals ***/
 var PocketReporter = Backbone.Model.extend({
   initialize: function() {
+    var self = this;
 
     this.topics = new Topics(STORYCHECK_TOPICS);
     // storage version
@@ -79,6 +85,12 @@ var PocketReporter = Backbone.Model.extend({
     } else {
       this.storage = null;
     }
+
+    // localisation
+    this.polyglot = new Polyglot();
+    Handlebars.registerHelper("_", function(text) {
+      return new Handlebars.SafeString(self.polyglot.t(text));
+    });
 
     this.load();
 
@@ -110,9 +122,10 @@ var PocketReporter = Backbone.Model.extend({
     this.state.set('user', new Backbone.Model(val.user, {parse: true}));
 
     this.stories = this.state.get('stories');
-
     this.user = this.state.get('user');
 
+    this.state.on('change:locale', this.loadLocale, this);
+    this.loadLocale();
   },
 
   save: function() {
@@ -126,6 +139,14 @@ var PocketReporter = Backbone.Model.extend({
     var id = this.state.get('nextId');
     this.state.set('nextId', id + 1);
     return id;
+  },
+
+  loadLocale: function() {
+    // load new localised phrases
+    var locale = this.state.get('locale'),
+        phrases = L10N[locale];
+
+    this.polyglot.replace(phrases);
   },
 
   general: function() {
@@ -159,21 +180,25 @@ var router = null;
 
 var app = {
   initialize: function() {
-      this.bindEvents();
+    this.bindEvents();
+    // XXX HACK HACK HACK/
+    // this means we can run the app using a local webserver
+    // and this must be removed when compiling using phonegap
+    // this.onDeviceReady();
   },
   bindEvents: function() {
-      document.addEventListener('deviceready', this.onDeviceReady, false);
+    document.addEventListener('deviceready', this.onDeviceReady, false);
   },
   onDeviceReady: function() {
-      app.eventReceived('deviceready');
+    app.eventReceived('deviceready');
   },
   eventReceived: function(id) {
     PocketReporter = new PocketReporter();
     router = new Router();
     Backbone.history.start();
-    window.ga.startTrackerWithId('UA-48399585-42');
+    if ('ga' in window) window.ga.startTrackerWithId('UA-48399585-42');
     console.log('Event received: ',id);
   }
-}
+};
 
 app.initialize();
