@@ -32,8 +32,10 @@ var L10N = {
       "write_your_answer": "Write your answer now",
       "type_of_story": "What type of story are you writing?",
       "story_name": "Give your story a name",
-      "start_story": "Start this story",
+      "start": "Start this story",
       "new_story": "Start a New Story",
+      "confirm_delete": "Delete this story?",
+      "rename": "Rename this story",
     },
     topics: {
       1: {

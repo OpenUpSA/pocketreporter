@@ -108,7 +108,7 @@ var StoryView = Backbone.View.extend({
   deleteStory: function(e) {
     e.preventDefault();
 
-    if (confirm("Delete this story?")) {
+    if (confirm(PocketReporter.polyglot.t('story.confirm_delete'))) {
       PocketReporter.stories.remove(this.model);
       window.ga.trackEvent('story','delete');
       router.navigate('', {trigger: true});
@@ -116,7 +116,7 @@ var StoryView = Backbone.View.extend({
   },
 
   rename: function(e) {
-    var title = prompt('Rename this story', this.model.get('title'));
+    var title = prompt(PocketReporter.polyglot.t('story.rename'), this.model.get('title'));
 
     if (!_.isEmpty(title)) {
       this.model.set('title', title);
