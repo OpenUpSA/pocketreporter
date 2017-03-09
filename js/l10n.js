@@ -251,7 +251,7 @@ var L10N = {
     }
   },
   'xh': {
-    'name': 'Xhosa',
+    "name": "isiXhosa",
     "about": {
       "about_c4sa": "I-Code for South Africa liqela elingasekwanga ngeenjongo zokwenza imali neli khuthaza izigqibo ezidala utshintsho eluntwini. Ungafumana okuthe vetshe ku <a href=\"http://code4sa.org\" target=\"_blank\">code4sa.org</a>.",
       "background": "Imvelaphi",
@@ -260,6 +260,7 @@ var L10N = {
       "feedback": "Sithumele ingxelo yakho",
       "line1": "U-Pocket Reporter ngumhleli weendaba ohlala ese pokothweni yakho nokuncedisa ukuba ube yintatheli engcono.",
       "line2": "Phendula nje imibuzo nanjengokuba uPocket Reporter ekukhokela kwinkqubo yoku qokelela iindaba.",
+      "title": "Malunga no Pocket Reporter"
     },
     "nav": {
       "about": "Malunga",
@@ -275,9 +276,11 @@ var L10N = {
       "tagline": "U-Mhleli Weendaba ePokothweni Yakho"
     },
     "story": {
-      "write_your_answer": "Bhala impendulo yakho apha",
-      "completed": "Ugqibile eli bali!",
-      "delete_story": "Cima eli bali",
+      "completed": "Uligqibile eli bali!",
+      "delete_story": "Cima ibali",
+      "email_now": "Imeyila elibali ngoku",
+      "email_story": "Imeyila ibali",
+      "write_your_answer": "Bhala impendulo yakho apha"
     },
     "topics": {
       "1": {
