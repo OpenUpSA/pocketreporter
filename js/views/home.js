@@ -6,7 +6,6 @@ var HomeView = Backbone.View.extend({
 
   events: {
     'click #splash .button': 'add',
-    'click .delete': 'deleteStory',
     'click .share': 'shareStory',
   },
 
@@ -19,19 +18,6 @@ var HomeView = Backbone.View.extend({
 
   add: function() {
     router.navigate('add', {trigger: true});
-  },
-
-  deleteStory: function(e) {
-    e.preventDefault();
-
-    if (confirm("Delete this story?")) {
-      var id = $(e.target).closest('.story-item').attr('data-id');
-      var story = PocketReporter.stories.get(id);
-
-      PocketReporter.stories.remove(story);
-      window.ga.trackEvent('story','delete');
-      router.navigate('', {trigger: true});
-    }
   },
 
   shareStory: function(e) {
