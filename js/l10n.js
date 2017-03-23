@@ -267,7 +267,7 @@ var L10N = {
       "line2": "Phendula nje imibuzo nanjengokuba uPocket Reporter ekukhokela kwinkqubo yoku qokelela iindaba.", 
       "title": "Malunga no Pocket Reporter"
     }, 
-    "name": "isiXhosa", 
+    "name": "IsiXhosa", 
     "nav": {
       "about": "Malunga", 
       "my_stories": "Amabali am"
@@ -283,9 +283,15 @@ var L10N = {
     }, 
     "story": {
       "completed": "Uligqibile eli bali!", 
+      "confirm_delete": "Cima elibali na?", 
       "delete_story": "Cima ibali", 
       "email_now": "Imeyila elibali ngoku", 
       "email_story": "Imeyila ibali", 
+      "new_story": "Qalisa ibali elitsha", 
+      "rename": "Phinda ulithiye eli bali", 
+      "start": "Qalisa eli bali", 
+      "story_name": "Linike igama ibali lakho", 
+      "type_of_story": "Ludidi luni lwebali olibhalayo?", 
       "write_your_answer": "Bhala impendulo yakho apha"
     }, 
     "topics": {
