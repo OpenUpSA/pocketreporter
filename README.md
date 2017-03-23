@@ -26,9 +26,9 @@ Local development is simple because the app is client-side only and has no serve
 1. Download the translations file [from CrowdIn.com](https://crowdin.com/project/pocketreporter/settings#translations)
 2. Make a note of the language code (eg. ``en-za`` or ``xh``)
 3. Import it into ``js/l10n.js`` by running:
-
+    ```bash
     python strings.py --file download.csv --language LANGUAGE_CODE
-
+    ```
 4. Check the new strings in the app
 5. Sanity check the changes using ``git diff``
 6. Commit as usual
