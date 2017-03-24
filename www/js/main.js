@@ -208,7 +208,7 @@ var app = {
     // this.onDeviceReady();
   },
   bindEvents: function() {
-    document.addEventListener('deviceready', this.onDeviceReady, false);
+    document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
   },
   onDeviceReady: function() {
     app.eventReceived('deviceready');

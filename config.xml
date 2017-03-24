@@ -6,28 +6,14 @@
     <content src="index.html" />
     <access origin="mailto:*" launch-external="yes" />
     <allow-intent href="mailto:*" />
-    <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="3000" />
-    <preference name="SplashMaintainAspectRatio" value="true|false" />
-    <preference name="SplashShowOnlyFirstTime" value="true|false" />
     <preference name="Orientation" value="portrait"/>
     <platform name="android">
         <icon src="res/icon/android/ldpi.png" platform="android" qualifier="ldpi" />
         <icon src="res/icon/android/mdpi.png" platform="android" qualifier="mdpi" />
         <icon src="res/icon/android/hdpi.png" platform="android" qualifier="hdpi" />
         <icon src="res/icon/android/xhdpi.png" platform="android" qualifier="xhdpi" />
-        <splash src="res/splash/hdpi-landscape.png" density="land-hdpi"/>
-        <splash src="res/splash/mdpi-landscape.png" density="land-mdpi"/>
-        <splash src="res/splash/ldpi-landscape.png" density="land-ldpi"/>
-        <splash src="res/splash/xhdpi-landscape.png" density="land-xhdpi"/>
-
-        <splash src="res/splash/xhdpi-portrait.png" density="port-xhdpi"/>
-        <splash src="res/splash/ldpi-portrait.png" density="port-ldpi"/>
-        <splash src="res/splash/mdpi-portrait.png" density="port-mdpi"/>
-        <splash src="res/splash/hdpi-portrait.png" density="port-hdpi"/>
     </platform>
     <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
-    <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
     <plugin name="cordova-plugin-firebase-analytics" spec="~0.9.3" />
 </widget>
