@@ -5,7 +5,6 @@ var State = Backbone.Model.extend({
   defaults: {
     stories: [],
     nextId: 1,
-    locale: 'en-za'
   }
 });
 
