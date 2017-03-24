@@ -29,5 +29,5 @@
     <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
-    <plugin name="cordova-plugin-google-analytics" source="npm" />
+    <plugin name="cordova-plugin-firebase-analytics" spec="~0.9.3" />
 </widget>

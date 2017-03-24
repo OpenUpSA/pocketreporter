@@ -54,6 +54,7 @@ var AddStoryView = Backbone.View.extend({
   create: function(topic) {
     this.model.set('id', PocketReporter.newStoryId());
     PocketReporter.stories.add(this.model);
+    PocketReporter.logEvent('new_story', {topic: this.model.get('topic')});
 
     router.navigate('stories/' + this.model.id, {trigger: true});
   }

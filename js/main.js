@@ -64,8 +64,7 @@ var Router = Backbone.Router.extend({
     }
 
     fragment = '/app' + fragment;
-
-    if ('ga' in window) window.ga.trackView(fragment);
+    PocketReporter.logEvent('page_view', {name: fragment});
   }
 });
 
@@ -131,7 +130,7 @@ var PocketReporter = Backbone.Model.extend({
       this.state.set('locale', 'en-za');
     }
 
-    this.state.on('change:locale', this.loadLocale, this);
+    this.state.on('change:locale', this.localeChanged, this);
     this.loadLocale();
   },
 
@@ -148,12 +147,21 @@ var PocketReporter = Backbone.Model.extend({
     return id;
   },
 
+  localeChanged: function() {
+    this.loadLocale();
+    this.logEvent('locale_changed', {locale: this.state.get('locale')});
+  },
+
   loadLocale: function() {
     // load new localised phrases
     var locale = this.state.get('locale'),
         phrases = L10N[locale];
 
     this.polyglot.replace(phrases);
+
+    if ('cordova' in window) {
+      window.cordova.plugins.firebase.analytics.setUserProperty('locale', locale);
+    }
   },
 
   general: function() {
@@ -180,6 +188,12 @@ var PocketReporter = Backbone.Model.extend({
        $('#footer-wrapper').show();
      }
     });
+  },
+  
+  logEvent: function(event, params) {
+    if ('cordova' in window) {
+      window.cordova.plugins.firebase.analytics.logEvent(event, params);
+    }
   }
 });
 
@@ -203,7 +217,6 @@ var app = {
     PocketReporter = new PocketReporter();
     router = new Router();
     Backbone.history.start();
-    if ('ga' in window) window.ga.startTrackerWithId('UA-48399585-49');
     console.log('Event received: ',id);
   }
 };
