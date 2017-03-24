@@ -13,13 +13,22 @@ The ``app`` branch is the app itself, the ``gh-pages`` branch is the website.
 
 ## Local development
 
-Local development is simple because the app is client-side only and has no server component. You can use any local webserver that servers files from the filesystem. We use [Jekyll](http://jekyllrb.com/).
+Local development uses the PhoneGap simulator.
 
 1. Clone the repo and `cd` into the repo directory
 2. Switch to the **app** branch: `git checkout app`
-3. Start any local webserver, such as Jekyll: ``jekyll server``
-4. You can also use python: ``python -m SimpleHTTPServer 4000``
-5. Visit the site in your browser: [http://localhost:4000](http://localhost:4000)
+3. Download the [PhoneGap app](http://phonegap.com/getstarted/)
+4. Run PhoneGap and add the PocketReporter directory, and start the app in PhoneGap
+5. Visit the URL shown in PhoneGap
+
+You can also use any local webserver that servers files from the filesystem. We use [Jekyll](http://jekyllrb.com/).
+
+1. Check out the repo and app branch as above
+2. Start any local webserver, such as Jekyll: ``jekyll server``
+3. You can also use python: ``python -m SimpleHTTPServer 4000``
+4. Open ``www/js/main.js`` and uncomment the line that says ``// this.onDeviceReady();``
+4. Visit the site in your browser: [http://localhost:4000](http://localhost:4000)
+
 
 ## Updating translations
 
