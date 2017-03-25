@@ -1,11 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.pocketreporter" version="1.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.phonegap.pocketreporter" version="1.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>Pocket Reporter</name>
     <description>App to help young journalists structure their stories.</description>
     <author email="info@code4sa.org" href="http://code4sa.org">Code4SA</author>
     <content src="index.html" />
+    <access origin="*" />
     <access origin="mailto:*" launch-external="yes" />
     <allow-intent href="mailto:*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
     <preference name="Orientation" value="portrait"/>
     <platform name="android">
         <icon src="res/icon/android/ldpi.png" platform="android" qualifier="ldpi" />
@@ -16,4 +19,7 @@
     <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
     <plugin name="cordova-plugin-firebase-analytics" spec="~0.9.3" />
+    <config-file platform="android" parent="/manifest" mode="merge">
+        <application android:debuggable="true" />
+    </config-file>
 </widget>
