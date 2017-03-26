@@ -204,7 +204,6 @@ var app = {
     router = new Router();
     Backbone.history.start();
     if ('ga' in window) window.ga.startTrackerWithId('UA-48399585-49');
-    window.ga.debugMode();
     console.log('Event received: ',id);
   }
 };
