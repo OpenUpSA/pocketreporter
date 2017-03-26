@@ -132,6 +132,14 @@ var StoryView = Backbone.View.extend({
   render: function() {
     var self = this;
 
+    window.ga.trackEvent('test', 'tested', '', 0, false, function() {
+      console.log('event sent');
+      console.log(arguments);
+    }, function() {
+      console.log('event failed');
+      console.log(arguments);
+    });
+
     this.$el.html(this.template({
       story: this.model.toJSON(),
       topic: this.topic.toJSON()
