@@ -64,8 +64,7 @@ var Router = Backbone.Router.extend({
     }
 
     fragment = '/app' + fragment;
-
-    if ('ga' in window) window.ga.trackView(fragment);
+    PocketReporter.trackView(fragment);
   }
 });
 
@@ -131,7 +130,7 @@ var PocketReporter = Backbone.Model.extend({
       this.state.set('locale', 'en-za');
     }
 
-    this.state.on('change:locale', this.loadLocale, this);
+    this.state.on('change:locale', this.localeChanged, this);
     this.loadLocale();
   },
 
@@ -146,6 +145,11 @@ var PocketReporter = Backbone.Model.extend({
     var id = this.state.get('nextId');
     this.state.set('nextId', id + 1);
     return id;
+  },
+
+  localeChanged: function() {
+    this.loadLocale();
+    this.trackEvent('locale', 'changed', this.state.get('locale'));
   },
 
   loadLocale: function() {
@@ -180,6 +184,16 @@ var PocketReporter = Backbone.Model.extend({
        $('#footer-wrapper').show();
      }
     });
+  },
+
+  trackEvent: function(category, action, label, value, newSession, success, error) {
+    if ('ga' in window) {
+      window.ga.trackEvent(category, action, label, value, newSession, success, error);
+    }
+  },
+
+  trackView: function(view) {
+    if ('ga' in window) window.ga.trackView(view);
   }
 });
 
