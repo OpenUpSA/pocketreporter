@@ -110,7 +110,7 @@ var StoryView = Backbone.View.extend({
 
     if (confirm(PocketReporter.polyglot.t('story.confirm_delete'))) {
       PocketReporter.stories.remove(this.model);
-      PocketReporter.logEvent('story_deleted');
+      window.ga.trackEvent('story','delete');
       router.navigate('', {trigger: true});
     }
   },

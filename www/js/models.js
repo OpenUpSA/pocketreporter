@@ -117,7 +117,7 @@ var Story = Backbone.Model.extend({
 
     window.open(mailto, '_system');
 
-    PocketReporter.logEvent('story_shared');
+    window.ga.trackEvent('story', 'share');
   }
 });
 

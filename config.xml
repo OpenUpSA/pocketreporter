@@ -24,7 +24,7 @@
     </platform>
     <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
-    <plugin name="cordova-plugin-firebase-analytics" spec="~0.9.3" />
+    <plugin name="cordova-plugin-google-analytics" source="npm" />
     <config-file platform="android" parent="/manifest" mode="merge">
         <application android:debuggable="true" />
     </config-file>
