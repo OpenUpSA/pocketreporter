@@ -15,6 +15,12 @@
         <icon src="res/icon/android/mdpi.png" platform="android" qualifier="mdpi" />
         <icon src="res/icon/android/hdpi.png" platform="android" qualifier="hdpi" />
         <icon src="res/icon/android/xhdpi.png" platform="android" qualifier="xhdpi" />
+        <config-file parent="/resources" target="res/values/strings.xml">
+            <string name="google_app_id">1:55139546583:android:4a989f249434db2b</string>
+        </config-file>
+        <config-file parent="/resources" target="res/values/strings.xml">
+            <string name="google_api_key">AIzaSyBpeeWWZxyrUIKTM1lY2U8eEfMpwmGKies</string>
+        </config-file>
     </platform>
     <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
