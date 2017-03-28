@@ -32,6 +32,7 @@ var L10N = {
       "email_story": "Email story", 
       "new_story": "Start a New Story", 
       "rename": "Rename this story", 
+      "share_incomplete": "You haven't answered all the questions. Share anyway?",
       "start": "Start this story", 
       "story_name": "Give your story a name", 
       "type_of_story": "What type of story are you writing?", 

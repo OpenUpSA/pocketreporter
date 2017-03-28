@@ -106,7 +106,7 @@ var Story = Backbone.Model.extend({
     var cordova = window.cordova || null;
 
     if (pending.length > 0) {
-      if (!confirm('You still have ' + Handlebars.helpers.pluralCount(pending.length, 'item') + ' to complete. Share anyway?'))
+      if (!confirm(PocketReporter.polyglot.t('story.share_incomplete')))
         return;
     }
 
