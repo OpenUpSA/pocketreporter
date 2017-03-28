@@ -278,7 +278,7 @@ var L10N = {
       "select_lang": "Khetha ulwimi lwakho"
     }, 
     "splash": {
-      "description": "U-Pocket Reporter ukunceda ukuba ube yintatheli engcono ngokuthi akukhokele kwinkqubo yoku chola-chola iindaba.", 
+      "description": "U-Pocket Reporter ukunceda ukuba ube<br>yintatheli engcono ngokuthi akukhokele<br>kwinkqubo yoku chola-chola iindaba.", 
       "language_sel": "Tshintsha ulwimi", 
       "tagline": "U-Mhleli Weendaba ePokothweni Yakho"
     }, 
