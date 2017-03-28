@@ -86,7 +86,13 @@ var PocketReporter = Backbone.Model.extend({
     }
 
     // localisation
+    // fallback english polyglot
+    this.polyglot_en = new Polyglot();
+    this.loadLocale(this.polyglot_en, 'en-za');
     this.polyglot = new Polyglot();
+    this.polyglot._t = this.polyglot.t;
+    this.polyglot.t = _.bind(this.t, this);
+
     Handlebars.registerHelper("_", function(text) {
       return new Handlebars.SafeString(self.polyglot.t(text));
     });
@@ -98,6 +104,15 @@ var PocketReporter = Backbone.Model.extend({
     this.state.get('stories').on('change add remove', save);
 
     this.general();
+  },
+
+  // override polyglot.t to track when a key is missing
+  t: function(key) {
+    if (this.polyglot.has(key)) return this.polyglot._t.apply(this.polyglot, arguments);
+
+    // fall back to the english translation, and log a GA event
+    this.trackEvent('l10n-missing', this.polyglot.locale(), key);
+    return this.polyglot_en.t.apply(this.polyglot_en, arguments);
   },
 
   load: function() {
@@ -152,12 +167,12 @@ var PocketReporter = Backbone.Model.extend({
     this.trackEvent('locale', 'changed', this.state.get('locale'));
   },
 
-  loadLocale: function() {
+  loadLocale: function(polyglot, locale) {
     // load new localised phrases
-    var locale = this.state.get('locale'),
-        phrases = L10N[locale];
-
-    this.polyglot.replace(phrases);
+    polyglot = polyglot || this.polyglot;
+    locale = locale || this.state.get('locale');
+    polyglot.locale(locale);
+    polyglot.replace(L10N[locale]);
   },
 
   general: function() {
