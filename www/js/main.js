@@ -183,6 +183,7 @@ var PocketReporter = Backbone.Model.extend({
     $('body').on('hide.bs.collapse', '.collapsible-sections .collapse', function() {
       $(this).prev().addClass('collapsed');
     });
+
     var originalHeight = document.documentElement.clientHeight;
     var originalWidth = document.documentElement.clientWidth;
     $(window).resize(function() {
@@ -199,6 +200,28 @@ var PocketReporter = Backbone.Model.extend({
        $('#footer-wrapper').show();
      }
     });
+
+    // cycle any language chooser elements
+    setTimeout(_.bind(this.cycleLanguageChooser, this), 3000);
+  },
+
+  cycleLanguageChooser: function() {
+    $('.change-language-cycler').each(function() {
+      var $elem = $(this),
+          lang = $elem.data('lang'),
+          codes = _.keys(L10N);
+
+      var ix = codes.indexOf(lang);
+      ix++;
+      if (ix >= codes.length) ix = 0;
+      lang = codes[ix];
+
+      $elem
+        .text(L10N[lang].splash.language_sel)
+        .data('lang', lang);
+    });
+
+    setTimeout(_.bind(this.cycleLanguageChooser, this), 3000);
   },
 
   trackEvent: function(category, action, label, value, newSession, success, error) {
