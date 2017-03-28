@@ -402,14 +402,15 @@ ul.question-list {
     text-decoration: none; }
   .add-story-view .topic-buttons a {
     display: block;
+    line-height: 1.2;
     height: 100px;
-    padding: 10px;
+    padding: 5px 2px;
     background-color: #73c619;
     border: 1px solid #979797;
     text-align: center; }
     .add-story-view .topic-buttons a .fa {
       font-size: 32px;
-      margin-top: 5px;
+      margin-top: 0px;
       margin-bottom: 5px; }
 .add-story-view .name-section {
   display: none; }
