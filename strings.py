@@ -33,7 +33,7 @@ def dump(d, prefix=""):
 def load_csv(fname):
     output = {}
 
-    with open(fname) as f:
+    with codecs.open(fname, "r", "utf-8") as f:
         for line in unicode_csv_reader(f, escapechar='\\'):
             key, string = line
             deep_set(output, key, string)
@@ -50,7 +50,7 @@ def deep_set(into, key, string):
 
 
 def read_l10n():
-    with codecs.open("js/l10n.js", "r", "utf-8") as f:
+    with codecs.open("www/js/l10n.js", "r", "utf-8") as f:
         data = f.read()
         data = re.sub(r'^var L10N = ', '', data)
         data = re.sub(r';$', '', data)
@@ -58,7 +58,7 @@ def read_l10n():
 
 
 def write_l10n(strings):
-    with codecs.open("js/l10n.js", "w", "utf-8") as f:
+    with codecs.open("www/js/l10n.js", "w", "utf-8") as f:
         data = json.dumps(strings, indent=2, sort_keys=True)
         data = u"var L10N = " + data + u";"
         f.write(data)
