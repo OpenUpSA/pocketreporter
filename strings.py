@@ -36,7 +36,7 @@ def load_csv(fname):
     with codecs.open(fname, "r", "utf-8") as f:
         for line in unicode_csv_reader(f, escapechar='\\'):
             key, string = line
-            deep_set(output, key, string)
+            deep_set(output, key.strip(), string.strip())
 
     return output
 
