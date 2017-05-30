@@ -58,4 +58,6 @@ The Pocket Report name and logo are Copyright 2017 OpenUp, and may not be used w
 
 Pocket Report is the brainchild of Raymond Joseph and is inspired by the [Virtual Reporter tool](http://nqabile.co.za/virtual) by [Kanthan Pillay](http://kanthanpillay.com/content/about).
 
+The logo is a derivative of [this Freepik icon](http://www.flaticon.com/free-icon/quill-drawing-a-line_16294).
+
 You're welcome to re-use this code to build your own application, provided you give it a new name and logo, provide attribution to Pocket Reporter and OpenUp, and follow the requirements of the MIT License.
