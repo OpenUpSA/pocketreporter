@@ -243,7 +243,7 @@ var app = {
     // XXX HACK HACK HACK/
     // this means we can run the app using a local webserver
     // and this must be removed when compiling using phonegap
-    // this.onDeviceReady();
+    this.onDeviceReady();
   },
   bindEvents: function() {
     document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);

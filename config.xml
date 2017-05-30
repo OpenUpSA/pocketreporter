@@ -2,7 +2,7 @@
 <widget id="com.phonegap.pocketreporter" version="1.1.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>Pocket Reporter</name>
     <description>App to help young journalists structure their stories.</description>
-    <author email="info@code4sa.org" href="http://code4sa.org">Code4SA</author>
+    <author email="info@openup.org.za" href="https://openup.org.za">OpenUp</author>
     <content src="index.html" />
     <access origin="*" />
     <access origin="mailto:*" launch-external="yes" />

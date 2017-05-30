@@ -1,6 +1,6 @@
 # Pocket Reporter
 
-**HELP WANTED: We don't have the capacity to maintain this app. We're looking for community volunteers to help us out and keep it going. Please email info@code4sa.org if you're interested.**
+**HELP WANTED: We don't have the capacity to maintain this app. We're looking for community volunteers to help us out and keep it going. Please email <info@openup.org.za> if you're interested.**
 
 PocketReporter is an mobile app for Android devices that helps you be a better reporter by guiding you through the news gathering process.
 
