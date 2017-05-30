@@ -3,7 +3,7 @@ var L10N = {
     "about": {
       "about_openup": "OpenUp is 'n niewinsgewende onderneming wat ingeligte besluitneming bevorder om sosiale verandering aan te help. Nadere inligting is beskikbaar by <a href=\"https://openup.org.za\" target=\"_blank\">openup.org.za</a>.", 
       "background": "Agtergrond", 
-      "builtby": "Pocket Reporter is ontwikkel deur <a href=\"https://openup.org.za\" target=\"_blank\">Code for South Africa</a> en is ge\u00efnspireer deur die <a href=\"http://nqabile.co.za/virtual\" target=\"_blank\">Virtual Reporter-nutsmiddel</a> van <a href=\"http://kanthanpillay.com/content/about\" target=\"_blank\">Kanthan Pillay</a>.", 
+      "builtby": "Pocket Reporter is ontwikkel deur <a href=\"https://openup.org.za\" target=\"_blank\">OpenUp</a> en is ge\u00efnspireer deur die <a href=\"http://nqabile.co.za/virtual\" target=\"_blank\">Virtual Reporter-nutsmiddel</a> van <a href=\"http://kanthanpillay.com/content/about\" target=\"_blank\">Kanthan Pillay</a>.", 
       "contributors": "Bydraers", 
       "feedback": "Stuur vir ons terugvoer", 
       "line1": "Pocket Reporter is 'n nuusredakteur wat altyd byderhand is en jou help om 'n beter verslaggewer te wees.", 
@@ -261,7 +261,7 @@ var L10N = {
     "about": {
       "about_openup": "OpenUp is a non-profit organisation that promotes informed decision-making that drives social change. Find out more at <a href=\"https://openup.org.za\" target=\"_blank\">openup.org.za</a>.", 
       "background": "Background", 
-      "builtby": "Pocket Reporter is built by <a href=\"https://OpenUp.org.za\" target=\"_blank\">Code for South Africa</a> and is inspired by the <a href=\"http://nqabile.co.za/virtual\" target=\"_blank\">Virtual Reporter tool</a> by <a href=\"http://kanthanpillay.com/content/about\" target=\"_blank\">Kanthan Pillay</a>.", 
+      "builtby": "Pocket Reporter is built by <a href=\"https://openup.org.za\" target=\"_blank\">OpenUp</a> and is inspired by the <a href=\"http://nqabile.co.za/virtual\" target=\"_blank\">Virtual Reporter tool</a> by <a href=\"http://kanthanpillay.com/content/about\" target=\"_blank\">Kanthan Pillay</a>.", 
       "contributors": "Contributors", 
       "feedback": "Send us feedback", 
       "line1": "Pocket Reporter is a news editor in your pocket that helps you be a better reporter.", 
@@ -519,7 +519,7 @@ var L10N = {
     "about": {
       "about_openup": "OpenUp \u00e9 uma organiza\u00e7\u00e3o sem \u00e1nimo de lucro que promove a tomada de decis\u00f5es respons\u00e1vel que promove a mudan\u00e7a social. Saiba mais em <a href=\"https://openup.org.za\" target=\"_blank\">openup.org.za</a>.", 
       "background": "Contexto", 
-      "builtby": "Pocket Reporter foi desenvolvido por <a href=\"https://openup.org.za\" target=\"_blank\">Code for South Africa</a> e est\u00e1 inspirado na <a href=\"http://nqabile.co.za/virtual\" target=\"_blank\">ferramenta Reporter virtual</a> de <a href=\"http://kanthanpillay.com/content/about\" target=\"_blank\">Kanthan Pillay</a>.", 
+      "builtby": "Pocket Reporter foi desenvolvido por <a href=\"https://openup.org.za\" target=\"_blank\">OpenUp</a> e est\u00e1 inspirado na <a href=\"http://nqabile.co.za/virtual\" target=\"_blank\">ferramenta Reporter virtual</a> de <a href=\"http://kanthanpillay.com/content/about\" target=\"_blank\">Kanthan Pillay</a>.", 
       "contributors": "Colaboradores", 
       "feedback": "Envie-nos os seus coment\u00e1rios", 
       "line1": "Pocket Reporter \u00e9 um editor de not\u00edcias no seu bolso que ajuda voc\u00ea a ser melhor rep\u00f3rter.", 

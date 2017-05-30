@@ -48,14 +48,14 @@ Phonegap is built on [Phonegap Build](https://build.phonegap.com/apps/2227365/bu
 
 # License and Copyright
 
-Copyright 2016 Code for South Africa.
+Copyright 2017 OpenUp.
 
 Licensed under the [MIT license](LICENSE).
 
-The Pocket Report name and logo are Copyright 2016 Code for South Africa, and may not be used without permission.
+The Pocket Report name and logo are Copyright 2017 OpenUp, and may not be used without permission.
 
 # Attribution
 
 Pocket Report is the brainchild of Raymond Joseph and is inspired by the [Virtual Reporter tool](http://nqabile.co.za/virtual) by [Kanthan Pillay](http://kanthanpillay.com/content/about).
 
-You're welcome to re-use this code to build your own application, provided you give it a new name and logo, provide attribution to Pocket Reporter and Code for South Africa, and follow the requirements of the MIT License.
+You're welcome to re-use this code to build your own application, provided you give it a new name and logo, provide attribution to Pocket Reporter and OpenUp, and follow the requirements of the MIT License.
