@@ -1,6 +1,6 @@
 # Pocket Reporter
 
-**HELP WANTED: We don't have the capacity to maintain this app. We're looking for community volunteers to help us out and keep it going. Please email info@code4sa.org if you're interested.**
+**HELP WANTED: We don't have the capacity to maintain this app. We're looking for community volunteers to help us out and keep it going. Please email <info@openup.org.za> if you're interested.**
 
 PocketReporter is an mobile app for Android devices that helps you be a better reporter by guiding you through the news gathering process.
 
@@ -48,14 +48,16 @@ Phonegap is built on [Phonegap Build](https://build.phonegap.com/apps/2227365/bu
 
 # License and Copyright
 
-Copyright 2016 Code for South Africa.
+Copyright (c) 2016, 2017 OpenUp
 
 Licensed under the [MIT license](LICENSE).
 
-The Pocket Report name and logo are Copyright 2016 Code for South Africa, and may not be used without permission.
+The Pocket Reporter name and logo are Copyright 2016 OpenUp, and may not be used without permission.
 
 # Attribution
 
-Pocket Report is the brainchild of Raymond Joseph and is inspired by the [Virtual Reporter tool](http://nqabile.co.za/virtual) by [Kanthan Pillay](http://kanthanpillay.com/content/about).
+Pocket Reporter is the brainchild of Raymond Joseph and is inspired by the [Virtual Reporter tool](http://nqabile.co.za/virtual) by [Kanthan Pillay](http://kanthanpillay.com/content/about).
 
-You're welcome to re-use this code to build your own application, provided you give it a new name and logo, provide attribution to Pocket Reporter and Code for South Africa, and follow the requirements of the MIT License.
+The logo is a derivative of [this Freepik icon](http://www.flaticon.com/free-icon/quill-drawing-a-line_16294).
+
+You're welcome to re-use this code to build your own application, provided you give it a new name and logo, provide attribution to Pocket Reporter and OpenUp, and follow the requirements of the MIT License.
