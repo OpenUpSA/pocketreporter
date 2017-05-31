@@ -52,11 +52,11 @@ Copyright (c) 2016, 2017 OpenUp
 
 Licensed under the [MIT license](LICENSE).
 
-The Pocket Report name and logo are Copyright 2017 OpenUp, and may not be used without permission.
+The Pocket Reporter name and logo are Copyright 2016 OpenUp, and may not be used without permission.
 
 # Attribution
 
-Pocket Report is the brainchild of Raymond Joseph and is inspired by the [Virtual Reporter tool](http://nqabile.co.za/virtual) by [Kanthan Pillay](http://kanthanpillay.com/content/about).
+Pocket Reporter is the brainchild of Raymond Joseph and is inspired by the [Virtual Reporter tool](http://nqabile.co.za/virtual) by [Kanthan Pillay](http://kanthanpillay.com/content/about).
 
 The logo is a derivative of [this Freepik icon](http://www.flaticon.com/free-icon/quill-drawing-a-line_16294).
 
