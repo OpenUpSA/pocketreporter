@@ -48,7 +48,7 @@ Phonegap is built on [Phonegap Build](https://build.phonegap.com/apps/2227365/bu
 
 # License and Copyright
 
-Copyright 2017 OpenUp.
+Copyright (c) 2016, 2017 OpenUp
 
 Licensed under the [MIT license](LICENSE).
 
