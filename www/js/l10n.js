@@ -780,9 +780,9 @@ var L10N = {
       "builtby": "Pocket Reporter est\u00e1 construido por <a href=\"https://openup.org.za\" target=\"_blank\">OpenUp</a> y est\u00e1 inspirado en el <a href=\"http://nqabile.co.za/virtual \"target=\"_blank\">Herramienta Reportero Virtual</a> por <a href =\"http://kanthanpillay.com/content/about\" target=\"_blank\">Kanthan Pillay</a>.", 
       "contributors": "Colaboradores", 
       "feedback": "Env\u00edenos sus comentarios", 
-      "line1": "Reporter Pocket es un editor de noticias en el bolsillo que te ayuda a ser mejor periodista.", 
+      "line1": "Pocket Reporter es un editor de noticias en el bolsillo que te ayuda a ser mejor periodista.", 
       "line2": "Simplemente conteste las preguntas, ya que Pocket Reporter le guiar\u00e1 a trav\u00e9s del proceso de recopilaci\u00f3n de noticias.", 
-      "title": "Acerca de Pocket Reporter"
+      "title": "Sobre Pocket Reporter"
     }, 
     "name": "Espa\u00f1ol", 
     "nav": {
@@ -794,7 +794,7 @@ var L10N = {
       "select_lang": "Elige tu idioma"
     }, 
     "splash": {
-      "description": "Reporter Pocket te ayuda a ser un <br> mejor reportero guiandote a trav\u00e9s<br>del proceso de recopilaci\u00f3n de noticias.", 
+      "description": "Pocket Reporter te ayuda a ser un <br> mejor reportero guiandote a trav\u00e9s<br>del proceso de recopilaci\u00f3n de noticias.", 
       "language_sel": "Cambiar idioma", 
       "tagline": "Un editor de noticias en tu bolsillo"
     }, 
