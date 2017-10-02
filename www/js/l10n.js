@@ -777,7 +777,7 @@ var L10N = {
     "about": {
       "about_c4sa": "OpenUp es una organizaci\u00f3n sin fines de lucro que promueve la toma de decisiones informada que impulsa el cambio social. Obtenga m\u00e1s informaci\u00f3n en <a href=\"http://openup.org.za\" target=\"_blank\">openup.org.za</a>.", 
       "background": "Contexto", 
-      "builtby": "Pocket Reporter est\u00e1 construido por <a href=\"http://code4sa.org\" target=\"_blank\">Code for South Africa</a> y est\u00e1 inspirado en el <a href=\"http://nqabile.co.za/virtual \"target=\"_blank\">Herramienta Reportero Virtual</a> por <a href =\"http://kanthanpillay.com/content/about\" target=\"_blank\">Kanthan Pillay</a>.", 
+      "builtby": "Pocket Reporter est\u00e1 construido por <a href=\"https://openup.org.za\" target=\"_blank\">OpenUp</a> y est\u00e1 inspirado en el <a href=\"http://nqabile.co.za/virtual \"target=\"_blank\">Herramienta Reportero Virtual</a> por <a href =\"http://kanthanpillay.com/content/about\" target=\"_blank\">Kanthan Pillay</a>.", 
       "contributors": "Colaboradores", 
       "feedback": "Env\u00edenos sus comentarios", 
       "line1": "Reporter Pocket es un editor de noticias en el bolsillo que te ayuda a ser mejor periodista.", 
@@ -796,7 +796,7 @@ var L10N = {
     "splash": {
       "description": "Reporter Pocket te ayuda a ser un <br> mejor reportero guiandote a trav\u00e9s<br>del proceso de recopilaci\u00f3n de noticias.", 
       "language_sel": "Cambiar idioma", 
-      "tagline": "Um editor de noticias en tu bolsillo"
+      "tagline": "Un editor de noticias en tu bolsillo"
     }, 
     "story": {
       "completed": "Has completado esta historia!", 
