@@ -958,7 +958,7 @@ var L10N = {
           "14": "\u00bfCu\u00e1l fue el costo de su pasaje de regreso?", 
           "2": "\u00bfCu\u00e1les son los servicios que no est\u00e1n funcionando correctamente? (\u00e1reas sin prestaci\u00f3n de servicios)", 
           "3": "\u00bfPor qu\u00e9 estos servicios ya no se ofrecen?", 
-          "4": "\u00bfA qui\u00e9nes afecta esto? (Un grupo particular de personas / \u00e1rea y cu\u00e1les son sus antecedentes socioecon\u00f3micos?", 
+          "4": "\u00bfA qui\u00e9nes afecta esto? Un grupo particular de personas / \u00e1rea y cu\u00e1les son sus antecedentes socioecon\u00f3micos?", 
           "5": "\u00bfCu\u00e1ntas personas est\u00e1n afectadas, en riesgo o en peligro debido a la retirada de estos servicios?", 
           "6": "\u00bfCu\u00e1les son los nombres y edades de los afectados y cu\u00e1les son sus experiencias?", 
           "7": "\u00bfCu\u00e1nto tiempo esperan los pacientes para ser vistos por los m\u00e9dicos / trabajadores de salud?", 
