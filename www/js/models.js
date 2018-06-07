@@ -111,7 +111,6 @@ var Story = Backbone.Model.extend({
     }
 
     var mailto = 'mailto:';
-
     mailto += '?subject=' + encodeURIComponent(this.get('title'));
     mailto += '&body=' + encodeURIComponent(this.shareableBody());
 

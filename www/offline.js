@@ -1,6 +1,6 @@
 if ('serviceWorker' in navigator) {
 	console.log('CLIENT: service worker registration in progress.');
-	navigator.serviceWorker.register('http://localhost:8001/service-worker.js').then(
+	navigator.serviceWorker.register('/service-worker.js').then(
 		function() {
 			console.log('CLIENT: service worker registration complete.');
 		},
