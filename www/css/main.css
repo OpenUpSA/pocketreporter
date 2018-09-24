@@ -82,8 +82,10 @@ body {
 
 #viewport article.with-header {
   padding-top: 60px; }
+
 #viewport article {
   padding-bottom: 60px; }
+
 #viewport article.free-text {
   padding-left: 15px;
   padding-right: 15px; }
@@ -156,6 +158,7 @@ body {
   margin-left: -5px;
   margin-right: -5px;
   background-color: #f5f6f6; }
+
 .box-sections h2 {
   margin: 5px 0px 10px 5px;
   font-size: 16px; }
@@ -168,10 +171,13 @@ body {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
 .collapsible-sections > section > h2::before {
   content: "\f077"; }
+
 .collapsible-sections > section > h2.collapsed::before {
   content: "\f078"; }
+
 .collapsible-sections > section > h2:hover {
   cursor: pointer; }
 
@@ -269,6 +275,7 @@ ul.question-list {
 
 .story-view article.with-header {
   padding-top: 80px !important; }
+
 .story-view #story-progress {
   position: fixed;
   top: 50px;
@@ -279,6 +286,7 @@ ul.question-list {
   .story-view #story-progress .progress {
     border-radius: 0px;
     margin: 0px -15px; }
+
 .story-view .story-done {
   display: none;
   padding: 20px 0px;
@@ -412,6 +420,7 @@ ul.question-list {
       font-size: 32px;
       margin-top: 0px;
       margin-bottom: 5px; }
+
 .add-story-view .name-section {
   display: none; }
 
@@ -428,4 +437,11 @@ section.empty {
 .language-choices .radio {
   margin-top: 20px; }
 
-/*# sourceMappingURL=main.css.map */
+.notice {
+  text-align: center;
+  color: #383d41;
+  background-color: #e2e3e5;
+  border: 1px solid #d6d8db;
+  padding: 2rem 1rem 1rem;
+  border-radius: 4px;
+  margin: 0 1rem 1rem; }
